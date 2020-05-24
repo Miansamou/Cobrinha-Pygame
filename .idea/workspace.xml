@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d6451dd-30f0-4209-9f9a-d29069415ea9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Cobrinha" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZzDsbHyT9tJgTW8lpHEdvoGe1x" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../teste" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha" />
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Grafico" />
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Fonts" />
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Musics" />
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\lib" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Main">
+    <configuration name="Creditos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Cobrinha" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/lib/Creditos.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DBConfig" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Cobrinha" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/lib/DBConfig.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Intro" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Cobrinha" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/lib/Intro.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Cobrinha" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testeFade" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Cobrinha" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testeFade.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.Creditos" />
+        <item itemvalue="Python.testeFade" />
+        <item itemvalue="Python.Intro" />
+        <item itemvalue="Python.DBConfig" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d6451dd-30f0-4209-9f9a-d29069415ea9" name="Default Changelist" comment="" />
+      <created>1585833236279</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585833236279</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1229" y="227" key="#Asteroids" timestamp="1585836244232">
+      <screen x="-1920" y="93" width="1920" height="1040" />
+    </state>
+    <state x="-1229" y="227" key="#Asteroids/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585836244232" />
+    <state x="-1229" y="227" key="#Aula6" timestamp="1585836762378">
+      <screen x="-1920" y="93" width="1920" height="1040" />
+    </state>
+    <state x="-1229" y="227" key="#Aula6/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585836762378" />
+    <state x="-1229" y="227" key="#Main" timestamp="1585833466798">
+      <screen x="-1920" y="93" width="1920" height="1040" />
+    </state>
+    <state x="-1229" y="227" key="#Main/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585833466798" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588825188761">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588825188761" />
+    <state x="695" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587654450796">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="695" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587654450796" />
+    <state x="728" y="350" key="#com.intellij.tools.ToolEditorDialog" timestamp="1588364397688">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="728" y="350" key="#com.intellij.tools.ToolEditorDialog/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588364397688" />
+    <state x="977" y="354" key="FileChooserDialogImpl" timestamp="1589426468034">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-943" y="447" key="FileChooserDialogImpl/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585841545228" />
+    <state x="977" y="354" key="FileChooserDialogImpl/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589426468034" />
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1590099348365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1882" height="277" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590099348365" />
+    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1590099348365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1882" height="277" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
+    <state width="1899" height="277" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590099348365" />
+    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1590099348365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1882" height="277" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
+    <state width="1899" height="277" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590099348365" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1590099348365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1882" height="277" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590099348365" />
+    <state width="1899" height="181" key="GridCell.Tab.1.bottom" timestamp="1590045337599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585871213490" />
+    <state width="1899" height="181" key="GridCell.Tab.1.bottom/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590045337599" />
+    <state width="1899" height="181" key="GridCell.Tab.1.center" timestamp="1590045337599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.center/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585871213490" />
+    <state width="1899" height="181" key="GridCell.Tab.1.center/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590045337599" />
+    <state width="1899" height="181" key="GridCell.Tab.1.left" timestamp="1590045337599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.left/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585871213490" />
+    <state width="1899" height="181" key="GridCell.Tab.1.left/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590045337599" />
+    <state width="1899" height="181" key="GridCell.Tab.1.right" timestamp="1590045337599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.right/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585871213490" />
+    <state width="1899" height="181" key="GridCell.Tab.1.right/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590045337599" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1588824348486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1459" y="255" key="SettingsEditor/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585836858197" />
+    <state x="461" y="162" key="SettingsEditor/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588824348486" />
+    <state x="655" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1590072789493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="655" y="343" key="com.intellij.ide.util.TipDialog/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590072789493" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
