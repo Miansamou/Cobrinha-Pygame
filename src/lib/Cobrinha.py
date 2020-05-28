@@ -14,9 +14,6 @@ class Cobrinha:
     def setCobrinha(self, array):
         self.snake[0] = array
 
-    def reiniciarEstruturaDaCobrinha(self):
-        self.snake = [(200, 200), (200 + dificuldade, 200), (200 + (dificuldade * 2), 200)]
-
     def mudarCor(self, color):
         self.tamanhoPixel.fill(color)
 

@@ -16,6 +16,8 @@ class System:
 
         self.dificuldade = 0
 
+        self.cenario = "Garden"
+
         self.clock = pygame.time.Clock()
 
     def mudarPrimeiroArrayBimensional(self, valorImutavel, valorTotal, soma):
@@ -31,3 +33,9 @@ class System:
 
     def getDificuldade(self):
         return self.dificuldade
+
+    def setCenario(self, scene):
+        self.cenario = scene
+
+    def getCenario(self):
+        return self.cenario

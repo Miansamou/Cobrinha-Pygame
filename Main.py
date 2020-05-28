@@ -1,7 +1,7 @@
 import pygame, random
 from src.Fonts import fontes
 from src.Grafico import cores, cenario
-from src.lib import Cobrinha, sys, Intro, CaixaDeTexto, Ranking, Menu, Creditos
+from src.lib import Cobrinha, sys, Intro, CaixaDeTexto, Ranking, Menu, Creditos, Fases
 from pygame.locals import *
 
 pygame.init()
@@ -17,6 +17,8 @@ Rank = Ranking.Rankinkg()
 menu = Menu.Menu()
 
 creditos = Creditos.Creditos()
+
+fases = Fases.Fases()
 
 # Seta do menu
 seta = System.seta
@@ -63,7 +65,6 @@ while running != "Fim":
             opcao = 2
             seta = [(240, 235), (240, 265), (255, 250)]
 
-
         elif opcao == 7:
             running = "Ranking"
 
@@ -84,10 +85,9 @@ while running != "Fim":
             seta = [(220, 335), (220, 365), (235, 350)]
             opcao = 4
 
-
-    elif running == "MenuDificuldade":
-        menu.selecionarDificuldade(System.screen, seta)
-        setSeta = menu.eventoDificuldade(opcao)
+    elif running == "MenuFases":
+        fases.desenhaFases(System.screen, seta)
+        setSeta = fases.eventoFases(opcao)
         opcao += setSeta
         if setSeta == -1:
             for i in range(3):
@@ -100,8 +100,19 @@ while running != "Fim":
         if opcao > 10:
             running = "Jogo"
 
+            if opcao == 11:
+                System.setCenario("Garden")
+
+            elif opcao == 12:
+                System.setCenario("Sky")
+
+            elif opcao == 13:
+                System.setCenario("Hell")
+
+
         elif opcao < -1:
-            running = "MenuPrincipal"
+            running = "MenuDificuldade"
+            opcao = -1
 
         elif opcao > 5:
             seta = [(240, 485), (240, 515), (255, 500)]
@@ -119,22 +130,26 @@ while running != "Fim":
             seta = [(340, 235), (340, 265), (355, 250)]
             opcao = 3
 
-        #Inicializar as variaveis antes do jogo começar
+        # Inicializar as variaveis antes do jogo começar
 
         if running == "Jogo":
 
-            if opcao == 11:
-                System.setDificuldade(15)
-
-            elif opcao == 12:
-                System.setDificuldade(25)
-
-            elif opcao == 13:
-                System.setDificuldade(40)
-
             # ---------------- Variaveis do jogo ---------------------
             # cria a cobra com três posições
-            snake = Cobrinha.Cobrinha(System.getDificuldade(),cores.LightRed)
+            snake = Cobrinha.Cobrinha(System.getDificuldade(), cores.LightRed)
+
+            if System.getCenario() == "Garden":
+                cenarioAtual = cenario.BackgroundGrass
+                itemAtual = cenario.MacaSprite
+                snake.mudarCor(cores.LightRed)
+            elif System.getCenario() == "Sky":
+                cenarioAtual = cenario.BackgroundHeaven
+                itemAtual = cenario.MacaSprite
+                snake.mudarCor(cores.HardBlue)
+            elif System.getCenario() == "Hell":
+                cenarioAtual = cenario.BackgroundHell
+                itemAtual = cenario.MacaSprite
+                snake.mudarCor(cores.LightGreen)
 
             # movimentação inicial
             direcao = "direita"
@@ -148,6 +163,50 @@ while running != "Fim":
             mudouMovimento = False
 
             pygame.mixer.music.stop()
+
+    elif running == "MenuDificuldade":
+        menu.selecionarDificuldade(System.screen, seta)
+        setSeta = menu.eventoDificuldade(opcao)
+        opcao += setSeta
+        if setSeta == -1:
+            for i in range(3):
+                seta[i] = System.mudarSegundoArrayBimensional(seta[i][1], seta[i][0], -100)
+
+        elif setSeta == 1:
+            for i in range(3):
+                seta[i] = System.mudarSegundoArrayBimensional(seta[i][1], seta[i][0], 100)
+
+        elif opcao < -1:
+            running = "MenuPrincipal"
+
+        elif opcao > 5 and opcao < 10:
+            seta = [(240, 485), (240, 515), (255, 500)]
+            opcao = 6
+
+        elif opcao == -1:
+            opcao = 2
+            seta = [(240, 235), (240, 265), (255, 250)]
+
+        elif opcao > 3 and opcao < 10:
+            seta = [(140, 235), (140, 265), (155, 250)]
+            opcao = 1
+
+        elif opcao < 1:
+            seta = [(340, 235), (340, 265), (355, 250)]
+            opcao = 3
+
+        if opcao == 11:
+            System.setDificuldade(15)
+
+        elif opcao == 12:
+            System.setDificuldade(25)
+
+        elif opcao == 13:
+            System.setDificuldade(40)
+
+        if opcao > 10:
+            running = "MenuFases"
+            opcao = -1
 
     elif running == "Jogo":
         System.clock.tick(System.getDificuldade())
@@ -211,11 +270,11 @@ while running != "Fim":
 
         # Atulizações de tela
         System.screen.fill(cores.Black)
-        System.screen.blit(cenario.BackgroundGrass, (0, 0))
+        System.screen.blit(cenarioAtual, (0, 0))
         System.screen.blit(cenario.Score, (0, 600))
         scoreAtual = fontes.comicNeue90.render(str(score), True, cores.Black)
         System.screen.blit(scoreAtual, (350, 600))
-        System.screen.blit(cenario.MacaSprite, posicao_da_maca)
+        System.screen.blit(itemAtual, posicao_da_maca)
 
         for posicao in snake.getCobrinha():
             snake.desenhaCobrinha(System.screen, posicao)

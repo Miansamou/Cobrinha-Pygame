@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d6451dd-30f0-4209-9f9a-d29069415ea9" name="Default Changelist" comment="" />
+    <list default="true" id="1d6451dd-30f0-4209-9f9a-d29069415ea9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/heaven.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/hell.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grafico/cenario.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafico/cenario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grafico/cores.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafico/cores.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Cobrinha.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Cobrinha.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/sys.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/sys.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +27,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZzDsbHyT9tJgTW8lpHEdvoGe1x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,19 +39,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../teste" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Grafico" />
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha" />
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Fonts" />
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Musics" />
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\lib" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mians\PycharmProjects\Cobrinha" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Main">
@@ -199,26 +214,26 @@
     </state>
     <state x="-943" y="447" key="FileChooserDialogImpl/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585841545228" />
     <state x="977" y="354" key="FileChooserDialogImpl/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589426468034" />
-    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1590099348365">
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1590644311672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="277" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590099348365" />
-    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1590099348365">
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590644311672" />
+    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1590644311672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="277" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590099348365" />
-    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1590099348365">
+    <state width="1899" height="277" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590644311672" />
+    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1590644311672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="277" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590099348365" />
-    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1590099348365">
+    <state width="1899" height="277" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590644311672" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1590644311672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="277" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590099348365" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590644311672" />
     <state width="1899" height="181" key="GridCell.Tab.1.bottom" timestamp="1590045337599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -244,10 +259,10 @@
     </state>
     <state x="-1459" y="255" key="SettingsEditor/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585836858197" />
     <state x="461" y="162" key="SettingsEditor/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588824348486" />
-    <state x="655" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1590072789493">
+    <state x="655" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1590691056068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="343" key="com.intellij.ide.util.TipDialog/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590072789493" />
+    <state x="655" y="343" key="com.intellij.ide.util.TipDialog/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590691056068" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
