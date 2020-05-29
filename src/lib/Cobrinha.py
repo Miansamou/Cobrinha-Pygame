@@ -8,6 +8,9 @@ class Cobrinha:
         self.tamanhoPixel.fill(color)
         self.velocidade = 10
 
+    def resetCobrinha(self, dificuldade):
+        self.snake = [(200, 200), (200 + dificuldade, 200), (200 + (dificuldade * 2), 200)]
+
     def getCobrinha(self):
         return self.snake
 

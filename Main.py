@@ -24,6 +24,9 @@ textBox = CaixaDeTexto.CaixaDeTexto()
 
 creditos = Creditos.Creditos()
 
+snake = Cobrinha.Cobrinha(System.getDificuldade(), cores.LightRed)
+posicao_item = System.on_grid_random(10, 590)
+
 inimigoInferno = Inimigo.InimigoInferno()
 
 inimigoCeu = Inimigo.InimigoCeu()
@@ -36,12 +39,6 @@ opcao = 1
 
 #Cenario Jogado
 cenarioAtual = cenario.BackgroundHeaven
-
-#cria um valor aleatório e faz uma divisão exata para que posteriormente a maçã fique no mesmo nível da cobra
-def on_grid_random(min, max):
-    x = random.randint(min, max)
-    y = random.randint(min, max)
-    return (x//10 * 10, y//10 * 10)
 
 #cria a função de colição entre duas posições
 def colisao(c1, c2):
@@ -248,7 +245,7 @@ while running != "Fim":
 
             # ---------------- Variaveis do jogo ---------------------
             # cria a cobra com três posições
-            snake = Cobrinha.Cobrinha(System.getDificuldade(), cores.LightRed)
+            snake.resetCobrinha(System.dificuldade)
 
             if System.getCenario() == "Garden":
                 cenarioAtual = cenario.BackgroundGrass
@@ -264,15 +261,13 @@ while running != "Fim":
                 cenarioAtual = cenario.BackgroundHell
                 itemAtual = cenario.MacaSprite
                 snake.mudarCor(cores.LightGreen)
+                posicao_item = System.on_grid_random(20, 580)
 
             # movimentação inicial
             direcao = "direita"
 
-            # utiliza a função para delimitar a posição da maçã
-            posicao_da_maca = on_grid_random(10, 590)
-
             # pontuação
-            score = 0
+            System.score = 0
 
             mudouMovimento = False
 
@@ -308,14 +303,14 @@ while running != "Fim":
             mudouMovimento = False
 
         # responsável pela colisão entre a cobra e a maçã
-        if colisao(snake.getCobrinha()[0], posicao_da_maca):
+        if colisao(snake.getCobrinha()[0], posicao_item):
             if cenarioAtual == cenario.BackgroundHell:
-                posicao_da_maca = on_grid_random(20, 580)
+                posicao_item = System.on_grid_random(20, 580)
             else:
-                posicao_da_maca = on_grid_random(10, 590)
+                posicao_item = System.on_grid_random(10, 590)
             pygame.mixer.music.load("src/Musics/ColetarFruta.mp3")
             pygame.mixer.music.play(0)
-            score += 9
+            System.score += 9
 
             # Aumentar cobrinha com base na dificuldade
 
@@ -341,13 +336,20 @@ while running != "Fim":
         System.screen.fill(cores.Black)
         System.screen.blit(cenarioAtual, (0, 0))
         System.screen.blit(cenario.Score, (0, 600))
-        scoreAtual = fontes.comicNeue90.render(str(score), True, cores.Black)
+        scoreAtual = fontes.comicNeue90.render(str(System.score), True, cores.Black)
         System.screen.blit(scoreAtual, (350, 600))
-        System.screen.blit(itemAtual, posicao_da_maca)
+        System.screen.blit(itemAtual, posicao_item)
+
+        if cenarioAtual == cenario.BackgroundHeaven:
+            inimigoCeu.updateInimigos()
+            inimigoCeu.desenhaInimigo(System.screen)
+            if running == "Jogo":
+                running = inimigoCeu.colisao(snake)
 
         if cenarioAtual == cenario.BackgroundHell:
             inimigoInferno.desenhaInimigo(System.screen)
-            running = inimigoInferno.colisao(snake)
+            if running == "Jogo":
+                running = inimigoInferno.colisao(snake)
 
         for posicao in snake.getCobrinha():
             snake.desenhaCobrinha(System.screen, posicao)
@@ -359,8 +361,8 @@ while running != "Fim":
         System.clock.tick(System.getDificuldade())
 
     elif running == "CaixaDeTexto":
-        running = textBox.evento(score, cenarioAtual, System.getDificuldade())
-        textBox.desenhaTexto(score, System.screen)
+        running = textBox.evento(System.score, cenarioAtual, System.getDificuldade())
+        textBox.desenhaTexto(System.score, System.screen)
 
     elif running == "Ranking":
         Rank.desenhaRank(System.screen)

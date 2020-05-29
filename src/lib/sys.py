@@ -1,4 +1,4 @@
-import pygame
+import pygame, random
 
 class System:
     def __init__(self):
@@ -14,7 +14,9 @@ class System:
         # Seta do menu
         self.seta = [(220, 185), (220, 215), (235, 200)]
 
-        self.dificuldade = 0
+        self.dificuldade = 15
+
+        self.score = 0
 
         self.cenario = "Garden"
 
@@ -39,3 +41,8 @@ class System:
 
     def getCenario(self):
         return self.cenario
+
+    def on_grid_random(self, min, max):
+        x = random.randint(min, max)
+        y = random.randint(min, max)
+        return (x // 10 * 10, y // 10 * 10)
