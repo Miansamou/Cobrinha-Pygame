@@ -30,6 +30,9 @@ seta = System.seta
 # Selecionar opcoes
 opcao = 1
 
+#Cenario Jogado
+cenarioAtual = cenario.BackgroundHeaven
+
 #cria um valor aleatório e faz uma divisão exata para que posteriormente a maçã fique no mesmo nível da cobra
 def on_grid_random():
     x = random.randint(10, 590)
@@ -101,6 +104,7 @@ while running != "Fim":
 
         elif opcao == 12:
             running = "Ranking"
+            opcao = 1
 
         elif opcao == 13:
             running = "Creditos"
@@ -340,12 +344,25 @@ while running != "Fim":
         pygame.display.flip()
 
     elif running == "CaixaDeTexto":
-        running = textBox.evento(score)
+        running = textBox.evento(score, cenarioAtual, System.getDificuldade())
         textBox.desenhaTexto(score, System.screen)
 
     elif running == "Ranking":
         Rank.desenhaRank(System.screen)
-        running = Rank.evento()
+        opcao += Rank.evento()
+        Rank.setRank(opcao)
+
+        if opcao == 0:
+            opcao = 3
+
+        if opcao == 4:
+            opcao = 1
+
+        elif opcao >= 11 and opcao <= 13:
+            running = "IniciandoMenu"
+
+        elif opcao > 20:
+            running = "Fim"
 
     elif running == "Creditos":
         creditos.desenhaCreditos(System.screen)

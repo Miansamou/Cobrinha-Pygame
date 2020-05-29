@@ -57,11 +57,11 @@ class MenuPrincipal:
             if evento.type == QUIT:
                 return 20
 
-            elif evento.type == KEYDOWN and evento.key == K_KP_ENTER:
-                return 10
-
             elif evento.type == KEYDOWN:
-                if evento.key == K_UP:
+                if evento.key == K_KP_ENTER:
+                    return 10
+
+                elif evento.key == K_UP:
                     return -1
 
                 elif evento.key == K_DOWN:
@@ -96,11 +96,11 @@ class MenuDificuldade:
             if evento.type == QUIT:
                 return 20
 
-            elif evento.type == KEYDOWN and evento.key == K_KP_ENTER:
-                return 10
-
             elif evento.type == KEYDOWN:
-                if evento.key == K_LEFT and opcao != 5:
+                if evento.key == K_KP_ENTER:
+                    return 10
+
+                elif evento.key == K_LEFT and opcao != 5:
                     return -1
 
                 elif evento.key == K_RIGHT and opcao != 5:
@@ -149,11 +149,11 @@ class MenuFases:
             if evento.type == QUIT:
                 return 20
 
-            elif evento.type == KEYDOWN and evento.key == K_KP_ENTER:
-                return 10
-
             elif evento.type == KEYDOWN:
-                if evento.key == K_LEFT and opcao != 5:
+                if evento.key == K_KP_ENTER:
+                    return 10
+
+                elif evento.key == K_LEFT and opcao != 5:
                     return -1
 
                 elif evento.key == K_RIGHT and opcao != 5:

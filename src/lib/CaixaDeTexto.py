@@ -46,7 +46,7 @@ class CaixaDeTexto():
         screen.blit(self.seuScore, (100, 100))
         pygame.display.flip()
 
-    def evento(self, score):
+    def evento(self, score, cenarioAtual, dificuldade):
         for evento in pygame.event.get():
             if evento.type == QUIT:
                 return "Fim"
@@ -68,7 +68,24 @@ class CaixaDeTexto():
 
                     db = DBConfig.DBConfig()
 
-                    db.insert('Rank', self.text, score)
+                    if cenarioAtual == cenario.BackgroundGrass and dificuldade == 15:
+                        db.insert('Jardim_Facil', self.text, score)
+                    elif cenarioAtual == cenario.BackgroundGrass and dificuldade == 25:
+                        db.insert('Jardim_Medio', self.text, score)
+                    elif cenarioAtual == cenario.BackgroundGrass and dificuldade == 40:
+                        db.insert('Jardim_Dificil', self.text, score)
+                    elif cenarioAtual == cenario.BackgroundHeaven and dificuldade == 15:
+                        db.insert('Ceu_Facil', self.text, score)
+                    elif cenarioAtual == cenario.BackgroundHeaven and dificuldade == 25:
+                        db.insert('Ceu_Medio', self.text, score)
+                    elif cenarioAtual == cenario.BackgroundHeaven and dificuldade == 40:
+                        db.insert('Ceu_Dificil', self.text, score)
+                    elif cenarioAtual == cenario.BackgroundHell and dificuldade == 15:
+                        db.insert('Inferno_Facil', self.text, score)
+                    elif cenarioAtual == cenario.BackgroundHell and dificuldade == 25:
+                        db.insert('Inferno_Medio', self.text, score)
+                    elif cenarioAtual == cenario.BackgroundHell and dificuldade == 40:
+                        db.insert('Inferno_Dificil', self.text, score)
 
                     db.encerrarConexao()
 
