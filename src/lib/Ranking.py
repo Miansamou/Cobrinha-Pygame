@@ -36,7 +36,7 @@ class Rankinkg:
     def evento(self):
         for evento in pygame.event.get():
             if evento.type == QUIT:
-                pygame.quit()
+                return "Fim"
 
             if evento.type == KEYDOWN and evento.key == K_KP_ENTER:
                 return "IniciandoMenu"

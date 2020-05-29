@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d6451dd-30f0-4209-9f9a-d29069415ea9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafico/heaven.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafico/hell.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/MenuDificuldadeBG.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/PythonBG.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/SelectGarden.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/SelectHeaven.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/SelectHell.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/SnakeIntroBG.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafico/SnakeMenuBG.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Musics/Canon-In-B.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Musics/Our-Mountain_v003_Looping.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grafico/cenario.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafico/cenario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grafico/cores.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafico/cores.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Cobrinha.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Cobrinha.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/sys.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/sys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/CaixaDeTexto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/CaixaDeTexto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Creditos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Creditos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Fases.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Intro.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Ranking.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Ranking.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +53,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mians\PycharmProjects\Cobrinha" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Musics" />
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Grafico" />
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha" />
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Fonts" />
-      <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\Musics" />
       <recent name="C:\Users\mians\PycharmProjects\Cobrinha\src\lib" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mians\PycharmProjects\Cobrinha" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Main">
@@ -69,27 +78,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/lib/Creditos.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="DBConfig" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Cobrinha" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/lib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/lib/DBConfig.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,6 +128,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Cobrinha" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/lib/Menu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="testeFade" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Cobrinha" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,10 +173,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.Menu" />
         <item itemvalue="Python.Creditos" />
         <item itemvalue="Python.testeFade" />
         <item itemvalue="Python.Intro" />
-        <item itemvalue="Python.DBConfig" />
       </list>
     </recent_temporary>
   </component>
@@ -205,6 +214,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="695" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587654450796" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590696191937">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590696191937" />
     <state x="728" y="350" key="#com.intellij.tools.ToolEditorDialog" timestamp="1588364397688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -214,26 +227,26 @@
     </state>
     <state x="-943" y="447" key="FileChooserDialogImpl/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585841545228" />
     <state x="977" y="354" key="FileChooserDialogImpl/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589426468034" />
-    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1590644311672">
+    <state width="1899" height="140" key="GridCell.Tab.0.bottom" timestamp="1590717799205">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="277" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590644311672" />
-    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1590644311672">
+    <state width="1899" height="140" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590717799205" />
+    <state width="1899" height="140" key="GridCell.Tab.0.center" timestamp="1590717799205">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="277" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590644311672" />
-    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1590644311672">
+    <state width="1899" height="140" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590717799205" />
+    <state width="1899" height="140" key="GridCell.Tab.0.left" timestamp="1590717799205">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="277" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590644311672" />
-    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1590644311672">
+    <state width="1899" height="140" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590717799205" />
+    <state width="1899" height="140" key="GridCell.Tab.0.right" timestamp="1590717799205">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="277" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590644311672" />
+    <state width="1899" height="140" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590717799205" />
     <state width="1899" height="181" key="GridCell.Tab.1.bottom" timestamp="1590045337599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

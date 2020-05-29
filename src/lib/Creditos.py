@@ -52,10 +52,12 @@ class Creditos:
         self.soundTrack = fontes.comicNeue15.render("Diretor de áudio", True, cores.White)
         self.roteiro = fontes.comicNeue15.render("Roteirista", True, cores.White)
 
-        self.music1 = fontes.comicNeue15.render("Cattle Drive", True, cores.White)
-        self.music1Artist = fontes.comicNeue15.render("Purple Planet Music", True, cores.White)
+        self.music1 = fontes.comicNeue15.render("Cannon In B", True, cores.White)
+        self.music1Artist = fontes.comicNeue15.render("Pachelbel/Jerry C", True, cores.White)
         self.music2 = fontes.comicNeue15.render("Snake Eater", True, cores.White)
         self.music2Artist = fontes.comicNeue15.render("Cynthia Harrell", True, cores.White)
+        self.music3 = fontes.comicNeue15.render("Our Moutain", True, cores.White)
+        self.music3Artist = fontes.comicNeue15.render("Sound Image", True, cores.White)
 
         # 60 ~ 180
         self.patrocinadores = fontes.comicNeue15.render("Patrocinadores", True, cores.White)
@@ -154,14 +156,16 @@ class Creditos:
             screen.blit(self.music1Artist, (350, self.provYn2 + 770))
             screen.blit(self.music2, (50, self.provYn2 + 800))
             screen.blit(self.music2Artist, (350, self.provYn2 + 800))
+            screen.blit(self.music3, (50, self.provYn2 + 830))
+            screen.blit(self.music3Artist, (350, self.provYn2 + 830))
 
-            screen.blit(self.roteiro, (50, self.provYn2 + 850))
-            screen.blit(self.Gustavo, (350, self.provYn2 + 850))
-            screen.blit(self.Miguel, (350, self.provYn2 + 880))
+            screen.blit(self.roteiro, (50, self.provYn2 + 880))
+            screen.blit(self.Gustavo, (350, self.provYn2 + 880))
+            screen.blit(self.Miguel, (350, self.provYn2 + 910))
 
             self.provYn2 -= self.deltaTime
 
-        if self.timer > 125:
+        if self.timer > 127:
 
             screen.blit(cenario.FabricaSonho, (300 - cenario.FabricaSonho.get_width() // 2, self.provYn3))
 
@@ -195,7 +199,7 @@ class Creditos:
     def evento(self):
         for evento in pygame.event.get():
             if evento.type == QUIT:
-                pygame.quit()
+                return "Fim"
 
             if evento.type == KEYDOWN and evento.key == K_KP_ENTER:
                 self.timer = 0

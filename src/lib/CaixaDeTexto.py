@@ -1,7 +1,7 @@
 import pygame
 from src.lib import DBConfig
 from src.Fonts import fontes
-from src.Grafico import cores
+from src.Grafico import cores, cenario
 from pygame.locals import *
 
 pygame.init()
@@ -34,17 +34,18 @@ class CaixaDeTexto():
 
     def desenhaTexto(self, score, screen):
         screen.fill(cores.White)
+        screen.blit(cenario.TextBackground, (0, 0))
         screen.blit(self.image, self.rect)
         self.scoreAtual = fontes.comicNeue40.render(str(score), True, cores.Black)
-        screen.blit(self.scoreAtual, (400, 400))
-        screen.blit(self.pressEnter, (50, 450))
-        screen.blit(self.seuScore, (100, 400))
+        screen.blit(self.scoreAtual, (400, 100))
+        screen.blit(self.pressEnter, (50, 150))
+        screen.blit(self.seuScore, (100, 100))
         pygame.display.flip()
 
     def evento(self, score):
         for evento in pygame.event.get():
             if evento.type == QUIT:
-                pygame.quit()
+                return "Fim"
             if evento.type == pygame.KEYUP:
                 if evento.key in [pygame.K_RSHIFT, pygame.K_LSHIFT]:
                     self.shiftDown = False

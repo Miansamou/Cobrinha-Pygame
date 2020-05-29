@@ -2,8 +2,15 @@ import pygame
 
 #Cenários
 BackgroundGrass = pygame.image.load('src/Grafico/BackgroundGrass.bmp')
+SelectGarden = pygame.image.load('src/Grafico/SelectGarden.bmp')
 BackgroundHell = pygame.image.load('src/Grafico/hell.bmp')
+SelectHell = pygame.image.load('src/Grafico/SelectHell.bmp')
 BackgroundHeaven = pygame.image.load('src/Grafico/heaven.bmp')
+SelectHeaven = pygame.image.load('src/Grafico/SelectHeaven.bmp')
+IntroBackground = pygame.image.load('src/Grafico/SnakeIntroBG.bmp')
+MenuBackground = pygame.image.load('src/Grafico/SnakeMenuBG.bmp')
+DificuldadeBackground = pygame.image.load('src/Grafico/MenuDificuldadeBG.bmp')
+TextBackground = pygame.image.load('src/Grafico/PythonBG.bmp')
 
 #Score
 Score = pygame.image.load('src/Grafico/Score.bmp')
