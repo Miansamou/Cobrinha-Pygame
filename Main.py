@@ -1,7 +1,7 @@
 import pygame, random
 from src.Fonts import fontes
 from src.Grafico import cores, cenario
-from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos
+from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos, Inimigo
 from pygame.locals import *
 
 pygame.init()
@@ -24,6 +24,10 @@ textBox = CaixaDeTexto.CaixaDeTexto()
 
 creditos = Creditos.Creditos()
 
+inimigoInferno = Inimigo.InimigoInferno()
+
+inimigoCeu = Inimigo.InimigoCeu()
+
 # Seta do menu
 seta = System.seta
 
@@ -34,9 +38,9 @@ opcao = 1
 cenarioAtual = cenario.BackgroundHeaven
 
 #cria um valor aleatório e faz uma divisão exata para que posteriormente a maçã fique no mesmo nível da cobra
-def on_grid_random():
-    x = random.randint(10, 590)
-    y = random.randint(10, 590)
+def on_grid_random(min, max):
+    x = random.randint(min, max)
+    y = random.randint(min, max)
     return (x//10 * 10, y//10 * 10)
 
 #cria a função de colição entre duas posições
@@ -250,10 +254,12 @@ while running != "Fim":
                 cenarioAtual = cenario.BackgroundGrass
                 itemAtual = cenario.MacaSprite
                 snake.mudarCor(cores.LightRed)
+
             elif System.getCenario() == "Sky":
                 cenarioAtual = cenario.BackgroundHeaven
                 itemAtual = cenario.MacaSprite
                 snake.mudarCor(cores.HardBlue)
+
             elif System.getCenario() == "Hell":
                 cenarioAtual = cenario.BackgroundHell
                 itemAtual = cenario.MacaSprite
@@ -263,7 +269,7 @@ while running != "Fim":
             direcao = "direita"
 
             # utiliza a função para delimitar a posição da maçã
-            posicao_da_maca = on_grid_random()
+            posicao_da_maca = on_grid_random(10, 590)
 
             # pontuação
             score = 0
@@ -273,7 +279,6 @@ while running != "Fim":
             pygame.mixer.music.stop()
 
     elif running == "Jogo":
-        System.clock.tick(System.getDificuldade())
         for evento in pygame.event.get():
             if evento.type == QUIT:
                 running = "Fim"
@@ -304,7 +309,10 @@ while running != "Fim":
 
         # responsável pela colisão entre a cobra e a maçã
         if colisao(snake.getCobrinha()[0], posicao_da_maca):
-            posicao_da_maca = on_grid_random()
+            if cenarioAtual == cenario.BackgroundHell:
+                posicao_da_maca = on_grid_random(20, 580)
+            else:
+                posicao_da_maca = on_grid_random(10, 590)
             pygame.mixer.music.load("src/Musics/ColetarFruta.mp3")
             pygame.mixer.music.play(0)
             score += 9
@@ -317,7 +325,6 @@ while running != "Fim":
         # Cobra colidir com ela mesmo
         for i in range(len(snake.getCobrinha()) - 1):
             if colisao(snake.getCobrinha()[0], snake.getCobrinha()[i + 1]):
-                textBox.resetBox()
                 running = "CaixaDeTexto"
 
         # Não sair da tela
@@ -338,10 +345,18 @@ while running != "Fim":
         System.screen.blit(scoreAtual, (350, 600))
         System.screen.blit(itemAtual, posicao_da_maca)
 
+        if cenarioAtual == cenario.BackgroundHell:
+            inimigoInferno.desenhaInimigo(System.screen)
+            running = inimigoInferno.colisao(snake)
+
         for posicao in snake.getCobrinha():
             snake.desenhaCobrinha(System.screen, posicao)
 
+        if running == "CaixaDeTexto":
+            textBox.resetBox()
+
         pygame.display.flip()
+        System.clock.tick(System.getDificuldade())
 
     elif running == "CaixaDeTexto":
         running = textBox.evento(score, cenarioAtual, System.getDificuldade())
