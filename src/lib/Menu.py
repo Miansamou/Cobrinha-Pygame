@@ -37,6 +37,14 @@ class MenuPrincipal:
         self.btnCreditos = fontes.comicNeue25.render("Creditos", True, cores.White)
         self.btnSair = fontes.comicNeue25.render("Sair", True, cores.White)
 
+        self.btnVolume = fontes.comicNeue25.render("Volume", True, cores.White)
+        pygame.mixer.music.set_volume(1)
+        self.volumeAtual = pygame.mixer.music.get_volume()
+        self.btnVolumeAtual = fontes.comicNeue25.render("- " + str(int(pygame.mixer.music.get_volume() * 100)) + " +", True, cores.White)
+
+    def updateVolume(self):
+        self.btnVolumeAtual = fontes.comicNeue25.render("- " + str(int(pygame.mixer.music.get_volume() * 100)) + " +", True, cores.White)
+
     def desenhaMenu(self, screen, seta):
 
         pygame.draw.polygon(screen, cores.White, seta, 1)
@@ -49,6 +57,8 @@ class MenuPrincipal:
         screen.blit(self.btnRanking, (300 - self.btnRanking.get_width() // 2, 250 - self.btnRanking.get_height() // 2))
         screen.blit(self.btnCreditos, (300 - self.btnCreditos.get_width() // 2, 300 - self.btnCreditos.get_height() // 2))
         screen.blit(self.btnSair, (300 - self.btnSair.get_width() // 2, 350 - self.btnSair.get_height() // 2))
+        screen.blit(self.btnVolume, (300 - self.btnSair.get_width() // 2, 500 - self.btnSair.get_height() // 2))
+        screen.blit(self.btnVolumeAtual, (300 - self.btnSair.get_width() // 2, 550 - self.btnSair.get_height() // 2))
         pygame.draw.polygon(screen, cores.White, seta, 1)
 
     def eventoMenu(self):
@@ -66,6 +76,18 @@ class MenuPrincipal:
 
                 elif evento.key == K_DOWN:
                     return 1
+
+                elif evento.key == K_KP_PLUS:
+                    if self.volumeAtual < 1:
+                        self.volumeAtual += 0.1
+                    pygame.mixer.music.set_volume(self.volumeAtual)
+                    self.updateVolume()
+
+                elif evento.key == K_KP_MINUS:
+                    if self.volumeAtual > 0:
+                        self.volumeAtual -= 0.10
+                    pygame.mixer.music.set_volume(self.volumeAtual)
+                    self.updateVolume()
 
         pygame.display.flip()
 

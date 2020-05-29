@@ -31,7 +31,7 @@ class DBConfig:
             self.db.commit()
 
         else:
-            print("Sem conexão com obanco de dados")
+            print("Sem conexão com o banco de dados")
 
     def organizarTabela(self, Tabela):
 
@@ -42,7 +42,7 @@ class DBConfig:
             self.cursor.execute(sql_select_Query)
 
         else:
-            print("Sem conexão com obanco de dados")
+            print("Sem conexão com o banco de dados")
 
     def encerrarConexao(self):
         if self.estaConectado:
@@ -51,4 +51,4 @@ class DBConfig:
             self.cursor.close()
 
         else:
-            print("Sem conexão com obanco de dados")
+            print("Sem conexão com o banco de dados")

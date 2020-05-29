@@ -31,6 +31,7 @@ class Rankinkg:
 
     def impressaoBanco(self, screen, db, dificuldade, posX, posY, posFinal):
         db.organizarTabela(self.fase + dificuldade)
+
         records = db.cursor.fetchall()
 
         for row in records:
@@ -50,13 +51,17 @@ class Rankinkg:
         screen.blit(self.Medio, (450 - self.Facil.get_width() // 2, 100))
         screen.blit(self.Difil, (300 - self.Facil.get_width() // 2, 325))
 
-        db = DBConfig.DBConfig()
+        try:
+            db = DBConfig.DBConfig()
 
-        self.impressaoBanco(screen, db, 'Facil', 150, 125, 300)
-        self.impressaoBanco(screen, db, 'Medio', 450, 125, 300)
-        self.impressaoBanco(screen, db, 'Dificil', 300, 350, 550)
+            self.impressaoBanco(screen, db, 'Facil', 150, 125, 300)
+            self.impressaoBanco(screen, db, 'Medio', 450, 125, 300)
+            self.impressaoBanco(screen, db, 'Dificil', 300, 350, 550)
 
-        db.encerrarConexao()
+            db.encerrarConexao()
+
+        except:
+            print("Não foi possível se conectar com o banco de dados")
 
         pygame.display.flip()
 
