@@ -18,6 +18,10 @@ class CaixaDeTexto():
         self.shiftChars = '~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?'
         self.shiftDown = False
 
+    def resetBox(self):
+        self.text = ""
+        self.image = fontes.comicNeue40.render("Qual o seu nickname?", True, cores.Black)
+
     def adicionarChar(self, char):
         if char in self.validChars and not self.shiftDown:
             self.text += char
@@ -35,7 +39,7 @@ class CaixaDeTexto():
     def desenhaTexto(self, score, screen):
         screen.fill(cores.White)
         screen.blit(cenario.TextBackground, (0, 0))
-        screen.blit(self.image, self.rect)
+        screen.blit(self.image, (300 - self.image.get_width() // 2, 250 - self.image.get_height() // 2))
         self.scoreAtual = fontes.comicNeue40.render(str(score), True, cores.Black)
         screen.blit(self.scoreAtual, (400, 100))
         screen.blit(self.pressEnter, (50, 150))

@@ -18,9 +18,11 @@ menuPrincipal = Menu.MenuPrincipal()
 
 menuDificuldade = Menu.MenuDificuldade()
 
-creditos = Creditos.Creditos()
-
 fases = Menu.MenuFases()
+
+textBox = CaixaDeTexto.CaixaDeTexto()
+
+creditos = Creditos.Creditos()
 
 # Seta do menu
 seta = System.seta
@@ -270,7 +272,7 @@ while running != "Fim":
         System.clock.tick(System.getDificuldade())
         for evento in pygame.event.get():
             if evento.type == QUIT:
-                pygame.quit()
+                running = "Fim"
 
             if evento.type == KEYDOWN:
                 if evento.key == K_UP and direcao != "baixo":
@@ -291,7 +293,6 @@ while running != "Fim":
                     mudouMovimento = True
 
         # resposável por fazer a cobra se movimentar para todas as direções
-        # snake.movimentaCobrinha(direcao)
         if mudouMovimento == False:
             snake.movimentaCobrinha(direcao)
         else:
@@ -312,8 +313,7 @@ while running != "Fim":
         # Cobra colidir com ela mesmo
         for i in range(len(snake.getCobrinha()) - 1):
             if colisao(snake.getCobrinha()[0], snake.getCobrinha()[i + 1]):
-                textBox = CaixaDeTexto.CaixaDeTexto()
-                textBox.rect.center = [300, 250]
+                textBox.resetBox()
                 running = "CaixaDeTexto"
 
         # Não sair da tela

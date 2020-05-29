@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d6451dd-30f0-4209-9f9a-d29069415ea9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Grafico/MenuDificuldadeBG.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafico/PythonBG.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafico/SelectGarden.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafico/SelectHeaven.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafico/SelectHell.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafico/SnakeIntroBG.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafico/SnakeMenuBG.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Musics/Canon-In-B.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Musics/Our-Mountain_v003_Looping.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grafico/cenario.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafico/cenario.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/CaixaDeTexto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/CaixaDeTexto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Creditos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Creditos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Fases.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Intro.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Ranking.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Ranking.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,26 +212,26 @@
     </state>
     <state x="-943" y="447" key="FileChooserDialogImpl/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1585841545228" />
     <state x="977" y="354" key="FileChooserDialogImpl/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589426468034" />
-    <state width="1899" height="140" key="GridCell.Tab.0.bottom" timestamp="1590717799205">
+    <state width="1899" height="140" key="GridCell.Tab.0.bottom" timestamp="1590720584177">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="140" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590717799205" />
-    <state width="1899" height="140" key="GridCell.Tab.0.center" timestamp="1590717799205">
+    <state width="1899" height="140" key="GridCell.Tab.0.bottom/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590720584177" />
+    <state width="1899" height="140" key="GridCell.Tab.0.center" timestamp="1590720584176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="140" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590717799205" />
-    <state width="1899" height="140" key="GridCell.Tab.0.left" timestamp="1590717799205">
+    <state width="1899" height="140" key="GridCell.Tab.0.center/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590720584176" />
+    <state width="1899" height="140" key="GridCell.Tab.0.left" timestamp="1590720584176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="140" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590717799205" />
-    <state width="1899" height="140" key="GridCell.Tab.0.right" timestamp="1590717799205">
+    <state width="1899" height="140" key="GridCell.Tab.0.left/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590720584176" />
+    <state width="1899" height="140" key="GridCell.Tab.0.right" timestamp="1590720584176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="277" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@-1920.93.1920.1040" timestamp="1590022055023" />
-    <state width="1899" height="140" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590717799205" />
+    <state width="1899" height="140" key="GridCell.Tab.0.right/-1920.93.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590720584176" />
     <state width="1899" height="181" key="GridCell.Tab.1.bottom" timestamp="1590045337599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
