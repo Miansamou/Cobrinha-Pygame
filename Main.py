@@ -24,21 +24,21 @@ textBox = CaixaDeTexto.CaixaDeTexto()
 
 creditos = Creditos.Creditos()
 
+#Objetos e variaveis do jogo em si
 snake = Cobrinha.Cobrinha(System.getDificuldade(), cores.LightRed)
 posicao_item = System.on_grid_random(10, 590)
-
 inimigoInferno = Inimigo.InimigoInferno()
-
 inimigoCeu = Inimigo.InimigoCeu()
+cenarioAtual = cenario.BackgroundHeaven
+direcao = "direita"
+mudouMovimento = False
+itemAtual = cenario.MacaSprite
 
 # Seta do menu
 seta = System.seta
 
 # Selecionar opcoes
 opcao = 1
-
-#Cenario Jogado
-cenarioAtual = cenario.BackgroundHeaven
 
 #cria a função de colição entre duas posições
 def colisao(c1, c2):
