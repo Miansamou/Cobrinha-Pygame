@@ -1,8 +1,6 @@
-import pygame, random
-from src.Fonts import fontes
+import pygame
 from src.Grafico import cores, cenario
-from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos, Inimigo
-from pygame.locals import *
+from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos, Inimigo, GameFlow
 
 pygame.init()
 
@@ -25,24 +23,14 @@ textBox = CaixaDeTexto.CaixaDeTexto()
 creditos = Creditos.Creditos()
 
 #Objetos e variaveis do jogo em si
+GF = GameFlow.gameFlow()
 snake = Cobrinha.Cobrinha(System.getDificuldade(), cores.LightRed)
-posicao_item = System.on_grid_random(10, 590)
-inimigoInferno = Inimigo.InimigoInferno()
-inimigoCeu = Inimigo.InimigoCeu()
-cenarioAtual = cenario.BackgroundHeaven
-direcao = "direita"
-mudouMovimento = False
-itemAtual = cenario.MacaSprite
 
 # Seta do menu
 seta = System.seta
 
 # Selecionar opcoes
 opcao = 1
-
-#cria a função de colição entre duas posições
-def colisao(c1, c2):
-    return (c1[0] == c2[0]) and (c1[1] == c2[1])
 
 # Tocar musica inicial
 pygame.mixer.music.load("src/Musics/Our-Mountain_v003_Looping.mp3")
@@ -247,112 +235,25 @@ while running != "Fim":
             # cria a cobra com três posições
             snake.resetCobrinha(System.dificuldade)
 
-            if System.getCenario() == "Garden":
-                cenarioAtual = cenario.BackgroundGrass
-                itemAtual = cenario.MacaSprite
-                snake.mudarCor(cores.LightRed)
-
-            elif System.getCenario() == "Sky":
-                cenarioAtual = cenario.BackgroundHeaven
-                itemAtual = cenario.MacaSprite
-                snake.mudarCor(cores.HardBlue)
-
-            elif System.getCenario() == "Hell":
-                cenarioAtual = cenario.BackgroundHell
-                itemAtual = cenario.MacaSprite
-                snake.mudarCor(cores.LightGreen)
-                posicao_item = System.on_grid_random(20, 580)
-
-            # movimentação inicial
-            direcao = "direita"
-
-            # pontuação
-            System.score = 0
-
-            mudouMovimento = False
-
-            pygame.mixer.music.stop()
+            GF.resetGame(System.getCenario(), snake)
 
     elif running == "Jogo":
-        for evento in pygame.event.get():
-            if evento.type == QUIT:
-                running = "Fim"
 
-            if evento.type == KEYDOWN:
-                if evento.key == K_UP and direcao != "baixo":
-                    direcao = "cima"
-                    snake.movimentaCobrinha(direcao)
-                    mudouMovimento = True
-                if evento.key == K_DOWN and direcao != "cima":
-                    direcao = "baixo"
-                    snake.movimentaCobrinha(direcao)
-                    mudouMovimento = True
-                if evento.key == K_LEFT and direcao != "direita":
-                    direcao = "esquerda"
-                    snake.movimentaCobrinha(direcao)
-                    mudouMovimento = True
-                if evento.key == K_RIGHT and direcao != "esquerda":
-                    direcao = "direita"
-                    snake.movimentaCobrinha(direcao)
-                    mudouMovimento = True
+        running = GF.eventoJogo(snake, running)
 
-        # resposável por fazer a cobra se movimentar para todas as direções
-        if mudouMovimento == False:
-            snake.movimentaCobrinha(direcao)
-        else:
-            mudouMovimento = False
+        GF.updateMoving(snake)
 
-        # responsável pela colisão entre a cobra e a maçã
-        if colisao(snake.getCobrinha()[0], posicao_item):
-            if cenarioAtual == cenario.BackgroundHell:
-                posicao_item = System.on_grid_random(20, 580)
-            else:
-                posicao_item = System.on_grid_random(10, 590)
-            pygame.mixer.music.load("src/Musics/ColetarFruta.mp3")
-            pygame.mixer.music.play(0)
-            System.score += 9
+        running = GF.snakePrimalColission(snake, running)
 
-            # Aumentar cobrinha com base na dificuldade
+        GF.snakeOnScreen(snake)
 
-            for i in range(System.getDificuldade() // 10 + 1):
-                snake.getCobrinha().append((-250, -250))
+        GF.desenhaJogo(System.screen, snake)
 
-        # Cobra colidir com ela mesmo
-        for i in range(len(snake.getCobrinha()) - 1):
-            if colisao(snake.getCobrinha()[0], snake.getCobrinha()[i + 1]):
-                running = "CaixaDeTexto"
+        if GF.cenarioAtual == cenario.BackgroundHeaven:
+            running = GF.heavenColission(System.screen, running, snake)
 
-        # Não sair da tela
-        if snake.getCobrinha()[0][1] > 590:
-            snake.setCobrinha(System.mudarPrimeiroArrayBimensional(snake.getCobrinha()[0][0], snake.getCobrinha()[0][1], -600))
-        if snake.getCobrinha()[0][1] < 0:
-            snake.setCobrinha(System.mudarPrimeiroArrayBimensional(snake.getCobrinha()[0][0], snake.getCobrinha()[0][1], 600))
-        if snake.getCobrinha()[0][0] > 590:
-            snake.setCobrinha(System.mudarSegundoArrayBimensional(snake.getCobrinha()[0][1], snake.getCobrinha()[0][0], -600))
-        if snake.getCobrinha()[0][0] < 0:
-            snake.setCobrinha(System.mudarSegundoArrayBimensional(snake.getCobrinha()[0][1], snake.getCobrinha()[0][0], 600))
-
-        # Atulizações de tela
-        System.screen.fill(cores.Black)
-        System.screen.blit(cenarioAtual, (0, 0))
-        System.screen.blit(cenario.Score, (0, 600))
-        scoreAtual = fontes.comicNeue90.render(str(System.score), True, cores.Black)
-        System.screen.blit(scoreAtual, (350, 600))
-        System.screen.blit(itemAtual, posicao_item)
-
-        if cenarioAtual == cenario.BackgroundHeaven:
-            inimigoCeu.updateInimigos()
-            inimigoCeu.desenhaInimigo(System.screen)
-            if running == "Jogo":
-                running = inimigoCeu.colisao(snake)
-
-        if cenarioAtual == cenario.BackgroundHell:
-            inimigoInferno.desenhaInimigo(System.screen)
-            if running == "Jogo":
-                running = inimigoInferno.colisao(snake)
-
-        for posicao in snake.getCobrinha():
-            snake.desenhaCobrinha(System.screen, posicao)
+        if GF.cenarioAtual == cenario.BackgroundHell:
+            running = GF.hellColission(System.screen, running, snake)
 
         if running == "CaixaDeTexto":
             textBox.resetBox()
@@ -361,8 +262,8 @@ while running != "Fim":
         System.clock.tick(System.getDificuldade())
 
     elif running == "CaixaDeTexto":
-        running = textBox.evento(System.score, cenarioAtual, System.getDificuldade())
-        textBox.desenhaTexto(System.score, System.screen)
+        running = textBox.evento(GF.System.score, GF.cenarioAtual, System.getDificuldade())
+        textBox.desenhaTexto(GF.System.score, System.screen)
 
     elif running == "Ranking":
         Rank.desenhaRank(System.screen)

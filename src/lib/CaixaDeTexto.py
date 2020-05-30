@@ -14,8 +14,8 @@ class CaixaDeTexto():
         self.pressEnter = fontes.comicNeue40.render("Pressione ENTER para salvar", True, cores.Black)
         self.image = fontes.comicNeue40.render("Qual o seu nickname?", True, cores.Black)
         self.rect = self.image.get_rect()
-        self.validChars = "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./"
-        self.shiftChars = '~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?'
+        self.validChars = "1234567890-=qwertyuiop[]\\asdfghjkl;zxcvbnm,./"
+        self.shiftChars = '!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:ZXCVBNM<>?'
         self.shiftDown = False
 
     def resetBox(self):

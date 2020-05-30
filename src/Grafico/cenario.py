@@ -15,6 +15,8 @@ TextBackground = pygame.image.load('src/Grafico/PythonBG.bmp')
 #Score
 Score = pygame.image.load('src/Grafico/Score.bmp')
 MacaSprite = pygame.image.load('src/Grafico/maca.png')
+AngelSprite = pygame.image.load('src/Grafico/Angel.png')
+DemonSprite = pygame.image.load('src/Grafico/Demon.png')
 
 #Imagens do crédito
 jesusKidTaca = pygame.image.load('src/Grafico/JesusKidTaca.bmp')
