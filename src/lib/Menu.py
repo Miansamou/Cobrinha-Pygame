@@ -33,6 +33,7 @@ class MenuPrincipal:
 
         # botoes do menu principal
         self.btnJogar = fontes.comicNeue25.render("Jogar", True, cores.White)
+        self.btnHistoria = fontes.comicNeue25.render("História", True, cores.White)
         self.btnRanking = fontes.comicNeue25.render("Ranking", True, cores.White)
         self.btnCreditos = fontes.comicNeue25.render("Creditos", True, cores.White)
         self.btnSair = fontes.comicNeue25.render("Sair", True, cores.White)
@@ -54,9 +55,10 @@ class MenuPrincipal:
         screen.fill(cores.Black)
         screen.blit(cenario.MenuBackground, (0, 0))
         screen.blit(self.btnJogar, (300 - self.btnJogar.get_width() // 2, 200 - self.btnJogar.get_height() // 2))
-        screen.blit(self.btnRanking, (300 - self.btnRanking.get_width() // 2, 250 - self.btnRanking.get_height() // 2))
-        screen.blit(self.btnCreditos, (300 - self.btnCreditos.get_width() // 2, 300 - self.btnCreditos.get_height() // 2))
-        screen.blit(self.btnSair, (300 - self.btnSair.get_width() // 2, 350 - self.btnSair.get_height() // 2))
+        screen.blit(self.btnHistoria, (300 - self.btnHistoria.get_width() // 2, 250 - self.btnHistoria.get_height() // 2))
+        screen.blit(self.btnRanking, (300 - self.btnRanking.get_width() // 2, 300 - self.btnRanking.get_height() // 2))
+        screen.blit(self.btnCreditos, (300 - self.btnCreditos.get_width() // 2, 350 - self.btnCreditos.get_height() // 2))
+        screen.blit(self.btnSair, (300 - self.btnSair.get_width() // 2, 400 - self.btnSair.get_height() // 2))
         screen.blit(self.btnVolume, (300 - self.btnSair.get_width() // 2, 500 - self.btnSair.get_height() // 2))
         screen.blit(self.btnVolumeAtual, (300 - self.btnSair.get_width() // 2, 550 - self.btnSair.get_height() // 2))
         pygame.draw.polygon(screen, cores.White, seta, 1)

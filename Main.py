@@ -1,6 +1,6 @@
 import pygame
 from src.Grafico import cores, cenario
-from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos, Inimigo, GameFlow
+from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos, GameFlow
 
 pygame.init()
 
@@ -92,10 +92,14 @@ while running != "Fim":
             seta = [(240, 235), (240, 265), (255, 250)]
 
         elif opcao == 12:
-            running = "Ranking"
+            running = "Historia"
             opcao = 1
 
         elif opcao == 13:
+            running = "Ranking"
+            opcao = 1
+
+        elif opcao == 14:
             running = "Creditos"
             creditos.initialTime = pygame.time.get_ticks()
 
@@ -104,20 +108,20 @@ while running != "Fim":
             pygame.mixer.music.load("src/Musics/snake-eater.mp3")
             pygame.mixer.music.play(0)
 
-        elif opcao == 14:
+        elif opcao == 15:
             running = "Fim"
 
         elif opcao > 20:
             running = "Fim"
 
         # Jogador avançou ou voltou além do permitido, volta para a primeira ou última posição
-        elif opcao == 5:
+        elif opcao == 6:
             seta = [(220, 185), (220, 215), (235, 200)]
             opcao = 1
 
         elif opcao == 0:
-            seta = [(220, 335), (220, 365), (235, 350)]
-            opcao = 4
+            seta = [(220, 385), (220, 415), (235, 400)]
+            opcao = 5
 
     elif running == "MenuDificuldade":
 
@@ -285,5 +289,8 @@ while running != "Fim":
     elif running == "Creditos":
         creditos.desenhaCreditos(System.screen)
         running = creditos.evento()
+
+    elif running == "Historia":
+        print(running)
 
 pygame.quit()
