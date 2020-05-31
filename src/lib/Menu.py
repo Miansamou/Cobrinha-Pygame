@@ -48,10 +48,6 @@ class MenuPrincipal:
 
     def desenhaMenu(self, screen, seta):
 
-        pygame.draw.polygon(screen, cores.White, seta, 1)
-
-        pygame.display.flip()
-
         screen.fill(cores.Black)
         screen.blit(cenario.MenuBackground, (0, 0))
         screen.blit(self.btnJogar, (300 - self.btnJogar.get_width() // 2, 200 - self.btnJogar.get_height() // 2))
@@ -62,6 +58,8 @@ class MenuPrincipal:
         screen.blit(self.btnVolume, (300 - self.btnSair.get_width() // 2, 500 - self.btnSair.get_height() // 2))
         screen.blit(self.btnVolumeAtual, (300 - self.btnSair.get_width() // 2, 550 - self.btnSair.get_height() // 2))
         pygame.draw.polygon(screen, cores.White, seta, 1)
+
+        pygame.display.flip()
 
     def eventoMenu(self):
 
@@ -90,8 +88,6 @@ class MenuPrincipal:
                         self.volumeAtual -= 0.10
                     pygame.mixer.music.set_volume(self.volumeAtual)
                     self.updateVolume()
-
-        pygame.display.flip()
 
         return 0
 

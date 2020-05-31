@@ -1,6 +1,6 @@
 import pygame
 from src.Grafico import cores, cenario
-from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos, GameFlow
+from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos, GameFlow, Scenes
 
 pygame.init()
 
@@ -13,6 +13,8 @@ Rank = Ranking.Rankinkg()
 intro = Menu.Intro()
 
 menuPrincipal = Menu.MenuPrincipal()
+
+scene = Scenes.Scene()
 
 menuDificuldade = Menu.MenuDificuldade()
 
@@ -93,6 +95,7 @@ while running != "Fim":
 
         elif opcao == 12:
             running = "Historia"
+            seta = [(220, 185), (220, 215), (235, 200)]
             opcao = 1
 
         elif opcao == 13:
@@ -290,7 +293,43 @@ while running != "Fim":
         creditos.desenhaCreditos(System.screen)
         running = creditos.evento()
 
-    elif running == "Historia":
-        print(running)
+    elif running == "Historia" or running == "RunningHistoria":
+
+        if running == "Historia":
+            scene.desenhaCena(System.screen, seta)
+
+            setSeta = scene.eventoLoad()
+            opcao += setSeta
+            if setSeta == 1:
+                for i in range(3):
+                    seta[i] = System.mudarPrimeiroArrayBimensional(seta[i][0], seta[i][1], 50)
+
+            elif setSeta == -1:
+                for i in range(3):
+                    seta[i] = System.mudarPrimeiroArrayBimensional(seta[i][0], seta[i][1], -50)
+        
+            if opcao == 4:
+                seta = [(220, 185), (220, 215), (235, 200)]
+                opcao = 1
+
+            elif opcao == 0:
+                seta = [(220, 285), (220, 315), (235, 300)]
+                opcao = 3
+
+            elif opcao == 11:
+                scene.currentScene = "Prologo, 1"
+                running = "RunningHistoria"
+
+            elif opcao == 12 and scene.currentScene == "Null":
+                opcao = 2
+
+            elif opcao == 12:
+                running = "RunningHistoria"
+
+            elif opcao == 13:
+                running = "IniciandoMenu"
+
+            elif opcao > 20:
+                running = "Fim"
 
 pygame.quit()
