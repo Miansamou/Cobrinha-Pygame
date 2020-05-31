@@ -48,19 +48,19 @@ class gameFlow:
                 return "Fim"
 
             if evento.type == KEYDOWN:
-                if evento.key == K_UP and self.direcao != "baixo":
+                if (evento.key == K_UP or evento.key == K_w) and self.direcao != "baixo":
                     self.direcao = "cima"
                     snake.movimentaCobrinha(self.direcao)
                     self.mudouMovimento = True
-                if evento.key == K_DOWN and self.direcao != "cima":
+                if (evento.key == K_DOWN or evento.key == K_s) and self.direcao != "cima":
                     self.direcao = "baixo"
                     snake.movimentaCobrinha(self.direcao)
                     self.mudouMovimento = True
-                if evento.key == K_LEFT and self.direcao != "direita":
+                if (evento.key == K_LEFT or evento.key == K_a) and self.direcao != "direita":
                     self.direcao = "esquerda"
                     snake.movimentaCobrinha(self.direcao)
                     self.mudouMovimento = True
-                if evento.key == K_RIGHT and self.direcao != "esquerda":
+                if (evento.key == K_RIGHT or evento.key == K_d) and self.direcao != "esquerda":
                     self.direcao = "direita"
                     snake.movimentaCobrinha(self.direcao)
                     self.mudouMovimento = True

@@ -23,7 +23,7 @@ class Intro:
             if evento.type == QUIT:
                 return "Fim"
 
-            if evento.type == KEYDOWN and evento.key == K_KP_ENTER:
+            if evento.type == KEYDOWN and (evento.key == K_KP_ENTER or evento.key == K_RETURN):
                 return "MusicaMenu"
 
         return "Intro"
@@ -68,13 +68,13 @@ class MenuPrincipal:
                 return 20
 
             elif evento.type == KEYDOWN:
-                if evento.key == K_KP_ENTER:
+                if evento.key == K_KP_ENTER or evento.key == K_RETURN:
                     return 10
 
-                elif evento.key == K_UP:
+                elif evento.key == K_UP or evento.key == K_w:
                     return -1
 
-                elif evento.key == K_DOWN:
+                elif evento.key == K_DOWN or evento.key == K_s:
                     return 1
 
                 elif evento.key == K_KP_PLUS:
@@ -117,16 +117,16 @@ class MenuDificuldade:
                 return 20
 
             elif evento.type == KEYDOWN:
-                if evento.key == K_KP_ENTER:
+                if evento.key == K_KP_ENTER or evento.key == K_RETURN:
                     return 10
 
-                elif evento.key == K_LEFT and opcao != 5:
+                elif (evento.key == K_LEFT or evento.key == K_a) and opcao != 5:
                     return -1
 
-                elif evento.key == K_RIGHT and opcao != 5:
+                elif (evento.key == K_RIGHT or evento.key == K_d) and opcao != 5:
                     return 1
 
-                elif evento.key == K_UP or evento.key == K_DOWN:
+                elif evento.key == K_UP or evento.key == K_w or evento.key == K_DOWN or evento.key == K_s:
                     if opcao == 5:
                         return -10
 
@@ -170,16 +170,16 @@ class MenuFases:
                 return 20
 
             elif evento.type == KEYDOWN:
-                if evento.key == K_KP_ENTER:
+                if evento.key == K_KP_ENTER or evento.key == K_RETURN:
                     return 10
 
-                elif evento.key == K_LEFT and opcao != 5:
+                elif (evento.key == K_LEFT or evento.key == K_a) and opcao != 5:
                     return -1
 
-                elif evento.key == K_RIGHT and opcao != 5:
+                elif (evento.key == K_RIGHT or evento.key == K_d) and opcao != 5:
                     return 1
 
-                elif evento.key == K_UP or evento.key == K_DOWN:
+                elif evento.key == K_UP or evento.key == K_w or evento.key == K_DOWN or evento.key == K_s:
                     if opcao == 5:
                         return -10
 

@@ -47,24 +47,28 @@ class CaixaDeTexto():
         pygame.display.flip()
 
     def evento(self, score, cenarioAtual, dificuldade):
+
+        if pygame.key.get_mods() & pygame.KMOD_LSHIFT or pygame.key.get_mods() & pygame.KMOD_RSHIFT or pygame.key.get_mods() & pygame.KMOD_CAPS:
+            self.shiftDown = True
+        else:
+            self.shiftDown = False
+
         for evento in pygame.event.get():
             if evento.type == QUIT:
                 return "Fim"
-            if evento.type == pygame.KEYUP:
-                if evento.key in [pygame.K_RSHIFT, pygame.K_LSHIFT]:
-                    self.shiftDown = False
             if evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_BACKSPACE:
                     self.text = self.text[:-1]
                     self.update()
                 if len(self.text) < 15:
-                    self.adicionarChar(pygame.key.name(evento.key))
+                    if evento.key == 93 or evento.key == 91:
+                        self.adicionarChar(pygame.key.name(evento.key))
+                    else:
+                        self.adicionarChar(pygame.key.name(evento.key).replace('[', '').replace(']', ''))
                     if evento.key == pygame.K_SPACE:
                         self.text += " "
                         self.update()
-                    if evento.key in [pygame.K_RSHIFT, pygame.K_LSHIFT]:
-                        self.shiftDown = True
-                if evento.key == pygame.K_KP_ENTER and len(self.text) > 0:
+                if (evento.key == K_KP_ENTER or evento.key == K_RETURN) and len(self.text) > 0:
 
                     db = DBConfig.DBConfig()
 

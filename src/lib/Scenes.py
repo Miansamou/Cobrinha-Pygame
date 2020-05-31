@@ -22,13 +22,13 @@ class Scene:
                 return 20
 
             elif evento.type == KEYDOWN:
-                if evento.key == K_KP_ENTER:
+                if evento.key == K_KP_ENTER or evento.key == K_RETURN:
                     return 10
 
-                elif evento.key == K_UP:
+                elif evento.key == K_UP or evento.key == K_w:
                     return -1
 
-                elif evento.key == K_DOWN:
+                elif evento.key == K_DOWN or evento.key == K_s:
                     return 1
 
         return 0

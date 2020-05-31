@@ -71,13 +71,13 @@ class Rankinkg:
                 return 20
 
             if evento.type == KEYDOWN:
-                if evento.key == K_LEFT:
+                if evento.key == K_LEFT or evento.key == K_a:
                     return -1
 
-                elif evento.key == K_RIGHT:
+                elif evento.key == K_RIGHT or evento.key == K_d:
                     return 1
 
-                elif evento.key == K_KP_ENTER:
+                elif evento.key == K_KP_ENTER or evento.key == K_RETURN:
                     return 10
 
         return 0
