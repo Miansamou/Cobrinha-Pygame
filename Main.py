@@ -430,9 +430,8 @@ while running != "Fim":
             System.clock.tick(30)
 
         elif scene.currentScene == "Capitulo 4" or scene.currentScene == "Capitulo 4, 1" or scene.currentScene == "Capitulo 4, 2" or scene.currentScene == "ObjetivoCapituloQuatro":
-            scene.desenhaCapituloTres(System.screen)
-            scene.currentScene = scene.eventoCapituloTres(scene.currentScene, GF, snake)
-            print("Cap 4")
+            scene.desenhaCapituloQuatro(System.screen)
+            scene.currentScene = scene.eventoCapituloQuatro(scene.currentScene, GF, snake)
 
         elif scene.currentScene == "JogoCapituloQuatro":
 
@@ -451,16 +450,21 @@ while running != "Fim":
 
             if running == "CaixaDeTexto":
                 running = "RunningHistoria"
-                scene.currentScene = "Capitulo 3, 1"
+                scene.currentScene = "Capitulo 4, 1"
 
-            if GF.System.score >= 15:
-                scene.saveData("Capitulo 4")
-                scene.currentScene = "Capitulo 4"
+            if GF.System.score >= 20:
+                scene.saveData("Capitulo 5")
+                scene.currentScene = "Capitulo 5"
                 scene.resetAlpha()
                 scene.initialTime = pygame.time.get_ticks()
 
             pygame.display.flip()
-            System.clock.tick(30)
+            System.clock.tick(40)
+
+        elif scene.currentScene == "Capitulo 5" or scene.currentScene == "Capitulo 5, 1" \
+                or scene.currentScene == "Capitulo 5, 2" or scene.currentScene == "Capitulo 5, 3" or scene.currentScene == "ObjetivoCapituloCinco":
+            scene.desenhaCapituloCinco(System.screen)
+            scene.currentScene = scene.eventoCapituloCinco(scene.currentScene, GF, snake)
 
         if scene.currentScene == "MusicaMenu":
             scene.resetScene()
