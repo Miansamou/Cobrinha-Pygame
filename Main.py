@@ -359,11 +359,46 @@ while running != "Fim":
                 running = "RunningHistoria"
                 scene.currentScene = "Capitulo 1, 1"
 
-            if GF.System.score >= 10:
-                print("Indo para O cap 2")
+            if GF.System.score >= 5:
+                scene.saveData("Capitulo 2")
+                scene.currentScene = "Capitulo 2"
+                scene.resetAlpha()
+                scene.initialTime = pygame.time.get_ticks()
 
             pygame.display.flip()
             System.clock.tick(30)
+
+        elif scene.currentScene == "Capitulo 2" or scene.currentScene == "Capitulo 2, 1" or scene.currentScene == "Capitulo 2, 2" or scene.currentScene == "ObjetivoCapituloDois":
+            scene.desenhaCapituloDois(System.screen)
+            scene.currentScene = scene.eventoCapituloDois(scene.currentScene, GF, snake)
+
+        elif scene.currentScene == "JogoCapituloDois":
+
+            running = GF.eventoJogo(snake, running)
+
+            GF.updateMoving(snake)
+
+            running = GF.snakePrimalColission(snake, running, 1)
+
+            GF.snakeOnScreen(snake)
+
+            GF.desenhaJogo(System.screen, snake)
+
+            if running == "CaixaDeTexto":
+                running = "RunningHistoria"
+                scene.currentScene = "Capitulo 2, 1"
+
+            if GF.System.score >= 10:
+                scene.saveData("Capitulo 3")
+                scene.currentScene = "Capitulo 3"
+                scene.resetAlpha()
+                scene.initialTime = pygame.time.get_ticks()
+
+            pygame.display.flip()
+            System.clock.tick(40)
+
+        elif scene.currentScene == "Capitulo 3":
+            print("Rodando cap 3")
 
         if scene.currentScene == "MusicaMenu":
             scene.resetScene()
