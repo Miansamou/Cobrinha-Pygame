@@ -2,6 +2,7 @@ import pygame, os
 
 filesComicNeue = os.path.join(os.path.dirname(__file__), "ComicNeue-Regular.ttf")  # Pega o caminho absoluto da fonte desejada
 filesChikhenButt = os.path.join(os.path.dirname(__file__), "ChickenButt.ttf")
+filesCalibri = os.path.join(os.path.dirname(__file__), "CalibriLight.ttf")
 
 pygame.init()
 
@@ -13,3 +14,5 @@ comicNeue25 = pygame.font.Font(filesComicNeue, 25)
 
 # Fontes Chikhen Butt
 chikhenButt70 = pygame.font.Font(filesChikhenButt, 70)
+
+calibri14 = pygame.font.Font(filesCalibri, 20)

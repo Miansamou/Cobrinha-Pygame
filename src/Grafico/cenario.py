@@ -28,3 +28,6 @@ PythonImg = pygame.image.load('src/Grafico/python.bmp')
 PygameImg = pygame.image.load('src/Grafico/pygame.bmp')
 MysqlImg = pygame.image.load('src/Grafico/mysql.bmp')
 SnakeBite = pygame.image.load('src/Grafico/SnakeBite.bmp')
+
+#Historia
+godTouch = pygame.image.load('src/Grafico/godTouch.bmp')

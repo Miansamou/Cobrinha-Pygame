@@ -250,7 +250,7 @@ while running != "Fim":
 
         GF.updateMoving(snake)
 
-        running = GF.snakePrimalColission(snake, running)
+        running = GF.snakePrimalColission(snake, running, 9)
 
         GF.snakeOnScreen(snake)
 
@@ -315,14 +315,18 @@ while running != "Fim":
             opcao = 3
 
         elif opcao == 11:
-            scene.currentScene = "Prologo, 1"
+            scene.currentScene = "Prologo"
             running = "RunningHistoria"
+            scene.initialTime = pygame.time.get_ticks()
+            pygame.mixer.music.stop()
 
         elif opcao == 12 and scene.currentScene == "Null":
             opcao = 2
 
         elif opcao == 12:
             running = "RunningHistoria"
+            scene.initialTime = pygame.time.get_ticks()
+            pygame.mixer.music.stop()
 
         elif opcao == 13:
             running = "IniciandoMenu"
@@ -331,6 +335,40 @@ while running != "Fim":
             running = "Fim"
 
     elif running == "RunningHistoria":
-        if scene.currentScene == "Prologo, 1":
-            print("teste")
+        if scene.currentScene == "Prologo" or scene.currentScene == "Prologo, 1" or scene.currentScene == "Prologo, 2":
+            scene.desenhaPrologo(System.screen)
+            scene.currentScene = scene.eventoPrologo(scene.currentScene)
+
+        elif scene.currentScene == "Capitulo 1" or scene.currentScene == "Capitulo 1, 1" or scene.currentScene == "ObjetivoCapituloUm":
+            scene.desenhaCapituloUm(System.screen)
+            scene.currentScene = scene.eventoCapituloUm(scene.currentScene, GF, snake)
+
+        elif scene.currentScene == "JogoCapituloUm":
+
+            running = GF.eventoJogo(snake, running)
+
+            GF.updateMoving(snake)
+
+            running = GF.snakePrimalColission(snake, running, 1)
+
+            GF.snakeOnScreen(snake)
+
+            GF.desenhaJogo(System.screen, snake)
+
+            if running == "CaixaDeTexto":
+                running = "RunningHistoria"
+                scene.currentScene = "Capitulo 1, 1"
+
+            if GF.System.score >= 10:
+                print("Indo para O cap 2")
+
+            pygame.display.flip()
+            System.clock.tick(30)
+
+        if scene.currentScene == "MusicaMenu":
+            scene.resetScene()
+            running = "MusicaMenu"
+        elif scene.currentScene == "Fim":
+            scene.resetScene()
+            running = "Fim"
 pygame.quit()

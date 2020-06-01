@@ -86,7 +86,7 @@ class gameFlow:
     def colission(self, c1, c2):
         return (c1[0] == c2[0]) and (c1[1] == c2[1])
 
-    def snakePrimalColission(self, snake, currentScreen):
+    def snakePrimalColission(self, snake, currentScreen, number):
         if self.colission(snake.getCobrinha()[0], self.posicao_item):
             if self.cenarioAtual == cenario.BackgroundHell:
                 self.posicao_item = self.System.on_grid_random(20, 580)
@@ -94,7 +94,7 @@ class gameFlow:
                 self.posicao_item = self.System.on_grid_random(10, 590)
             pygame.mixer.music.load("src/Musics/ColetarFruta.mp3")
             pygame.mixer.music.play(0)
-            self.System.score += 9
+            self.System.score += number
 
             # Aumentar cobrinha com base na dificuldade
 
