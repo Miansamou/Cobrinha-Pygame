@@ -397,8 +397,70 @@ while running != "Fim":
             pygame.display.flip()
             System.clock.tick(40)
 
-        elif scene.currentScene == "Capitulo 3":
-            print("Rodando cap 3")
+        elif scene.currentScene == "Capitulo 3" or scene.currentScene == "Capitulo 3, 1" or scene.currentScene == "Capitulo 3, 2" or scene.currentScene == "ObjetivoCapituloTres":
+            scene.desenhaCapituloTres(System.screen)
+            scene.currentScene = scene.eventoCapituloTres(scene.currentScene, GF, snake)
+
+        elif scene.currentScene == "JogoCapituloTres":
+
+            running = GF.eventoJogo(snake, running)
+
+            GF.updateMoving(snake)
+
+            running = GF.snakePrimalColission(snake, running, 1)
+
+            GF.snakeOnScreen(snake)
+
+            GF.desenhaJogo(System.screen, snake)
+
+            if GF.cenarioAtual == cenario.BackgroundHeaven:
+                running = GF.heavenColission(System.screen, running, snake)
+
+            if running == "CaixaDeTexto":
+                running = "RunningHistoria"
+                scene.currentScene = "Capitulo 3, 1"
+
+            if GF.System.score >= 15:
+                scene.saveData("Capitulo 4")
+                scene.currentScene = "Capitulo 4"
+                scene.resetAlpha()
+                scene.initialTime = pygame.time.get_ticks()
+
+            pygame.display.flip()
+            System.clock.tick(30)
+
+        elif scene.currentScene == "Capitulo 4" or scene.currentScene == "Capitulo 4, 1" or scene.currentScene == "Capitulo 4, 2" or scene.currentScene == "ObjetivoCapituloQuatro":
+            scene.desenhaCapituloTres(System.screen)
+            scene.currentScene = scene.eventoCapituloTres(scene.currentScene, GF, snake)
+            print("Cap 4")
+
+        elif scene.currentScene == "JogoCapituloQuatro":
+
+            running = GF.eventoJogo(snake, running)
+
+            GF.updateMoving(snake)
+
+            running = GF.snakePrimalColission(snake, running, 1)
+
+            GF.snakeOnScreen(snake)
+
+            GF.desenhaJogo(System.screen, snake)
+
+            if GF.cenarioAtual == cenario.BackgroundHeaven:
+                running = GF.heavenColission(System.screen, running, snake)
+
+            if running == "CaixaDeTexto":
+                running = "RunningHistoria"
+                scene.currentScene = "Capitulo 3, 1"
+
+            if GF.System.score >= 15:
+                scene.saveData("Capitulo 4")
+                scene.currentScene = "Capitulo 4"
+                scene.resetAlpha()
+                scene.initialTime = pygame.time.get_ticks()
+
+            pygame.display.flip()
+            System.clock.tick(30)
 
         if scene.currentScene == "MusicaMenu":
             scene.resetScene()

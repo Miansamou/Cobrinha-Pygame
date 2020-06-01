@@ -29,13 +29,13 @@ class InimigoCeu:
         for i in range(len(self.inimigos)):
             pygame.draw.rect(screen, cores.Black, self.inimigos[i])
 
-    def colisao(self, snake):
+    def colisao(self, snake, currentScene):
         for i in range(len(self.inimigos)):
             for j in range(len(snake.getCobrinha())):
                 if self.inimigos[i].collidepoint(snake.getCobrinha()[j][0], snake.getCobrinha()[j][1]):
                     return "CaixaDeTexto"
 
-        return "Jogo"
+        return currentScene
 
 class InimigoInferno:
     def __init__(self):
@@ -50,9 +50,9 @@ class InimigoInferno:
         for i in range(len(self.inimigos)):
             pygame.draw.rect(screen, cores.Black, self.inimigos[i])
 
-    def colisao(self, snake):
+    def colisao(self, snake, currentScene):
         for i in range(len(self.inimigos)):
             if self.inimigos[i].collidepoint(snake.getCobrinha()[0][0], snake.getCobrinha()[0][1]):
                 return "CaixaDeTexto"
 
-        return "Jogo"
+        return currentScene

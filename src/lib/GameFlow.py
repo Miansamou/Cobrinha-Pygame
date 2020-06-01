@@ -111,15 +111,15 @@ class gameFlow:
     def heavenColission(self, screen, currentScreen, snake):
         self.inimigoCeu.updateInimigos()
         self.inimigoCeu.desenhaInimigo(screen)
-        if currentScreen == "Jogo":
-            currentScreen = self.inimigoCeu.colisao(snake)
+        if currentScreen == "Jogo" or currentScreen == "RunningHistoria":
+            currentScreen = self.inimigoCeu.colisao(snake, currentScreen)
 
         return currentScreen
 
     def hellColission(self, screen, currentScreen, snake):
         self.inimigoInferno.desenhaInimigo(screen)
-        if currentScreen == "Jogo":
-            currentScreen = self.inimigoInferno.colisao(snake)
+        if currentScreen == "Jogo" or currentScreen == "RunningHistoria":
+            currentScreen = self.inimigoInferno.colisao(snake, currentScreen)
 
         return currentScreen
 

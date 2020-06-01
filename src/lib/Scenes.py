@@ -84,21 +84,21 @@ class Scene:
         self.capituloDois = fontes.comicNeue40.render("Capítulo 2 – Punição divina", True, cores.White)
 
         self.textoCapituloDoisParagrafoUm = "De alguma forma, Caillou começou a crescer e a crescer cada\n"\
-                                          "vez  mais  toda  vez  que  ela  se  alimentava,  todavia, ela não\n"\
-                                          "parecia se sentir saciada, e todo o alimento sequer demorava\n"\
+                                          "vez  mais  toda  vez  que  ele  se  alimentava,  todavia, ele não\n"\
+                                          "parecia se sentir saciado, e todo o alimento sequer demorava\n"\
                                           "para  ser  digerido.  Com  fome  Caillou como qualquer animal\n"\
                                           "irracional  foi  atrás  de presas que habitavam o Jardim, presas\n"\
                                           "essas    cada   vez   maiores,   porcos,   lobos,   leões,   búfalos,\n"\
                                           "rinocerontes,  elefantes  e  até  mesmo girafas, até chegar um\n"\
                                           "momento  que  aquele  Jardim  se  tornou muito pequeno com\n"\
-                                          "uma   alimentação  escassa   para  ela  e  por  fim,  quebrou  as\n"\
+                                          "uma   alimentação  escassa   para  ele  e  por  fim,  quebrou  as\n"\
                                           "barreiras do Jardim que a separavam da humanidade."
 
         self.capituloDoisParagrafoUm = self.separaLinhas(self.textoCapituloDoisParagrafoUm)
 
-        self.textoCapituloDoisParagrafoDois = "Então  ela  começou  a  devastar locais habitados por humanos,\n"\
-                                            "estava  gerado  o   caos,   muitos  se  renderam  ao  seu  terror,\n"\
-                                            "militares  não  eram  capazes  de  detê-la,  e  estava  claro  para\n"\
+        self.textoCapituloDoisParagrafoDois = "Então  ele  começou  a  devastar locais habitados por humanos,\n"\
+                                            "estava  gerando  o  caos,   muitos  se  renderam  ao  seu  terror,\n"\
+                                            "militares  não  eram  capazes  de  detê-lo,  e  estava  claro  para\n"\
                                             "todos  que  a  loucura  do  avanço   tecnológico  irritou  a   Deus,\n"\
                                             "aquela  certamente era a época do apocalipse, o julgamento de\n"\
                                             "todas as almas, a punição divina."
@@ -106,6 +106,37 @@ class Scene:
         self.capituloDoisParagrafoDois = self.separaLinhas(self.textoCapituloDoisParagrafoDois)
 
         self.objetivoCapituloDois = fontes.comicNeue25.render("Objetivo: Devore 10 pessoas", True, cores.White)
+
+        # Capitulo 3
+
+        self.capituloTres = fontes.comicNeue40.render("Capítulo 3 – Céu, o lugar de todos", True, cores.White)
+
+        self.textoCapituloTresParagrafoUm = "Desesperada,  a  humanidade não  via outra escolha, a não ser\n" \
+                                            "utilizar armas nucleares contra Caillou, e assim o fizeram, uma\n" \
+                                            "grande  explosão  que  destruiu  um  país  inteiro,  milhares de\n" \
+                                            "vidas  foram  sacrificadas  naquele  dia, mas este sacrifício não\n" \
+                                            "foi  em  vão,  finalmente  Caillou  parou  de  sentir  fome,  tudo\n" \
+                                            "estava  terminado,  a  humanidade  podia  enfim comemorar a\n" \
+                                            "morte  de  um  inimigo que quase destruiu a raça humana, eles\n"\
+                                            "poderiam  reconstruir  suas  vidas,  dessa vez repensando seus\n"\
+                                            "atos e se redimindo perante Deus, e Caillou poderia encontrar\n"\
+                                            "paz e vida eterna, no céu dos animais."
+
+        self.capituloTresParagrafoUm = self.separaLinhas(self.textoCapituloTresParagrafoUm)
+
+        self.textoCapituloTresParagrafoDois = "No  outro  mundo,  porém,  a  nossa  amada  python  ainda  se\n"\
+                                              "sentia   estranha,  de  alguma  forma,  a  sede  e  a  fome  dela\n"\
+                                              "pareciam  não ter fim,  mesmo tendo passado pela experiência\n"\
+                                              "da  morte,  e  seu  instinto animal despertou mais uma vez, ele\n"\
+                                              "iniciou  mais  uma  era  de caos,  por consequência  no terreno\n"\
+                                              "sagrado  do  paraíso,  devorando  almas,  Querubins  e Serafins,\n"\
+                                              "mas  diferente  da morte, não havia outro plano etéreo para as\n"\
+                                              "vítimas  de Caillou, e uma vez devorado, sua existência se esvai\n"\
+                                              "para todo o sempre."
+
+        self.capituloTresParagrafoDois = self.separaLinhas(self.textoCapituloTresParagrafoDois)
+
+        self.objetivoCapituloTres = fontes.comicNeue25.render("Objetivo: Acabe com 15 anjos", True, cores.White)
 
     def saveData(self, texto):
         pickle.dump(texto, open("Save/savefile.dat", "wb"))
@@ -416,6 +447,98 @@ class Scene:
                             Flow.resetGame("Garden", snake)
                             snake.resetCobrinha(40)
                             return "JogoCapituloDois"
+
+                    if evento.key == K_ESCAPE:
+                        return "MusicaMenu"
+
+        return currentScene
+
+    def desenhaCapituloTres(self, screen):
+        screen.fill(cores.Black)
+
+        self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
+        self.timer = int(self.timer)
+
+        if not pygame.mixer.music.get_busy():
+            pygame.mixer.music.load("src/Musics/invernoTriste.mp3")
+            pygame.mixer.music.play(-1)
+
+        if self.currentScene == "Capitulo 3":
+            if 1 < self.timer < 5:
+                screen.blit(self.capituloTres,
+                            (300 - self.capituloTres.get_width() // 2, 350 - self.capituloTres.get_height() // 2))
+            elif self.timer > 5:
+                self.currentScene = "Capitulo 3, 1"
+                self.initialTime = pygame.time.get_ticks()
+
+        elif self.currentScene == "Capitulo 3, 1":
+            screen.blit(cenario.explosao, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloTresParagrafoUm:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+            if self.timer < 10:
+                self.alphaMax = max(self.alphaMax - (self.deltaTime * 5), 0)
+                self.alphaSurface.set_alpha(self.alphaMax)
+                screen.blit(self.alphaSurface, (0, 0))
+
+        elif self.currentScene == "Capitulo 3, 2" or self.currentScene == "ObjetivoCapituloTres":
+            screen.blit(cenario.SelectHeaven, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloTresParagrafoDois:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+            if self.currentScene == "ObjetivoCapituloTres":
+                self.alphaZero = min(self.alphaZero + (self.deltaTime * 5), 255)
+                self.alphaSurface.set_alpha(self.alphaZero)
+                screen.blit(self.alphaSurface, (0, 0))
+
+                if self.alphaZero >= 255:
+                    screen.blit(self.objetivoCapituloTres,
+                                (300 - self.objetivoCapituloTres.get_width() // 2, 350 - self.objetivoCapituloTres.get_height() // 2))
+
+                    if self.timer % 2 == 0:
+                        screen.blit(self.btnEnter,
+                                    (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                        screen.blit(self.btnEsc,
+                                    (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+        pygame.display.flip()
+
+        self.clock.tick(60)
+
+    def eventoCapituloTres(self, currentScene, Flow, snake):
+        for evento in pygame.event.get():
+            if evento.type == QUIT:
+                return "Fim"
+
+            if self.currentScene == "Capitulo 3, 1" or self.currentScene == "Capitulo 3, 2" or self.currentScene == "ObjetivoCapituloTres":
+                if evento.type == KEYDOWN:
+                    if evento.key == K_KP_ENTER or evento.key == K_RETURN:
+                        if self.currentScene == "Capitulo 3, 1":
+                            return "Capitulo 3, 2"
+                        elif self.currentScene == "Capitulo 3, 2":
+                            return "ObjetivoCapituloTres"
+                        elif self.alphaZero >= 255:
+                            pygame.mixer.music.stop()
+                            self.resetAlpha()
+                            Flow.resetGame("Sky", snake)
+                            snake.resetCobrinha(40)
+                            return "JogoCapituloTres"
 
                     if evento.key == K_ESCAPE:
                         return "MusicaMenu"
