@@ -466,6 +466,38 @@ while running != "Fim":
             scene.desenhaCapituloCinco(System.screen)
             scene.currentScene = scene.eventoCapituloCinco(scene.currentScene, GF, snake)
 
+        elif scene.currentScene == "JogoCapituloCinco":
+
+            running = GF.eventoJogo(snake, running)
+
+            GF.updateMoving(snake)
+
+            running = GF.snakePrimalColission(snake, running, 1)
+
+            GF.snakeOnScreen(snake)
+
+            GF.desenhaJogo(System.screen, snake)
+
+            if GF.cenarioAtual == cenario.BackgroundHell:
+                running = GF.hellColission(System.screen, running, snake)
+
+            if running == "CaixaDeTexto":
+                running = "RunningHistoria"
+                scene.currentScene = "Capitulo 5, 1"
+
+            if GF.System.score >= 25:
+                scene.saveData("Capitulo 6")
+                scene.currentScene = "Capitulo 6"
+                scene.resetAlpha()
+                scene.initialTime = pygame.time.get_ticks()
+
+            pygame.display.flip()
+            System.clock.tick(30)
+
+        elif scene.currentScene == "Capitulo 6" or scene.currentScene == "Capitulo 6, 1" \
+                or scene.currentScene == "Capitulo 6, 2" or scene.currentScene == "Capitulo 6, 3" or scene.currentScene == "ObjetivoCapituloSeis":
+            print("Rodando cap 6")
+
         if scene.currentScene == "MusicaMenu":
             scene.resetScene()
             running = "MusicaMenu"

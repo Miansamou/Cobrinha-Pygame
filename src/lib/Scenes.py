@@ -164,35 +164,36 @@ class Scene:
 
         # Capitulo 5
 
-        self.capituloCinco = fontes.comicNeue40.render("Capítulo 5 – O julgamento de Caillou", True, cores.White)
+        self.capituloCinco = fontes.comicNeue40.render("Capítulo 5 – Julgamento de Caillou", True, cores.White)
 
-        self.textoCapituloCincoParagrafoUm = "A cobra despertava sua fúria contra todos da alvorada divina, até\n"\
-                                             "ver em sua frente o príncipe da milícia celeste, São Miguel\n"\
-                                             "Arcanjo, paralisada de medo, nada pode fazer, até ter sua cabeça\n"\
-                                             "pisoteada por Maria, a mãe de Jesus, e sem escolha, viu São\n"\
-                                             "Miguel erguer sua balança e iniciar o julgamento de sua alma.\n"\
-                                             "Mesmo sendo uma criatura irracional, seus pecados não\n"\
-                                             "poderiam ser relevados, e sua alma já não tinha mais salvação,\n"\
-                                             "ela viu o Arcanjo invocar sua espada de fogo e golpeá-la,\n"\
-                                             "precipitando sua alma para junto do reino de satanás, o inferno."
+        self.textoCapituloCincoParagrafoUm = "A  cobra  despertava sua fúria contra todos da  alvorada divina,\n"\
+                                             "até ver em sua frente o príncipe da milícia celeste, São Miguel\n"\
+                                             "Arcanjo,  paralisada  de  medo,  nada  pode  fazer,  até ter sua\n"\
+                                             "cabeça  pisoteada  por  Maria,  a mãe de Jesus, e sem escolha,\n"\
+                                             "viu São Miguel  erguer  sua  balança  e  iniciar o julgamento de\n"\
+                                             "sua alma.  Mesmo sendo uma criatura irracional, seus pecados\n"\
+                                             "não  poderiam  ser  relevados,  e  sua  alma  já  não tinha  mais\n"\
+                                             "salvação,   ela  viu  o  Arcanjo  invocar  sua  espada  de  fogo  e\n"\
+                                             "golpeá-la, precipitando sua alma para junto do reino de satanás,\n" \
+                                             "o inferno."
 
         self.capituloCincoParagrafoUm = self.separaLinhas(self.textoCapituloCincoParagrafoUm)
 
-        self.textoCapituloCincoParagrafoDois = "Mais uma vez, Caillou havia sido expurgada, e se viu em um novo\n"\
-                                               "habitat desconhecido, as chamas não ardiam, toda a sua sede e\n"\
-                                               "fome já não existia, e de alguma forma ela sentia que naquele\n"\
-                                               "lugar seria possível chamá-lo de lar, e talvez ali ela poderia viver\n"\
-                                               "enfim em paz."
+        self.textoCapituloCincoParagrafoDois = "Mais  uma  vez,  Caillou havia  sido expurgada, e se viu em um\n"\
+                                               "novo habitat  desconhecido, as chamas não ardiam, toda a sua\n"\
+                                               "sede  e  fome já  não existia, e de alguma forma ela sentia que\n"\
+                                               "naquele  lugar  seria  possível  chamá-lo  de lar,  e talvez ali ela\n"\
+                                               "poderia viver enfim em paz."
 
         self.capituloCincoParagrafoDois = self.separaLinhas(self.textoCapituloCincoParagrafoDois)
 
-        self.textoCapituloCincoParagrafoTres = "Alguns demônios não demoraram para encontrá-la, e com\n"\
-                                               "chicotes na mão, foram em sua direção para açoitá-la, em um\n"\
+        self.textoCapituloCincoParagrafoTres = "Alguns  demônios  não  demoraram  para  encontrá-la,  e  com\n"\
+                                               "chicotes na mão, foram em sua direção para açoitá-la,  em um\n"\
                                                "gesto de legítima defesa, Caillou os devorou, mas diferente de\n" \
-                                               "antes que se alimentar para saciar uma fome inesgotável, Caillou\n" \
-                                               "pode se deleitar e se divertir, então foi em direção de outros\n" \
-                                               "demônios para continuar seu legado de caos, mas dessa vez, por\n" \
-                                               "mera diversão."
+                                               "antes  que  se  alimentar  para  saciar  uma  fome  inesgotável,\n" \
+                                               "Caillou pode se deleitar  e  se  divertir, então foi em direção de\n" \
+                                               "outros demônios para continuar seu legado de caos, mas dessa\n" \
+                                               "vez, por mera diversão."
 
         self.capituloCincoParagrafoTres = self.separaLinhas(self.textoCapituloCincoParagrafoTres)
 
@@ -704,22 +705,22 @@ class Scene:
         self.timer = int(self.timer)
 
         if not pygame.mixer.music.get_busy():
-            pygame.mixer.music.load("src/Musics/invernoTriste.mp3")
+            pygame.mixer.music.load("src/Musics/veraoJulgamento.mp3")
             pygame.mixer.music.play(-1)
 
-        if self.currentScene == "Capitulo 4":
+        if self.currentScene == "Capitulo 5":
             if 1 < self.timer < 5:
-                screen.blit(self.capituloQuatro,
-                            (300 - self.capituloQuatro.get_width() // 2, 350 - self.capituloQuatro.get_height() // 2))
+                screen.blit(self.capituloCinco,
+                            (300 - self.capituloCinco.get_width() // 2, 350 - self.capituloCinco.get_height() // 2))
             elif self.timer > 5:
-                self.currentScene = "Capitulo 4, 1"
+                self.currentScene = "Capitulo 5, 1"
                 self.initialTime = pygame.time.get_ticks()
 
-        elif self.currentScene == "Capitulo 4, 1":
-            screen.blit(cenario.arcanjos, (0, 0))
+        elif self.currentScene == "Capitulo 5, 1":
+            screen.blit(cenario.virgemMaria, (0, 0))
 
             self.espacoEntreLinhas = 0
-            for linhas in self.capituloQuatroParagrafoUm:
+            for linhas in self.capituloCincoParagrafoUm:
                 self.espacoEntreLinhas += 30
                 screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
 
@@ -733,11 +734,11 @@ class Scene:
                 self.alphaSurface.set_alpha(self.alphaMax)
                 screen.blit(self.alphaSurface, (0, 0))
 
-        elif self.currentScene == "Capitulo 4, 2" or self.currentScene == "ObjetivoCapituloQuatro":
-            screen.blit(cenario.arcanjos, (0, 0))
+        elif self.currentScene == "Capitulo 5, 2":
+            screen.blit(cenario.saoMiguel, (0, 0))
 
             self.espacoEntreLinhas = 0
-            for linhas in self.capituloQuatroParagrafoDois:
+            for linhas in self.capituloCincoParagrafoDois:
                 self.espacoEntreLinhas += 30
                 screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
 
@@ -746,13 +747,25 @@ class Scene:
                             (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
                 screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
 
-            if self.currentScene == "ObjetivoCapituloQuatro":
+        elif self.currentScene == "Capitulo 5, 3" or self.currentScene == "ObjetivoCapituloCinco":
+            screen.blit(cenario.SelectHell, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloCincoParagrafoTres:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+            if self.currentScene == "ObjetivoCapituloCinco":
                 self.alphaZero = min(self.alphaZero + (self.deltaTime * 5), 255)
                 self.alphaSurface.set_alpha(self.alphaZero)
                 screen.blit(self.alphaSurface, (0, 0))
 
                 if self.alphaZero >= 255:
-                    screen.blit(self.objetivoCapituloQuatro,
+                    screen.blit(self.objetivoCapituloCinco,
                                 (300 - self.objetivoCapituloQuatro.get_width() // 2, 350 - self.objetivoCapituloQuatro.get_height() // 2))
 
                     if self.timer % 2 == 0:
@@ -770,19 +783,21 @@ class Scene:
             if evento.type == QUIT:
                 return "Fim"
 
-            if self.currentScene == "Capitulo 4, 1" or self.currentScene == "Capitulo 4, 2" or self.currentScene == "ObjetivoCapituloQuatro":
+            if self.currentScene == "Capitulo 5, 1" or self.currentScene == "Capitulo 5, 2"  or self.currentScene == "Capitulo 5, 3" or self.currentScene == "ObjetivoCapituloCinco":
                 if evento.type == KEYDOWN:
                     if evento.key == K_KP_ENTER or evento.key == K_RETURN:
-                        if self.currentScene == "Capitulo 4, 1":
-                            return "Capitulo 4, 2"
-                        elif self.currentScene == "Capitulo 4, 2":
-                            return "ObjetivoCapituloQuatro"
+                        if self.currentScene == "Capitulo 5, 1":
+                            return "Capitulo 5, 2"
+                        elif self.currentScene == "Capitulo 5, 2":
+                            return "Capitulo 5, 3"
+                        elif self.currentScene == "Capitulo 5, 3":
+                            return "ObjetivoCapituloCinco"
                         elif self.alphaZero >= 255:
                             pygame.mixer.music.stop()
                             self.resetAlpha()
-                            Flow.resetGame("Sky", snake)
-                            snake.resetCobrinha(40)
-                            return "JogoCapituloQuatro"
+                            Flow.resetGame("Hell", snake)
+                            snake.resetCobrinha(30)
+                            return "JogoCapituloCinco"
 
                     if evento.key == K_ESCAPE:
                         return "MusicaMenu"
