@@ -31,3 +31,5 @@ SnakeBite = pygame.image.load('src/Grafico/SnakeBite.bmp')
 
 #Historia
 godTouch = pygame.image.load('src/Grafico/godTouch.bmp')
+animals = pygame.image.load('src/Grafico/animaisNoJardim.bmp')
+city = pygame.image.load('src/Grafico/cityCaos.bmp')

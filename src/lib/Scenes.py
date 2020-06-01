@@ -79,6 +79,37 @@ class Scene:
 
         self.objetivoCapituloUm = fontes.comicNeue25.render("Objetivo: Coma 5 maças", True, cores.White)
 
+        # Capitulo Dois
+
+        self.capituloDois = fontes.comicNeue40.render("Capítulo 2 – Punição divina", True, cores.White)
+
+        self.textoCapituloDoisParagrafoUm = "De alguma forma, Caillou começou a crescer e a crescer cada\n"\
+                                          "vez  mais  toda  vez  que  ela  se  alimentava,  todavia, ela não\n"\
+                                          "parecia se sentir saciada, e todo o alimento sequer demorava\n"\
+                                          "para  ser  digerido.  Com  fome  Caillou como qualquer animal\n"\
+                                          "irracional  foi  atrás  de presas que habitavam o Jardim, presas\n"\
+                                          "essas    cada   vez   maiores,   porcos,   lobos,   leões,   búfalos,\n"\
+                                          "rinocerontes,  elefantes  e  até  mesmo girafas, até chegar um\n"\
+                                          "momento  que  aquele  Jardim  se  tornou muito pequeno com\n"\
+                                          "uma   alimentação  escassa   para  ela  e  por  fim,  quebrou  as\n"\
+                                          "barreiras do Jardim que a separavam da humanidade."
+
+        self.capituloDoisParagrafoUm = self.separaLinhas(self.textoCapituloDoisParagrafoUm)
+
+        self.textoCapituloDoisParagrafoDois = "Então  ela  começou  a  devastar locais habitados por humanos,\n"\
+                                            "estava  gerado  o   caos,   muitos  se  renderam  ao  seu  terror,\n"\
+                                            "militares  não  eram  capazes  de  detê-la,  e  estava  claro  para\n"\
+                                            "todos  que  a  loucura  do  avanço   tecnológico  irritou  a   Deus,\n"\
+                                            "aquela  certamente era a época do apocalipse, o julgamento de\n"\
+                                            "todas as almas, a punição divina."
+
+        self.capituloDoisParagrafoDois = self.separaLinhas(self.textoCapituloDoisParagrafoDois)
+
+        self.objetivoCapituloDois = fontes.comicNeue25.render("Objetivo: Devore 10 pessoas", True, cores.White)
+
+    def saveData(self, texto):
+        pickle.dump(texto, open("Save/savefile.dat", "wb"))
+
     def resetScene(self):
         try:
             self.currentScene = pickle.load(open("Save/savefile.dat", "rb"))
@@ -214,7 +245,7 @@ class Scene:
                         else:
                             self.initialTime = pygame.time.get_ticks()
                             self.resetAlpha()
-                            pickle.dump("Capitulo 1", open("Save/savefile.dat", "wb"))
+                            self.saveData("Capitulo 1")
                             return "Capitulo 1"
 
                     if evento.key == K_ESCAPE:
@@ -291,7 +322,100 @@ class Scene:
                             pygame.mixer.music.stop()
                             self.resetAlpha()
                             Flow.resetGame("Garden", snake)
+                            snake.resetCobrinha(30)
                             return "JogoCapituloUm"
+
+                    if evento.key == K_ESCAPE:
+                        return "MusicaMenu"
+
+        return currentScene
+
+    def desenhaCapituloDois(self, screen):
+        screen.fill(cores.Black)
+
+        self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
+        self.timer = int(self.timer)
+
+        if not pygame.mixer.music.get_busy():
+            pygame.mixer.music.load("src/Musics/veraoCatastrofe.mp3")
+            pygame.mixer.music.play(-1)
+
+        if self.currentScene == "Capitulo 2":
+            if 1 < self.timer < 5:
+                screen.blit(self.capituloDois,
+                            (300 - self.capituloDois.get_width() // 2, 350 - self.capituloDois.get_height() // 2))
+            elif self.timer > 5:
+                self.currentScene = "Capitulo 2, 1"
+                self.initialTime = pygame.time.get_ticks()
+
+        elif self.currentScene == "Capitulo 2, 1":
+            screen.blit(cenario.animals, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloDoisParagrafoUm:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+            if self.timer < 10:
+                self.alphaMax = max(self.alphaMax - (self.deltaTime * 5), 0)
+                self.alphaSurface.set_alpha(self.alphaMax)
+                screen.blit(self.alphaSurface, (0, 0))
+
+        elif self.currentScene == "Capitulo 2, 2" or self.currentScene == "ObjetivoCapituloDois":
+            screen.blit(cenario.city, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloDoisParagrafoDois:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+            if self.currentScene == "ObjetivoCapituloDois":
+                self.alphaZero = min(self.alphaZero + (self.deltaTime * 5), 255)
+                self.alphaSurface.set_alpha(self.alphaZero)
+                screen.blit(self.alphaSurface, (0, 0))
+
+                if self.alphaZero >= 255:
+                    screen.blit(self.objetivoCapituloDois,
+                                (300 - self.objetivoCapituloDois.get_width() // 2, 350 - self.objetivoCapituloDois.get_height() // 2))
+
+                    if self.timer % 2 == 0:
+                        screen.blit(self.btnEnter,
+                                    (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                        screen.blit(self.btnEsc,
+                                    (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+        pygame.display.flip()
+
+        self.clock.tick(60)
+
+    def eventoCapituloDois(self, currentScene, Flow, snake):
+        for evento in pygame.event.get():
+            if evento.type == QUIT:
+                return "Fim"
+
+            if self.currentScene == "Capitulo 2, 1" or self.currentScene == "Capitulo 2, 2" or self.currentScene == "ObjetivoCapituloDois":
+                if evento.type == KEYDOWN:
+                    if evento.key == K_KP_ENTER or evento.key == K_RETURN:
+                        if self.currentScene == "Capitulo 2, 1":
+                            return "Capitulo 2, 2"
+                        elif self.currentScene == "Capitulo 2, 2":
+                            return "ObjetivoCapituloDois"
+                        elif self.alphaZero >= 255:
+                            pygame.mixer.music.stop()
+                            self.resetAlpha()
+                            Flow.resetGame("Garden", snake)
+                            snake.resetCobrinha(40)
+                            return "JogoCapituloDois"
 
                     if evento.key == K_ESCAPE:
                         return "MusicaMenu"
