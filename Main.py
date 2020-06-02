@@ -495,13 +495,46 @@ while running != "Fim":
             System.clock.tick(30)
 
         elif scene.currentScene == "Capitulo 6" or scene.currentScene == "Capitulo 6, 1" \
-                or scene.currentScene == "Capitulo 6, 2" or scene.currentScene == "Capitulo 6, 3" or scene.currentScene == "ObjetivoCapituloSeis":
-            print("Rodando cap 6")
+                or scene.currentScene == "Capitulo 6, 2" or scene.currentScene == "Capitulo 6, 3"\
+                or scene.currentScene == "Capitulo 6, 4" or scene.currentScene == "Capitulo 6, 5"\
+                or scene.currentScene == "ObjetivoCapituloSeis":
+            scene.desenhaCapituloSeis(System.screen)
+            scene.currentScene = scene.eventoCapituloSeis(scene.currentScene, GF, snake)
 
-        if scene.currentScene == "MusicaMenu":
+        elif scene.currentScene == "JogoCapituloSeis":
+
+            running = GF.eventoJogo(snake, running)
+
+            GF.updateMoving(snake)
+
+            running = GF.snakePrimalColission(snake, running, 1)
+
+            GF.snakeOnScreen(snake)
+
+            GF.desenhaJogo(System.screen, snake)
+
+            if GF.cenarioAtual == cenario.BackgroundHell:
+                running = GF.hellColission(System.screen, running, snake)
+
+            if running == "CaixaDeTexto":
+                running = "RunningHistoria"
+                scene.currentScene = "Capitulo 6, 1"
+
+            if GF.System.score >= 30:
+                scene.saveData("Epilogo")
+                scene.currentScene = "Epilogo"
+                scene.resetAlpha()
+                scene.initialTime = pygame.time.get_ticks()
+
+            pygame.display.flip()
+            System.clock.tick(40)
+
+        elif scene.currentScene == "Epilogo" or scene.currentScene == "Epilogo, 1" or scene.currentScene == "Moral":
+            scene.desenhaEpilogo(System.screen)
+            scene.currentScene = scene.eventoEpilogo(scene.currentScene, creditos)
+
+        if scene.currentScene == "MusicaMenu" or scene.currentScene == "Fim" or scene.currentScene == "Creditos":
+            running = scene.currentScene
             scene.resetScene()
-            running = "MusicaMenu"
-        elif scene.currentScene == "Fim":
-            scene.resetScene()
-            running = "Fim"
+
 pygame.quit()

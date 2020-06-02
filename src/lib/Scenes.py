@@ -199,6 +199,65 @@ class Scene:
 
         self.objetivoCapituloCinco = fontes.comicNeue25.render("Objetivo: Engula 25 Demônios", True, cores.White)
 
+        # Capitulo 6
+
+        self.capituloSeis = fontes.comicNeue40.render("Capítulo 6 –Imperador do Inferno", True, cores.White)
+
+        self.textoCapituloSeisParagrafoUm = "Como no céu, o imperador do inferno, Lúcifer, não tardou para\n" \
+                                            "encontrar  Caillou,  mas  ele  mesmo  decidiu  ir em direção da\n" \
+                                            "criatura e combatê-la."
+
+        self.capituloSeisParagrafoUm = self.separaLinhas(self.textoCapituloSeisParagrafoUm)
+
+        self.textoCapituloSeisParagrafoDois = "- Ora, se não é aquela pequena cobrinha inútil da terra, quem\n" \
+                                              "diria que iriamos  nos encontrar aqui, depois de fazê-la comer\n" \
+                                              "aquele fruto proibido."
+
+        self.capituloSeisParagrafoDois = self.separaLinhas(self.textoCapituloSeisParagrafoDois)
+
+        self.textoCapituloSeisParagrafoTres = "O  fruto  proibido  ou  a  maçã  de Eva foi a origem  do  pecado\n" \
+                                            "original da humanidade, que a fez cair no caos, o consumo dela\n" \
+                                            "desperta uma  maldição eterna  para  a criatura que a digerir e\n" \
+                                            "para toda a sua linhagem."
+
+        self.capituloSeisParagrafoTres = self.separaLinhas(self.textoCapituloSeisParagrafoTres)
+
+        self.textoCapituloSeisParagrafoQuatro = "- Você é uma  falha,  por  ser um “animalzinho puro”, não seria\n" \
+                                                "barrada  na entrada do céu por qualquer pecado que fizesse, e\n" \
+                                                "assim poderia consumir todos, eu lhe dei o poder para destruir\n" \
+                                                "Deus...  achei que com essa maldição poderia fazer  com que a\n" \
+                                                "minha sede e fome de vingança pelos seres celestes  poderiam\n" \
+                                                "enfim  ser  saciados  através  de você...  estava errado, e agora\n" \
+                                                "tenho que corrigir meu erro e acabar com a sua existência aqui\n" \
+                                                "para SEMPRE!!"
+
+        self.capituloSeisParagrafoQuatro = self.separaLinhas(self.textoCapituloSeisParagrafoQuatro)
+
+        self.textoCapituloSeisParagrafoCinco = "Então Lúcifer se divide em diversas partes, e parte para o\n" \
+                                               "ataque em direção de Caillou."
+
+        self.capituloSeisParagrafoCinco = self.separaLinhas(self.textoCapituloSeisParagrafoCinco)
+
+        self.objetivoCapituloSeis = fontes.comicNeue25.render("Objetivo: Oblitere as 30 partes de Lúcifer", True, cores.White)
+
+        # Epilogo
+
+        self.epilogo = fontes.comicNeue40.render("Epílogo", True, cores.White)
+
+        self.epilogoTexto = "Após o confronto, o Capeta finalmente foi derrotado, e Cailllou\n" \
+                              "vendo o trono do inferno desocupado, assume o seu mais novo\n" \
+                              "reinado,  e assim, a nossa pequena cobrinha recebeu a alcunha\n" \
+                              "de Imperador do Inferno."
+
+        self.epilogoParagrafo = self.separaLinhas(self.epilogoTexto)
+
+        self.epilogoMoralTexto = "Moral da história: A fome e sede de vingança nunca o levará a\n" \
+                            "lugar algum, viva e se divirta"
+
+        self.epilogoMoral = self.separaLinhas(self.epilogoMoralTexto)
+
+        self.agradecimentos = fontes.comicNeue15.render("Obrigado por jogar nosso jogo!!", True, cores.White)
+
     def saveData(self, texto):
         pickle.dump(texto, open("Save/savefile.dat", "wb"))
 
@@ -242,6 +301,7 @@ class Scene:
             self.btnLoad = fontes.comicNeue25.render("Carregar", True, cores.White)
 
         screen.fill(cores.Black)
+        screen.blit(cenario.hellvsheaven, (0, 0))
         screen.blit(self.btnNewGame, (300 - self.btnNewGame.get_width() // 2, 200 - self.btnNewGame.get_height() // 2))
         screen.blit(self.btnLoad, (300 - self.btnLoad.get_width() // 2, 250 - self.btnLoad.get_height() // 2))
         screen.blit(self.btnVoltar, (300 - self.btnVoltar.get_width() // 2, 300 - self.btnVoltar.get_height() // 2))
@@ -766,7 +826,7 @@ class Scene:
 
                 if self.alphaZero >= 255:
                     screen.blit(self.objetivoCapituloCinco,
-                                (300 - self.objetivoCapituloQuatro.get_width() // 2, 350 - self.objetivoCapituloQuatro.get_height() // 2))
+                                (300 - self.objetivoCapituloCinco.get_width() // 2, 350 - self.objetivoCapituloCinco.get_height() // 2))
 
                     if self.timer % 2 == 0:
                         screen.blit(self.btnEnter,
@@ -798,6 +858,220 @@ class Scene:
                             Flow.resetGame("Hell", snake)
                             snake.resetCobrinha(30)
                             return "JogoCapituloCinco"
+
+                    if evento.key == K_ESCAPE:
+                        return "MusicaMenu"
+
+        return currentScene
+
+    def desenhaCapituloSeis(self, screen):
+        screen.fill(cores.Black)
+
+        self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
+        self.timer = int(self.timer)
+
+        if not pygame.mixer.music.get_busy():
+            pygame.mixer.music.load("src/Musics/veraoBatalha.mp3")
+            pygame.mixer.music.play(-1)
+
+        if self.currentScene == "Capitulo 6":
+            if 1 < self.timer < 5:
+                screen.blit(self.capituloSeis,
+                            (300 - self.capituloSeis.get_width() // 2, 350 - self.capituloSeis.get_height() // 2))
+            elif self.timer > 5:
+                self.currentScene = "Capitulo 6, 1"
+                self.initialTime = pygame.time.get_ticks()
+
+        elif self.currentScene == "Capitulo 6, 1":
+            screen.blit(cenario.hellThrone, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloSeisParagrafoUm:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+            if self.timer < 10:
+                self.alphaMax = max(self.alphaMax - (self.deltaTime * 5), 0)
+                self.alphaSurface.set_alpha(self.alphaMax)
+                screen.blit(self.alphaSurface, (0, 0))
+
+        elif self.currentScene == "Capitulo 6, 2":
+            screen.blit(cenario.capeta, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloSeisParagrafoDois:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+        elif self.currentScene == "Capitulo 6, 3":
+            screen.blit(cenario.frutaProibida, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloSeisParagrafoTres:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+        elif self.currentScene == "Capitulo 6, 4":
+            screen.blit(cenario.capeta, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloSeisParagrafoQuatro:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+        elif self.currentScene == "Capitulo 6, 5" or self.currentScene == "ObjetivoCapituloSeis":
+            screen.blit(cenario.capeta, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.capituloSeisParagrafoCinco:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+            if self.currentScene == "ObjetivoCapituloSeis":
+                self.alphaZero = min(self.alphaZero + (self.deltaTime * 5), 255)
+                self.alphaSurface.set_alpha(self.alphaZero)
+                screen.blit(self.alphaSurface, (0, 0))
+
+                if self.alphaZero >= 255:
+                    screen.blit(self.objetivoCapituloSeis,
+                                (300 - self.objetivoCapituloSeis.get_width() // 2, 350 - self.objetivoCapituloSeis.get_height() // 2))
+
+                    if self.timer % 2 == 0:
+                        screen.blit(self.btnEnter,
+                                    (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                        screen.blit(self.btnEsc,
+                                    (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+        pygame.display.flip()
+
+        self.clock.tick(60)
+
+    def eventoCapituloSeis(self, currentScene, Flow, snake):
+        for evento in pygame.event.get():
+            if evento.type == QUIT:
+                return "Fim"
+
+            if self.currentScene == "Capitulo 6, 1" or self.currentScene == "Capitulo 6, 2" \
+                    or self.currentScene == "Capitulo 6, 3" or self.currentScene == "Capitulo 6, 4" \
+                    or self.currentScene == "Capitulo 6, 5" or self.currentScene == "ObjetivoCapituloSeis":
+                if evento.type == KEYDOWN:
+                    if evento.key == K_KP_ENTER or evento.key == K_RETURN:
+                        if self.currentScene == "Capitulo 6, 1":
+                            return "Capitulo 6, 2"
+                        elif self.currentScene == "Capitulo 6, 2":
+                            return "Capitulo 6, 3"
+                        elif self.currentScene == "Capitulo 6, 3":
+                            return "Capitulo 6, 4"
+                        elif self.currentScene == "Capitulo 6, 4":
+                            return "Capitulo 6, 5"
+                        elif self.currentScene == "Capitulo 6, 5":
+                            return "ObjetivoCapituloSeis"
+                        elif self.alphaZero >= 255:
+                            pygame.mixer.music.stop()
+                            self.resetAlpha()
+                            Flow.resetGame("Hell", snake)
+                            snake.resetCobrinha(40)
+                            return "JogoCapituloSeis"
+
+                    if evento.key == K_ESCAPE:
+                        return "MusicaMenu"
+
+        return currentScene
+
+    def desenhaEpilogo(self, screen):
+        screen.fill(cores.Black)
+
+        self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
+        self.timer = int(self.timer)
+
+        if not pygame.mixer.music.get_busy():
+            pygame.mixer.music.load("src/Musics/primaveraFim.mp3")
+            pygame.mixer.music.play(-1)
+
+        if self.currentScene == "Epilogo":
+            if 1 < self.timer < 5:
+                screen.blit(self.epilogo,
+                            (300 - self.epilogo.get_width() // 2, 350 - self.epilogo.get_height() // 2))
+            elif self.timer > 5:
+                self.currentScene = "Epilogo, 1"
+                self.initialTime = pygame.time.get_ticks()
+
+        elif self.currentScene == "Epilogo, 1" or self.currentScene == "Moral":
+            screen.blit(cenario.whiteSnake, (0, 0))
+
+            self.espacoEntreLinhas = 0
+            for linhas in self.epilogoParagrafo:
+                self.espacoEntreLinhas += 30
+                screen.blit(linhas, (50, 380 + self.espacoEntreLinhas))
+
+            if self.timer % 2 == 0:
+                screen.blit(self.btnEnter,
+                            (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+            if self.currentScene == "Moral":
+                self.alphaZero = min(self.alphaZero + (self.deltaTime * 5), 255)
+                self.alphaSurface.set_alpha(self.alphaZero)
+                screen.blit(self.alphaSurface, (0, 0))
+
+                if self.alphaZero >= 255:
+                    for linhas in self.epilogoMoral:
+                        self.espacoEntreLinhas += 30
+                        screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
+
+                    screen.blit(self.agradecimentos, (300, 550))
+
+                    if self.timer % 2 == 0:
+                        screen.blit(self.btnEnter,
+                                    (450 - self.btnEnter.get_width() // 2, 690 - self.btnEnter.get_height() // 2))
+                        screen.blit(self.btnEsc,
+                                    (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
+
+        pygame.display.flip()
+
+        self.clock.tick(60)
+
+    def eventoEpilogo(self, currentScene, creditos):
+        for evento in pygame.event.get():
+            if evento.type == QUIT:
+                return "Fim"
+
+            if self.currentScene == "Epilogo, 1" or self.currentScene == "Moral":
+                if evento.type == KEYDOWN:
+                    if evento.key == K_KP_ENTER or evento.key == K_RETURN:
+                        if self.currentScene == "Epilogo, 1":
+                            return "Moral"
+                        elif self.alphaZero >= 255:
+                            pygame.mixer.music.stop()
+                            self.resetAlpha()
+                            creditos.initialTime = pygame.time.get_ticks()
+                            pygame.mixer.music.load("src/Musics/snake-eater.mp3")
+                            pygame.mixer.music.play(0)
+                            return "Creditos"
 
                     if evento.key == K_ESCAPE:
                         return "MusicaMenu"
