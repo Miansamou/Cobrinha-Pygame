@@ -6,6 +6,8 @@ pygame.init()
 
 #----------- Iniciando variaveis e objetos do jogo ----------------
 
+
+
 System = sys.System()
 
 Rank = Ranking.Rankinkg()
