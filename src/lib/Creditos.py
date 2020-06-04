@@ -201,7 +201,7 @@ class Creditos:
             if evento.type == QUIT:
                 return "Fim"
 
-            if evento.type == KEYDOWN and evento.key == K_KP_ENTER:
+            if evento.type == KEYDOWN and evento.key == K_KP_ENTER or evento.key == K_RETURN:
                 self.timer = 0
                 return "MusicaMenu"
 
