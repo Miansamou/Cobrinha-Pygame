@@ -256,7 +256,9 @@ class Scene:
 
         self.epilogoMoral = self.separaLinhas(self.epilogoMoralTexto)
 
-        self.agradecimentos = fontes.comicNeue15.render("Obrigado por jogar nosso jogo!!", True, cores.White)
+        self.agradecimentos = fontes.hello30.render("Obrigado por jogar nosso jogo!!", True, cores.White)
+
+        self.imagemCobrinha = fontes.animals90.render("S", True, cores.White)
 
     def saveData(self, texto):
         pickle.dump(texto, open("Save/savefile.dat", "wb"))
@@ -273,7 +275,7 @@ class Scene:
 
     def separaLinhas(self, texto):
         texto = texto.split("\n")
-        paragrafo = [fontes.calibri14.render(linhas, True, cores.White) for linhas in texto]
+        paragrafo = [fontes.times20.render(linhas, True, cores.White) for linhas in texto]
         return paragrafo
 
     def eventoLoad(self):
@@ -1044,6 +1046,7 @@ class Scene:
                         screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
 
                     screen.blit(self.agradecimentos, (300, 550))
+                    screen.blit(self.imagemCobrinha, (370, 590))
 
                     if self.timer % 2 == 0:
                         screen.blit(self.btnEnter,

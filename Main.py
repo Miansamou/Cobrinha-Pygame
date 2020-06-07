@@ -1,6 +1,6 @@
 import pygame
 from src.Grafico import cores, cenario
-from src.lib import Cobrinha, sys, CaixaDeTexto, Ranking, Menu, Creditos, GameFlow, Scenes
+from src.lib import Cobrinha, sys, TextBox, Ranking, Menu, Creditos, GameFlow, Scenes
 
 pygame.init()
 
@@ -20,7 +20,7 @@ menuDificuldade = Menu.MenuDificuldade()
 
 fases = Menu.MenuFases()
 
-textBox = CaixaDeTexto.CaixaDeTexto()
+textBox = TextBox.CaixaDeTexto()
 
 creditos = Creditos.Creditos()
 
@@ -292,6 +292,10 @@ while running != "Fim":
     elif running == "Creditos":
         creditos.desenhaCreditos(System.screen)
         running = creditos.evento()
+
+    #Fim do código referente ao modo Adventure
+
+    #Inicio do código referente ao modo história
 
     elif running == "Historia":
         scene.desenhaCena(System.screen, seta)

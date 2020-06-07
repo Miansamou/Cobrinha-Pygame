@@ -14,9 +14,6 @@ TextBackground = pygame.image.load('src/Grafico/PythonBG.bmp')
 
 #Score
 Score = pygame.image.load('src/Grafico/Score.bmp')
-MacaSprite = pygame.image.load('src/Grafico/maca.png')
-AngelSprite = pygame.image.load('src/Grafico/Angel.png')
-DemonSprite = pygame.image.load('src/Grafico/Demon.png')
 
 #Imagens do crédito
 jesusKidTaca = pygame.image.load('src/Grafico/JesusKidTaca.bmp')
@@ -42,3 +39,14 @@ capeta = pygame.image.load('src/Grafico/capeta.bmp')
 frutaProibida = pygame.image.load('src/Grafico/frutaProibida.bmp')
 hellvsheaven = pygame.image.load('src/Grafico/hellvsheaven.bmp')
 whiteSnake = pygame.image.load('src/Grafico/whiteSnake.bmp')
+
+#Sprites
+MacaSprite = pygame.image.load('src/Grafico/maca.png')
+AngelSprite = pygame.image.load('src/Grafico/Angel.png')
+DemonSprite = pygame.image.load('src/Grafico/Demon.png')
+
+'''
+Angel2Sprite = pygame.image.load('src/Grafico/Angel2.png')
+Demon2Sprite = pygame.image.load('src/Grafico/Demon2.png')
+HumanSprite = pygame.imagem.load('scr/Grafico/Human.png')
+'''

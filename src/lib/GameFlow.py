@@ -1,7 +1,7 @@
 import pygame
 from ..Fonts import fontes
 from ..Grafico import cores, cenario
-from src.lib import sys, Inimigo
+from src.lib import sys, Enemy
 from pygame.locals import *
 
 class gameFlow:
@@ -12,8 +12,8 @@ class gameFlow:
         self.posicao_item = self.System.on_grid_random(10, 590)
         self.cenarioAtual = cenario.BackgroundGrass
         self.itemAtual = cenario.MacaSprite
-        self.inimigoInferno = Inimigo.InimigoInferno()
-        self.inimigoCeu = Inimigo.InimigoCeu()
+        self.inimigoInferno = Enemy.InimigoInferno()
+        self.inimigoCeu = Enemy.InimigoCeu()
 
     def resetGame(self, sceneSelected, snake):
         self.direcao = "direita"
