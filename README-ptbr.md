@@ -66,7 +66,7 @@ Outra importante tecnologia usada nesse projeto é o mysql connector (Outro fram
       
 ### Windows (Python precisa estar listado no [PATH](https://www.computerhope.com/issues/ch000549.htm))
 
-1.  **Clone o repositório (Recommendation: with Git Bash).**
+1.  **Clone o repositório (Recomendação: use o Git Bash).**
 
     ```shell
     git clone https://github.com/Miansamou/Cobrinha-Pygame
