@@ -11,7 +11,7 @@
 ## 🎓 O projeto
 Esse é um trabalho semestral do Centro Universitário Senac, no qual temos que fazer um jogo 2D em um framework de python, chamado pygame.
 
-## 🕹️ What is Pygame?
+## 🕹️ O que é Pygame?
 Pygame é um módulo para uso em jogos 2D, com caracteristicas que incluem: renderizar audio e video, criar inteligência artificial e reconhecer inputs de periféricos como o mouse e o teclado, fezendo dele uma engine para jogos bem útil.
 
 ## 👨🏽‍💻 Tecnologias usadas
