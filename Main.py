@@ -1,6 +1,30 @@
+'''
+Entrega de trabalho
+Nós,
+
+Gustavo Costa Santos Almeida
+Miguel Angelo Moura
+
+declaramos que
+
+todas as respostas são fruto de nosso próprio trabalho,
+não copiamos respostas de colegas externos à equipe,
+não disponibilizamos nossas respostas para colegas externos à equipe e
+não realizamos quaisquer outras atividades desonestas para nos beneficiar ou predidicar outros.
+
+#######################
+
+Data de Entrega: 11/06/2020
+Faculdade: Centro Universitário Senac Santo Amaro
+Curso: Bacharelado em Jogos Digitais
+Matéria: Projeto Integrador (P.I.)
+
+#######################
+'''
+
 import pygame
-from src.Grafico import cores, cenario
-from src.lib import Cobrinha, sys, TextBox, Ranking, Menu, Creditos, GameFlow, Scenes
+from src.Graphics import colors, scenario
+from src.lib import Cobrinha, sys, TextBox, Ranking, Menu, Credits, GameFlow, Scenes
 
 pygame.init()
 
@@ -22,11 +46,11 @@ fases = Menu.MenuFases()
 
 textBox = TextBox.CaixaDeTexto()
 
-creditos = Creditos.Creditos()
+creditos = Credits.Creditos()
 
 #Objetos e variaveis do jogo em si
 GF = GameFlow.gameFlow()
-snake = Cobrinha.Cobrinha(System.getDificuldade(), cores.LightRed)
+snake = Cobrinha.Cobrinha(System.getDificuldade(), colors.LightRed)
 
 # Seta do menu
 seta = System.seta
@@ -215,6 +239,7 @@ while running != "Fim":
             seta = [(240, 485), (240, 515), (255, 500)]
             opcao = 5
 
+        #Opções de escolha de fase
         if opcao >= 11 and opcao <= 13:
             if opcao == 11:
                 System.setCenario("Garden")
@@ -256,10 +281,10 @@ while running != "Fim":
 
         GF.desenhaJogo(System.screen, snake)
 
-        if GF.cenarioAtual == cenario.BackgroundHeaven:
+        if GF.cenarioAtual == scenario.BackgroundHeaven:
             running = GF.heavenColission(System.screen, running, snake)
 
-        if GF.cenarioAtual == cenario.BackgroundHell:
+        if GF.cenarioAtual == scenario.BackgroundHell:
             running = GF.hellColission(System.screen, running, snake)
 
         if running == "CaixaDeTexto":
@@ -338,6 +363,7 @@ while running != "Fim":
         elif opcao > 20:
             running = "Fim"
 
+    #Inicializacao dos textos
     elif running == "RunningHistoria":
         if scene.currentScene == "Prologo" or scene.currentScene == "Prologo, 1" or scene.currentScene == "Prologo, 2":
             scene.desenhaPrologo(System.screen)
@@ -347,6 +373,7 @@ while running != "Fim":
             scene.desenhaCapituloUm(System.screen)
             scene.currentScene = scene.eventoCapituloUm(scene.currentScene, GF, snake)
 
+        #Inicializacao do cenário, cobrinha, da colisão e atualizacoes de tela
         elif scene.currentScene == "JogoCapituloUm":
 
             running = GF.eventoJogo(snake, running)
@@ -363,6 +390,7 @@ while running != "Fim":
                 running = "RunningHistoria"
                 scene.currentScene = "Capitulo 1, 1"
 
+            #Cada capitulo possui este trecho para determinar a quantidade de inimigos a serem
             if GF.System.score >= 5:
                 scene.saveData("Capitulo 2")
                 scene.currentScene = "Capitulo 2"
@@ -370,8 +398,11 @@ while running != "Fim":
                 scene.initialTime = pygame.time.get_ticks()
 
             pygame.display.flip()
+            #Velocidade da cobrinha
             System.clock.tick(30)
 
+
+        #Cada capitulo possui este trecho para fazer o jogador avançar ao finalizar um capitulo
         elif scene.currentScene == "Capitulo 2" or scene.currentScene == "Capitulo 2, 1" or scene.currentScene == "Capitulo 2, 2" or scene.currentScene == "ObjetivoCapituloDois":
             scene.desenhaCapituloDois(System.screen)
             scene.currentScene = scene.eventoCapituloDois(scene.currentScene, GF, snake)
@@ -417,7 +448,8 @@ while running != "Fim":
 
             GF.desenhaJogo(System.screen, snake)
 
-            if GF.cenarioAtual == cenario.BackgroundHeaven:
+            #Mudanca de cenário
+            if GF.cenarioAtual == scenario.BackgroundHeaven:
                 running = GF.heavenColission(System.screen, running, snake)
 
             if running == "CaixaDeTexto":
@@ -449,7 +481,7 @@ while running != "Fim":
 
             GF.desenhaJogo(System.screen, snake)
 
-            if GF.cenarioAtual == cenario.BackgroundHeaven:
+            if GF.cenarioAtual == scenario.BackgroundHeaven:
                 running = GF.heavenColission(System.screen, running, snake)
 
             if running == "CaixaDeTexto":
@@ -482,7 +514,7 @@ while running != "Fim":
 
             GF.desenhaJogo(System.screen, snake)
 
-            if GF.cenarioAtual == cenario.BackgroundHell:
+            if GF.cenarioAtual == scenario.BackgroundHell:
                 running = GF.hellColission(System.screen, running, snake)
 
             if running == "CaixaDeTexto":
@@ -517,7 +549,7 @@ while running != "Fim":
 
             GF.desenhaJogo(System.screen, snake)
 
-            if GF.cenarioAtual == cenario.BackgroundHell:
+            if GF.cenarioAtual == scenario.BackgroundHell:
                 running = GF.hellColission(System.screen, running, snake)
 
             if running == "CaixaDeTexto":
@@ -533,12 +565,14 @@ while running != "Fim":
             pygame.display.flip()
             System.clock.tick(40)
 
+        #Caixa de texto final
         elif scene.currentScene == "Epilogo" or scene.currentScene == "Epilogo, 1" or scene.currentScene == "Moral":
             scene.desenhaEpilogo(System.screen)
             scene.currentScene = scene.eventoEpilogo(scene.currentScene, creditos)
 
+        #Redirecionamento para os creditos do jogo
         if scene.currentScene == "MusicaMenu" or scene.currentScene == "Fim" or scene.currentScene == "Creditos":
             running = scene.currentScene
             scene.resetScene()
-
+#Fim do programa
 pygame.quit()

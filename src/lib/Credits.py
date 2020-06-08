@@ -1,6 +1,6 @@
 import pygame
-from ..Fonts import fontes
-from ..Grafico import cores, cenario
+from ..Fonts import fonts
+from ..Graphics import colors, scenario
 from pygame.locals import *
 
 class Creditos:
@@ -10,61 +10,61 @@ class Creditos:
         self.timer = 0
 
         #nomes
-        self.Gustavo = fontes.comicNeue15.render("Gustavo Almeida Costa", True, cores.White)
-        self.GustavoJesus = fontes.comicNeue15.render("Gustavo ~Jesus~ Costa", True, cores.White)
-        self.Miguel = fontes.comicNeue15.render("Miguel Ângelo Santiago Moura", True, cores.White)
-        self.Miguelito = fontes.comicNeue15.render("Miguelito ~Anjo~ Moura", True, cores.White)
-        self.MiguelitValsa = fontes.comicNeue15.render("Miguelito Pés de Valsa", True, cores.White)
-        self.Vagas = fontes.comicNeue15.render("Há vagas", True, cores.White)
-        self.stack = fontes.comicNeue15.render("Stack Overflow", True, cores.White)
-        self.caelum = fontes.comicNeue15.render("Apostila da Caelum", True, cores.White)
-        self.blogs = fontes.comicNeue15.render("Blogs de Programação", True, cores.White)
-        self.google = fontes.comicNeue15.render("São Google", True, cores.White)
-        self.Familia = fontes.comicNeue15.render("Família", True, cores.White)
+        self.Gustavo = fonts.comicNeue15.render("Gustavo Almeida Costa", True, colors.White)
+        self.GustavoJesus = fonts.comicNeue15.render("Gustavo ~Jesus~ Costa", True, colors.White)
+        self.Miguel = fonts.comicNeue15.render("Miguel Ângelo Santiago Moura", True, colors.White)
+        self.Miguelito = fonts.comicNeue15.render("Miguelito ~Anjo~ Moura", True, colors.White)
+        self.MiguelitValsa = fonts.comicNeue15.render("Miguelito Pés de Valsa", True, colors.White)
+        self.Vagas = fonts.comicNeue15.render("Há vagas", True, colors.White)
+        self.stack = fonts.comicNeue15.render("Stack Overflow", True, colors.White)
+        self.caelum = fonts.comicNeue15.render("Apostila da Caelum", True, colors.White)
+        self.blogs = fonts.comicNeue15.render("Blogs de Programação", True, colors.White)
+        self.google = fonts.comicNeue15.render("São Google", True, colors.White)
+        self.Familia = fonts.comicNeue15.render("Família", True, colors.White)
 
         # 0 ~ 60
-        self.gameName = fontes.chikhenButt70.render("Jogo da cobrinha", True, cores.White)
-        self.pressEnter = fontes.comicNeue15.render("Pressione ENTER para voltar", True, cores.White)
-        self.pressEnterBlack = fontes.comicNeue15.render("Pressione ENTER para voltar", True, cores.Black)
+        self.gameName = fonts.chikhenButt70.render("Jogo da cobrinha", True, colors.White)
+        self.pressEnter = fonts.comicNeue15.render("Pressione ENTER para voltar", True, colors.White)
+        self.pressEnterBlack = fonts.comicNeue15.render("Pressione ENTER para voltar", True, colors.Black)
 
-        self.faculdade = fontes.comicNeue25.render("Centro Universitário Senac", True, cores.White)
-        self.estudio = fontes.comicNeue25.render("ANACONDA 5", True, cores.White)
+        self.faculdade = fonts.comicNeue25.render("Centro Universitário Senac", True, colors.White)
+        self.estudio = fonts.comicNeue25.render("ANACONDA 5", True, colors.White)
 
-        self.diretorGeral = fontes.comicNeue15.render("Diretor do Jogo / Designer Líder", True, cores.White)
-        self.produtor = fontes.comicNeue15.render("Produtor", True, cores.White)
-        self.programadorLider = fontes.comicNeue15.render("Líder de Programação", True, cores.White)
-        self.diretorArte = fontes.comicNeue15.render("Diretor de Arte", True, cores.White)
-        self.produtorCordenador = fontes.comicNeue15.render("Produtor de Cordenação", True, cores.White)
-        self.produtorAssociado = fontes.comicNeue15.render("Produtores Associados", True, cores.White)
+        self.diretorGeral = fonts.comicNeue15.render("Diretor do Jogo / Designer Líder", True, colors.White)
+        self.produtor = fonts.comicNeue15.render("Produtor", True, colors.White)
+        self.programadorLider = fonts.comicNeue15.render("Líder de Programação", True, colors.White)
+        self.diretorArte = fonts.comicNeue15.render("Diretor de Arte", True, colors.White)
+        self.produtorCordenador = fonts.comicNeue15.render("Produtor de Cordenação", True, colors.White)
+        self.produtorAssociado = fonts.comicNeue15.render("Produtores Associados", True, colors.White)
 
-        self.fraseGailDeversPt1 = fontes.comicNeue25.render("TODA CONQUISTA", True, cores.White)
-        self.fraseGailDeversPt2 = fontes.comicNeue25.render("COMEÇA", True, cores.White)
-        self.fraseGailDeversPt3 = fontes.comicNeue25.render("COM A DECISÃO", True, cores.White)
-        self.fraseGailDeversPt4 = fontes.comicNeue25.render("DE TENTAR!", True, cores.White)
-        self.fraseGailDeversPt5 = fontes.comicNeue15.render("~ Gail Devers", True, cores.White)
+        self.fraseGailDeversPt1 = fonts.comicNeue25.render("TODA CONQUISTA", True, colors.White)
+        self.fraseGailDeversPt2 = fonts.comicNeue25.render("COMEÇA", True, colors.White)
+        self.fraseGailDeversPt3 = fonts.comicNeue25.render("COM A DECISÃO", True, colors.White)
+        self.fraseGailDeversPt4 = fonts.comicNeue25.render("DE TENTAR!", True, colors.White)
+        self.fraseGailDeversPt5 = fonts.comicNeue15.render("~ Gail Devers", True, colors.White)
 
         # 60 ~ 120
-        self.Programadores = fontes.comicNeue15.render("Programadores", True, cores.White)
-        self.designerPersonagem = fontes.comicNeue15.render("Designer de Personagem", True, cores.White)
-        self.designerItens = fontes.comicNeue15.render("Designer de Itens", True, cores.White)
-        self.designerCenarios = fontes.comicNeue15.render("Designer de Cenários", True, cores.White)
-        self.testers = fontes.comicNeue15.render("Testadores", True, cores.White)
-        self.soundTrack = fontes.comicNeue15.render("Diretor de áudio", True, cores.White)
-        self.roteiro = fontes.comicNeue15.render("Roteirista", True, cores.White)
+        self.Programadores = fonts.comicNeue15.render("Programadores", True, colors.White)
+        self.designerPersonagem = fonts.comicNeue15.render("Designer de Personagem", True, colors.White)
+        self.designerItens = fonts.comicNeue15.render("Designer de Itens", True, colors.White)
+        self.designerCenarios = fonts.comicNeue15.render("Designer de Cenários", True, colors.White)
+        self.testers = fonts.comicNeue15.render("Testadores", True, colors.White)
+        self.soundTrack = fonts.comicNeue15.render("Diretor de áudio", True, colors.White)
+        self.roteiro = fonts.comicNeue15.render("Roteirista", True, colors.White)
 
-        self.music1 = fontes.comicNeue15.render("Cannon In B", True, cores.White)
-        self.music1Artist = fontes.comicNeue15.render("Pachelbel/Jerry C", True, cores.White)
-        self.music2 = fontes.comicNeue15.render("Snake Eater", True, cores.White)
-        self.music2Artist = fontes.comicNeue15.render("Cynthia Harrell", True, cores.White)
-        self.music3 = fontes.comicNeue15.render("Our Moutain", True, cores.White)
-        self.music3Artist = fontes.comicNeue15.render("Sound Image", True, cores.White)
+        self.music1 = fonts.comicNeue15.render("Cannon In B", True, colors.White)
+        self.music1Artist = fonts.comicNeue15.render("Pachelbel/Jerry C", True, colors.White)
+        self.music2 = fonts.comicNeue15.render("Snake Eater", True, colors.White)
+        self.music2Artist = fonts.comicNeue15.render("Cynthia Harrell", True, colors.White)
+        self.music3 = fonts.comicNeue15.render("Our Moutain", True, colors.White)
+        self.music3Artist = fonts.comicNeue15.render("Sound Image", True, colors.White)
 
         # 60 ~ 180
-        self.patrocinadores = fontes.comicNeue15.render("Patrocinadores", True, cores.White)
-        self.tecnologia = fontes.comicNeue25.render("Tecnologias Usadas", True, cores.White)
+        self.patrocinadores = fonts.comicNeue15.render("Patrocinadores", True, colors.White)
+        self.tecnologia = fonts.comicNeue25.render("Tecnologias Usadas", True, colors.White)
 
-        self.fabricaDoce = fontes.comicNeue15.render("Doce Fábrica de sonhos", True, cores.White)
-        self.instaFabricaDoce = fontes.comicNeue15.render("Insta: @doce_fabricadesonhos", True, cores.White)
+        self.fabricaDoce = fonts.comicNeue15.render("Doce Fábrica de sonhos", True, colors.White)
+        self.instaFabricaDoce = fonts.comicNeue15.render("Insta: @doce_fabricadesonhos", True, colors.White)
 
         # Essentials
         self.provYGameName = 200
@@ -78,7 +78,7 @@ class Creditos:
         self.clock = pygame.time.Clock()
 
     def desenhaCreditos(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -119,8 +119,8 @@ class Creditos:
             screen.blit(self.blogs, (350, self.provYn1 + 540))
             screen.blit(self.google, (350, self.provYn1 + 570))
 
-            screen.blit(cenario.jesusKidTaca, (0, self.provYn1 + 610))
-            screen.blit(cenario.jesusTaca, (400, self.provYn1 + 610))
+            screen.blit(scenario.jesusKidTaca, (0, self.provYn1 + 610))
+            screen.blit(scenario.jesusTaca, (400, self.provYn1 + 610))
 
             screen.blit(self.fraseGailDeversPt1, (300 - self.fraseGailDeversPt1.get_width() // 2, self.provYn1 + 810))
             screen.blit(self.fraseGailDeversPt2, (300 - self.fraseGailDeversPt2.get_width() // 2, self.provYn1 + 830))
@@ -147,7 +147,7 @@ class Creditos:
             screen.blit(self.testers, (50, self.provYn2 + 230))
             screen.blit(self.Familia, (350, self.provYn2 + 230))
 
-            screen.blit(cenario.MiguelitoPesValsa, (300 - cenario.MiguelitoPesValsa.get_width() // 2, self.provYn2 + 280))
+            screen.blit(scenario.MiguelitoPesValsa, (300 - scenario.MiguelitoPesValsa.get_width() // 2, self.provYn2 + 280))
 
             screen.blit(self.soundTrack, (50, self.provYn2 + 720))
             screen.blit(self.MiguelitValsa, (350, self.provYn2 + 720))
@@ -167,17 +167,17 @@ class Creditos:
 
         if self.timer > 127:
 
-            screen.blit(cenario.FabricaSonho, (300 - cenario.FabricaSonho.get_width() // 2, self.provYn3))
+            screen.blit(scenario.FabricaSonho, (300 - scenario.FabricaSonho.get_width() // 2, self.provYn3))
 
             screen.blit(self.patrocinadores, (50, self.provYn3 + 130))
             screen.blit(self.fabricaDoce, (350, self.provYn3 + 130))
             screen.blit(self.instaFabricaDoce, (350, self.provYn3 + 160))
 
             screen.blit(self.tecnologia, (300 - self.tecnologia.get_width() // 2, self.provYn3 + 210))
-            screen.blit(cenario.PythonImg, (50, self.provYn3 + 260))
-            screen.blit(cenario.PygameImg, (350, self.provYn3 + 260))
-            screen.blit(cenario.Photoshop, (50, self.provYn3 + 400))
-            screen.blit(cenario.MysqlImg, (350, self.provYn3 + 400))
+            screen.blit(scenario.PythonImg, (50, self.provYn3 + 260))
+            screen.blit(scenario.PygameImg, (350, self.provYn3 + 260))
+            screen.blit(scenario.Photoshop, (50, self.provYn3 + 400))
+            screen.blit(scenario.MysqlImg, (350, self.provYn3 + 400))
 
             if self.timer > 155:
                 self.alpha = min(self.alpha + (self.deltaTime * 2), 255)
@@ -187,7 +187,7 @@ class Creditos:
             self.provYn3 -= self.deltaTime
 
         if self.timer > 161:
-            screen.blit(cenario.SnakeBite, (0, 0))
+            screen.blit(scenario.SnakeBite, (0, 0))
 
             if self.timer % 2 == 0 and self.timer > 164:
                 screen.blit(self.pressEnterBlack, (450 - self.pressEnter.get_width() // 2, 690 - self.pressEnter.get_height() // 2))

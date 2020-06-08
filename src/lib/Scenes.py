@@ -1,6 +1,6 @@
 import pygame, pickle
-from src.Fonts import fontes
-from src.Grafico import cores, cenario
+from src.Fonts import fonts
+from src.Graphics import colors, scenario
 from pygame.locals import *
 
 
@@ -24,16 +24,16 @@ class Scene:
         except:
             self.currentScene = "Null"
 
-        self.btnNewGame = fontes.comicNeue25.render("Novo Jogo", True, cores.White)
-        self.btnLoad = fontes.comicNeue25.render("Carregar", True, cores.White)
-        self.btnVoltar = fontes.comicNeue25.render("Voltar", True, cores.White)
-        self.btnEnter = fontes.comicNeue15.render("Pressione ENTER para avançar", True, cores.White)
-        self.btnEsc = fontes.comicNeue15.render("Pressione ESC para voltar ao menu", True, cores.White)
+        self.btnNewGame = fonts.comicNeue25.render("Novo Jogo", True, colors.White)
+        self.btnLoad = fonts.comicNeue25.render("Carregar", True, colors.White)
+        self.btnVoltar = fonts.comicNeue25.render("Voltar", True, colors.White)
+        self.btnEnter = fonts.comicNeue15.render("Pressione ENTER para avançar", True, colors.White)
+        self.btnEsc = fonts.comicNeue15.render("Pressione ESC para voltar ao menu", True, colors.White)
 
         # Prologo
-        self.estudio = fontes.comicNeue40.render("Anaconda 5 apresenta", True, cores.White)
-        self.nomeJogo = fontes.chikhenButt70.render("Jogo da Cobrinha", True, cores.White)
-        self.prologo = fontes.comicNeue40.render("Prólogo", True, cores.White)
+        self.estudio = fonts.comicNeue40.render("Anaconda 5 apresenta", True, colors.White)
+        self.nomeJogo = fonts.chikhenButt70.render("Jogo da Cobrinha", True, colors.White)
+        self.prologo = fonts.comicNeue40.render("Prólogo", True, colors.White)
 
         self.prologoTextoUm = "Esta é uma história de algum lugar num tempo futuro, no qual\n" \
                               "a  compreensão  sobre  o  mundo  se  tornou  mais  densa, e a\n" \
@@ -65,7 +65,7 @@ class Scene:
 
         # Capitulo Um
 
-        self.capituloUm = fontes.comicNeue40.render("Capítulo 1 – As maçãs do Jardim", True, cores.White)
+        self.capituloUm = fonts.comicNeue40.render("Capítulo 1 – As maçãs do Jardim", True, colors.White)
 
         self.textoCapituloUm = "Numa toca,  suja e  úmida do  Jardim, habitava uma pequena e\n" \
                                "jovem   cobra,   era   uma   python,   uma   das   espécies  mais\n" \
@@ -77,11 +77,11 @@ class Scene:
 
         self.capituloUmParagrafo = self.separaLinhas(self.textoCapituloUm)
 
-        self.objetivoCapituloUm = fontes.comicNeue25.render("Objetivo: Coma 5 maças", True, cores.White)
+        self.objetivoCapituloUm = fonts.comicNeue25.render("Objetivo: Coma 5 maças", True, colors.White)
 
         # Capitulo Dois
 
-        self.capituloDois = fontes.comicNeue40.render("Capítulo 2 – Punição divina", True, cores.White)
+        self.capituloDois = fonts.comicNeue40.render("Capítulo 2 – Punição divina", True, colors.White)
 
         self.textoCapituloDoisParagrafoUm = "De alguma forma, Caillou começou a crescer e a crescer cada\n"\
                                           "vez  mais  toda  vez  que  ele  se  alimentava,  todavia, ele não\n"\
@@ -105,11 +105,11 @@ class Scene:
 
         self.capituloDoisParagrafoDois = self.separaLinhas(self.textoCapituloDoisParagrafoDois)
 
-        self.objetivoCapituloDois = fontes.comicNeue25.render("Objetivo: Devore 10 pessoas", True, cores.White)
+        self.objetivoCapituloDois = fonts.comicNeue25.render("Objetivo: Devore 10 pessoas", True, colors.White)
 
         # Capitulo 3
 
-        self.capituloTres = fontes.comicNeue40.render("Capítulo 3 – Céu, o lugar de todos", True, cores.White)
+        self.capituloTres = fonts.comicNeue40.render("Capítulo 3 – Céu, o lugar de todos", True, colors.White)
 
         self.textoCapituloTresParagrafoUm = "Desesperada,  a  humanidade não  via outra escolha, a não ser\n" \
                                             "utilizar armas nucleares contra Caillou, e assim o fizeram, uma\n" \
@@ -136,11 +136,11 @@ class Scene:
 
         self.capituloTresParagrafoDois = self.separaLinhas(self.textoCapituloTresParagrafoDois)
 
-        self.objetivoCapituloTres = fontes.comicNeue25.render("Objetivo: Acabe com 15 anjos", True, cores.White)
+        self.objetivoCapituloTres = fonts.comicNeue25.render("Objetivo: Acabe com 15 anjos", True, colors.White)
 
         # Capitulo 4
 
-        self.capituloQuatro = fontes.comicNeue40.render("Capítulo 4 – A frota dos arcanjos", True, cores.White)
+        self.capituloQuatro = fonts.comicNeue40.render("Capítulo 4 – A frota dos arcanjos", True, colors.White)
 
         self.textoCapituloQuatroParagrafoUm = "Deus  tendo  notado  tal  afronta  dentro  de  seu próprio reino,\n"\
                                               "sentiu   uma   grande  energia  maléfica  vinda  de,  Caillou  algo\n"\
@@ -160,11 +160,11 @@ class Scene:
 
         self.capituloQuatroParagrafoDois = self.separaLinhas(self.textoCapituloQuatroParagrafoDois)
 
-        self.objetivoCapituloQuatro = fontes.comicNeue25.render("Objetivo: Destrua 20 arcanjos", True, cores.White)
+        self.objetivoCapituloQuatro = fonts.comicNeue25.render("Objetivo: Destrua 20 arcanjos", True, colors.White)
 
         # Capitulo 5
 
-        self.capituloCinco = fontes.comicNeue40.render("Capítulo 5 – Julgamento de Caillou", True, cores.White)
+        self.capituloCinco = fonts.comicNeue40.render("Capítulo 5 – Julgamento de Caillou", True, colors.White)
 
         self.textoCapituloCincoParagrafoUm = "A  cobra  despertava sua fúria contra todos da  alvorada divina,\n"\
                                              "até ver em sua frente o príncipe da milícia celeste, São Miguel\n"\
@@ -197,11 +197,11 @@ class Scene:
 
         self.capituloCincoParagrafoTres = self.separaLinhas(self.textoCapituloCincoParagrafoTres)
 
-        self.objetivoCapituloCinco = fontes.comicNeue25.render("Objetivo: Engula 25 Demônios", True, cores.White)
+        self.objetivoCapituloCinco = fonts.comicNeue25.render("Objetivo: Engula 25 Demônios", True, colors.White)
 
         # Capitulo 6
 
-        self.capituloSeis = fontes.comicNeue40.render("Capítulo 6 –Imperador do Inferno", True, cores.White)
+        self.capituloSeis = fonts.comicNeue40.render("Capítulo 6 –Imperador do Inferno", True, colors.White)
 
         self.textoCapituloSeisParagrafoUm = "Como no céu, o imperador do inferno, Lúcifer, não tardou para\n" \
                                             "encontrar  Caillou,  mas  ele  mesmo  decidiu  ir em direção da\n" \
@@ -238,11 +238,11 @@ class Scene:
 
         self.capituloSeisParagrafoCinco = self.separaLinhas(self.textoCapituloSeisParagrafoCinco)
 
-        self.objetivoCapituloSeis = fontes.comicNeue25.render("Objetivo: Oblitere as 30 partes de Lúcifer", True, cores.White)
+        self.objetivoCapituloSeis = fonts.comicNeue25.render("Objetivo: Oblitere as 30 partes de Lúcifer", True, colors.White)
 
         # Epilogo
 
-        self.epilogo = fontes.comicNeue40.render("Epílogo", True, cores.White)
+        self.epilogo = fonts.comicNeue40.render("Epílogo", True, colors.White)
 
         self.epilogoTexto = "Após o confronto, o Capeta finalmente foi derrotado, e Cailllou\n" \
                               "vendo o trono do inferno desocupado, assume o seu mais novo\n" \
@@ -256,9 +256,9 @@ class Scene:
 
         self.epilogoMoral = self.separaLinhas(self.epilogoMoralTexto)
 
-        self.agradecimentos = fontes.hello30.render("Obrigado por jogar nosso jogo!!", True, cores.White)
+        self.agradecimentos = fonts.hello30.render("Obrigado por jogar nosso jogo!!", True, colors.White)
 
-        self.imagemCobrinha = fontes.animals90.render("S", True, cores.White)
+        self.imagemCobrinha = fonts.animals90.render("S", True, colors.White)
 
     def saveData(self, texto):
         pickle.dump(texto, open("Save/savefile.dat", "wb"))
@@ -275,7 +275,7 @@ class Scene:
 
     def separaLinhas(self, texto):
         texto = texto.split("\n")
-        paragrafo = [fontes.times20.render(linhas, True, cores.White) for linhas in texto]
+        paragrafo = [fonts.times20.render(linhas, True, colors.White) for linhas in texto]
         return paragrafo
 
     def eventoLoad(self):
@@ -298,21 +298,21 @@ class Scene:
 
     def desenhaCena(self, screen, seta):
         if self.currentScene == "Null" or self.currentScene == "Prologo" or self.currentScene == "Prologo, 1" or self.currentScene == "Prologo, 2":
-            self.btnLoad = fontes.comicNeue25.render("Carregar", True, cores.Gray)
+            self.btnLoad = fonts.comicNeue25.render("Carregar", True, colors.Gray)
         else:
-            self.btnLoad = fontes.comicNeue25.render("Carregar", True, cores.White)
+            self.btnLoad = fonts.comicNeue25.render("Carregar", True, colors.White)
 
-        screen.fill(cores.Black)
-        screen.blit(cenario.hellvsheaven, (0, 0))
+        screen.fill(colors.Black)
+        screen.blit(scenario.hellvsheaven, (0, 0))
         screen.blit(self.btnNewGame, (300 - self.btnNewGame.get_width() // 2, 200 - self.btnNewGame.get_height() // 2))
         screen.blit(self.btnLoad, (300 - self.btnLoad.get_width() // 2, 250 - self.btnLoad.get_height() // 2))
         screen.blit(self.btnVoltar, (300 - self.btnVoltar.get_width() // 2, 300 - self.btnVoltar.get_height() // 2))
-        pygame.draw.polygon(screen, cores.White, seta, 1)
+        pygame.draw.polygon(screen, colors.White, seta, 1)
 
         pygame.display.flip()
 
     def desenhaPrologo(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -352,7 +352,7 @@ class Scene:
                 self.initialTime = pygame.time.get_ticks()
 
         elif self.currentScene == "Prologo, 1":
-            screen.blit(cenario.godTouch, (0, 0))
+            screen.blit(scenario.godTouch, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.prologoParagrafoUm:
@@ -370,7 +370,7 @@ class Scene:
                 screen.blit(self.alphaSurface, (0, 0))
 
         elif self.currentScene == "Prologo, 2":
-            screen.blit(cenario.godTouch, (0, 0))
+            screen.blit(scenario.godTouch, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.prologoParagrafoDois:
@@ -408,7 +408,7 @@ class Scene:
         return currentScene
 
     def desenhaCapituloUm(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -426,7 +426,7 @@ class Scene:
                 self.initialTime = pygame.time.get_ticks()
 
         elif self.currentScene == "Capitulo 1, 1" or self.currentScene == "ObjetivoCapituloUm":
-            screen.blit(cenario.SelectGarden, (0, 0))
+            screen.blit(scenario.SelectGarden, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloUmParagrafo:
@@ -485,7 +485,7 @@ class Scene:
         return currentScene
 
     def desenhaCapituloDois(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -503,7 +503,7 @@ class Scene:
                 self.initialTime = pygame.time.get_ticks()
 
         elif self.currentScene == "Capitulo 2, 1":
-            screen.blit(cenario.animals, (0, 0))
+            screen.blit(scenario.animals, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloDoisParagrafoUm:
@@ -521,7 +521,7 @@ class Scene:
                 screen.blit(self.alphaSurface, (0, 0))
 
         elif self.currentScene == "Capitulo 2, 2" or self.currentScene == "ObjetivoCapituloDois":
-            screen.blit(cenario.city, (0, 0))
+            screen.blit(scenario.city, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloDoisParagrafoDois:
@@ -577,7 +577,7 @@ class Scene:
         return currentScene
 
     def desenhaCapituloTres(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -595,7 +595,7 @@ class Scene:
                 self.initialTime = pygame.time.get_ticks()
 
         elif self.currentScene == "Capitulo 3, 1":
-            screen.blit(cenario.explosao, (0, 0))
+            screen.blit(scenario.explosao, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloTresParagrafoUm:
@@ -613,7 +613,7 @@ class Scene:
                 screen.blit(self.alphaSurface, (0, 0))
 
         elif self.currentScene == "Capitulo 3, 2" or self.currentScene == "ObjetivoCapituloTres":
-            screen.blit(cenario.SelectHeaven, (0, 0))
+            screen.blit(scenario.SelectHeaven, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloTresParagrafoDois:
@@ -669,7 +669,7 @@ class Scene:
         return currentScene
 
     def desenhaCapituloQuatro(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -687,7 +687,7 @@ class Scene:
                 self.initialTime = pygame.time.get_ticks()
 
         elif self.currentScene == "Capitulo 4, 1":
-            screen.blit(cenario.arcanjos, (0, 0))
+            screen.blit(scenario.arcanjos, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloQuatroParagrafoUm:
@@ -705,7 +705,7 @@ class Scene:
                 screen.blit(self.alphaSurface, (0, 0))
 
         elif self.currentScene == "Capitulo 4, 2" or self.currentScene == "ObjetivoCapituloQuatro":
-            screen.blit(cenario.arcanjos, (0, 0))
+            screen.blit(scenario.arcanjos, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloQuatroParagrafoDois:
@@ -761,7 +761,7 @@ class Scene:
         return currentScene
 
     def desenhaCapituloCinco(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -779,7 +779,7 @@ class Scene:
                 self.initialTime = pygame.time.get_ticks()
 
         elif self.currentScene == "Capitulo 5, 1":
-            screen.blit(cenario.virgemMaria, (0, 0))
+            screen.blit(scenario.virgemMaria, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloCincoParagrafoUm:
@@ -797,7 +797,7 @@ class Scene:
                 screen.blit(self.alphaSurface, (0, 0))
 
         elif self.currentScene == "Capitulo 5, 2":
-            screen.blit(cenario.saoMiguel, (0, 0))
+            screen.blit(scenario.saoMiguel, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloCincoParagrafoDois:
@@ -810,7 +810,7 @@ class Scene:
                 screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
 
         elif self.currentScene == "Capitulo 5, 3" or self.currentScene == "ObjetivoCapituloCinco":
-            screen.blit(cenario.SelectHell, (0, 0))
+            screen.blit(scenario.SelectHell, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloCincoParagrafoTres:
@@ -867,7 +867,7 @@ class Scene:
         return currentScene
 
     def desenhaCapituloSeis(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -885,7 +885,7 @@ class Scene:
                 self.initialTime = pygame.time.get_ticks()
 
         elif self.currentScene == "Capitulo 6, 1":
-            screen.blit(cenario.hellThrone, (0, 0))
+            screen.blit(scenario.hellThrone, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloSeisParagrafoUm:
@@ -903,7 +903,7 @@ class Scene:
                 screen.blit(self.alphaSurface, (0, 0))
 
         elif self.currentScene == "Capitulo 6, 2":
-            screen.blit(cenario.capeta, (0, 0))
+            screen.blit(scenario.capeta, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloSeisParagrafoDois:
@@ -916,7 +916,7 @@ class Scene:
                 screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
 
         elif self.currentScene == "Capitulo 6, 3":
-            screen.blit(cenario.frutaProibida, (0, 0))
+            screen.blit(scenario.frutaProibida, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloSeisParagrafoTres:
@@ -929,7 +929,7 @@ class Scene:
                 screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
 
         elif self.currentScene == "Capitulo 6, 4":
-            screen.blit(cenario.capeta, (0, 0))
+            screen.blit(scenario.capeta, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloSeisParagrafoQuatro:
@@ -942,7 +942,7 @@ class Scene:
                 screen.blit(self.btnEsc, (150 - self.btnEsc.get_width() // 2, 690 - self.btnEsc.get_height() // 2))
 
         elif self.currentScene == "Capitulo 6, 5" or self.currentScene == "ObjetivoCapituloSeis":
-            screen.blit(cenario.capeta, (0, 0))
+            screen.blit(scenario.capeta, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.capituloSeisParagrafoCinco:
@@ -1005,7 +1005,7 @@ class Scene:
         return currentScene
 
     def desenhaEpilogo(self, screen):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
 
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
@@ -1023,7 +1023,7 @@ class Scene:
                 self.initialTime = pygame.time.get_ticks()
 
         elif self.currentScene == "Epilogo, 1" or self.currentScene == "Moral":
-            screen.blit(cenario.whiteSnake, (0, 0))
+            screen.blit(scenario.whiteSnake, (0, 0))
 
             self.espacoEntreLinhas = 0
             for linhas in self.epilogoParagrafo:

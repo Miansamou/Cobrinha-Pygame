@@ -1,6 +1,6 @@
 import pygame
-from ..Fonts import fontes
-from ..Grafico import cores, cenario
+from ..Fonts import fonts
+from ..Graphics import colors, scenario
 from src.lib import sys, Enemy
 from pygame.locals import *
 
@@ -10,8 +10,8 @@ class gameFlow:
         self.direcao = "direita"
         self.System = sys.System()
         self.posicao_item = self.System.on_grid_random(10, 590)
-        self.cenarioAtual = cenario.BackgroundGrass
-        self.itemAtual = cenario.MacaSprite
+        self.cenarioAtual = scenario.BackgroundGrass
+        self.itemAtual = scenario.MacaSprite
         self.inimigoInferno = Enemy.InimigoInferno()
         self.inimigoCeu = Enemy.InimigoCeu()
 
@@ -25,21 +25,21 @@ class gameFlow:
         pygame.mixer.music.stop()
 
         if sceneSelected == "Garden":
-            self.cenarioAtual = cenario.BackgroundGrass
-            self.itemAtual = cenario.MacaSprite
-            snake.mudarCor(cores.LightRed)
+            self.cenarioAtual = scenario.BackgroundGrass
+            self.itemAtual = scenario.MacaSprite
+            snake.mudarCor(colors.LightRed)
 
 
         elif sceneSelected == "Sky":
-            self.cenarioAtual = cenario.BackgroundHeaven
-            self.itemAtual = cenario.AngelSprite
-            snake.mudarCor(cores.HardBlue)
+            self.cenarioAtual = scenario.BackgroundHeaven
+            self.itemAtual = scenario.AngelSprite
+            snake.mudarCor(colors.HardBlue)
 
 
         elif sceneSelected == "Hell":
-            self.cenarioAtual = cenario.BackgroundHell
-            self.itemAtual = cenario.DemonSprite
-            snake.mudarCor(cores.LightGreen)
+            self.cenarioAtual = scenario.BackgroundHell
+            self.itemAtual = scenario.DemonSprite
+            snake.mudarCor(colors.LightGreen)
             self.posicao_item = self.System.on_grid_random(20, 580)
 
     def eventoJogo(self, snake, currentScene):
@@ -88,7 +88,7 @@ class gameFlow:
 
     def snakePrimalColission(self, snake, currentScreen, number):
         if self.colission(snake.getCobrinha()[0], self.posicao_item):
-            if self.cenarioAtual == cenario.BackgroundHell:
+            if self.cenarioAtual == scenario.BackgroundHell:
                 self.posicao_item = self.System.on_grid_random(20, 580)
             else:
                 self.posicao_item = self.System.on_grid_random(10, 590)
@@ -124,10 +124,10 @@ class gameFlow:
         return currentScreen
 
     def desenhaJogo(self, screen, snake):
-        screen.fill(cores.Black)
+        screen.fill(colors.Black)
         screen.blit(self.cenarioAtual, (0, 0))
-        screen.blit(cenario.Score, (0, 600))
-        scoreAtual = fontes.comicNeue90.render(str(self.System.score), True, cores.Black)
+        screen.blit(scenario.Score, (0, 600))
+        scoreAtual = fonts.comicNeue90.render(str(self.System.score), True, colors.Black)
         screen.blit(scoreAtual, (350, 600))
         screen.blit(self.itemAtual, self.posicao_item)
 

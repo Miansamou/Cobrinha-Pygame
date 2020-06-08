@@ -1,7 +1,7 @@
 import pygame
 from src.lib import DBConfig
-from src.Fonts import fontes
-from src.Grafico import cores, cenario
+from src.Fonts import fonts
+from src.Graphics import colors, scenario
 from pygame.locals import *
 
 pygame.init()
@@ -10,9 +10,9 @@ pygame.init()
 class CaixaDeTexto():
     def __init__(self):
         self.text = ""
-        self.seuScore = fontes.comicNeue40.render("Sua potuação foi: ", True, cores.Black)
-        self.pressEnter = fontes.comicNeue40.render("Pressione ENTER para salvar", True, cores.Black)
-        self.image = fontes.comicNeue40.render("Qual o seu nickname?", True, cores.Black)
+        self.seuScore = fonts.comicNeue40.render("Sua potuação foi: ", True, colors.Black)
+        self.pressEnter = fonts.comicNeue40.render("Pressione ENTER para salvar", True, colors.Black)
+        self.image = fonts.comicNeue40.render("Qual o seu nickname?", True, colors.Black)
         self.rect = self.image.get_rect()
         self.validChars = "1234567890-=qwertyuiop[]\\asdfghjkl;zxcvbnm,./"
         self.shiftChars = '!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:ZXCVBNM<>?'
@@ -20,7 +20,7 @@ class CaixaDeTexto():
 
     def resetBox(self):
         self.text = ""
-        self.image = fontes.comicNeue40.render("Qual o seu nickname?", True, cores.Black)
+        self.image = fonts.comicNeue40.render("Qual o seu nickname?", True, colors.Black)
 
     def adicionarChar(self, char):
         if char in self.validChars and not self.shiftDown:
@@ -32,15 +32,15 @@ class CaixaDeTexto():
 
     def update(self):
         old_rect_pos = self.rect.center
-        self.image = fontes.comicNeue40.render(self.text, True, cores.Black)
+        self.image = fonts.comicNeue40.render(self.text, True, colors.Black)
         self.rect = self.image.get_rect()
         self.rect.center = old_rect_pos
 
     def desenhaTexto(self, score, screen):
-        screen.fill(cores.White)
-        screen.blit(cenario.TextBackground, (0, 0))
+        screen.fill(colors.White)
+        screen.blit(scenario.TextBackground, (0, 0))
         screen.blit(self.image, (300 - self.image.get_width() // 2, 250 - self.image.get_height() // 2))
-        self.scoreAtual = fontes.comicNeue40.render(str(score), True, cores.Black)
+        self.scoreAtual = fonts.comicNeue40.render(str(score), True, colors.Black)
         screen.blit(self.scoreAtual, (400, 100))
         screen.blit(self.pressEnter, (50, 150))
         screen.blit(self.seuScore, (100, 100))
@@ -72,23 +72,23 @@ class CaixaDeTexto():
 
                     db = DBConfig.DBConfig()
 
-                    if cenarioAtual == cenario.BackgroundGrass and dificuldade == 15:
+                    if cenarioAtual == scenario.BackgroundGrass and dificuldade == 15:
                         db.insert('Jardim_Facil', self.text, score)
-                    elif cenarioAtual == cenario.BackgroundGrass and dificuldade == 25:
+                    elif cenarioAtual == scenario.BackgroundGrass and dificuldade == 25:
                         db.insert('Jardim_Medio', self.text, score)
-                    elif cenarioAtual == cenario.BackgroundGrass and dificuldade == 40:
+                    elif cenarioAtual == scenario.BackgroundGrass and dificuldade == 40:
                         db.insert('Jardim_Dificil', self.text, score)
-                    elif cenarioAtual == cenario.BackgroundHeaven and dificuldade == 15:
+                    elif cenarioAtual == scenario.BackgroundHeaven and dificuldade == 15:
                         db.insert('Ceu_Facil', self.text, score)
-                    elif cenarioAtual == cenario.BackgroundHeaven and dificuldade == 25:
+                    elif cenarioAtual == scenario.BackgroundHeaven and dificuldade == 25:
                         db.insert('Ceu_Medio', self.text, score)
-                    elif cenarioAtual == cenario.BackgroundHeaven and dificuldade == 40:
+                    elif cenarioAtual == scenario.BackgroundHeaven and dificuldade == 40:
                         db.insert('Ceu_Dificil', self.text, score)
-                    elif cenarioAtual == cenario.BackgroundHell and dificuldade == 15:
+                    elif cenarioAtual == scenario.BackgroundHell and dificuldade == 15:
                         db.insert('Inferno_Facil', self.text, score)
-                    elif cenarioAtual == cenario.BackgroundHell and dificuldade == 25:
+                    elif cenarioAtual == scenario.BackgroundHell and dificuldade == 25:
                         db.insert('Inferno_Medio', self.text, score)
-                    elif cenarioAtual == cenario.BackgroundHell and dificuldade == 40:
+                    elif cenarioAtual == scenario.BackgroundHell and dificuldade == 40:
                         db.insert('Inferno_Dificil', self.text, score)
 
                     db.encerrarConexao()

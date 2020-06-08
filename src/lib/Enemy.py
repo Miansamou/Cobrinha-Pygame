@@ -1,5 +1,5 @@
 import pygame
-from ..Grafico import cores
+from ..Graphics import colors
 
 class InimigoCeu:
     def __init__(self):
@@ -27,7 +27,7 @@ class InimigoCeu:
 
     def desenhaInimigo(self, screen):
         for i in range(len(self.inimigos)):
-            pygame.draw.rect(screen, cores.Black, self.inimigos[i])
+            pygame.draw.rect(screen, colors.Black, self.inimigos[i])
 
     def colisao(self, snake, currentScene):
         for i in range(len(self.inimigos)):
@@ -48,7 +48,7 @@ class InimigoInferno:
 
     def desenhaInimigo(self, screen):
         for i in range(len(self.inimigos)):
-            pygame.draw.rect(screen, cores.Black, self.inimigos[i])
+            pygame.draw.rect(screen, colors.Black, self.inimigos[i])
 
     def colisao(self, snake, currentScene):
         for i in range(len(self.inimigos)):
