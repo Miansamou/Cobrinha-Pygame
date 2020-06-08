@@ -1,6 +1,8 @@
 <div align="center">
 
-  <h1>🐍 Jogo da Cobrinha 💻 <br> (Little Snake's Game)</h1>
+  <h1>🐍 Little Snake's Game 💻</h1>
+  
+  [Portuguese](https://github.com/Miansamou/Cobrinha-Pygame/blob/master/README-ptbr.md)
   
   ![snake](https://i.pinimg.com/originals/5b/6d/32/5b6d328e9b60ec558b4b3b0ae29f60b6.jpg)
   
