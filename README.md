@@ -25,7 +25,9 @@ Pygame is a python's framework used to make 2D games, the characteristics for re
 ## 📂 Database
 Other important tecnology used in this project is the mysql connector (Other python's framework), we made one comunication with our application and one database hosted in the Locaweb, to save our ranking and make it shared with everyone who play the game.
 
-## 👾 Starting the repository (Need [Python](https://www.python.org), command will depend between python3 and python, based on python version)
+## 👾 Starting the repository 
+
+#### Need [Python](https://www.python.org), command will depend between python and python3, based on python version
 
 ### Linux
 
