@@ -2,6 +2,8 @@
 
   <h1>🐍 Jogo da Cobrinha 💻</h1>
   
+  [Inglês](https://github.com/Miansamou/Cobrinha-Pygame/blob/master/README.md)
+  
   ![snake](https://i.pinimg.com/originals/5b/6d/32/5b6d328e9b60ec558b4b3b0ae29f60b6.jpg)
   
   <h4>Um jogo usando pygame (framework de python), baseado nos antigos jogos da cobrinha</h4>
