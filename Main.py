@@ -1,4 +1,4 @@
-'''
+"""""
 Entrega de trabalho
 Nós,
 
@@ -12,15 +12,15 @@ não copiamos respostas de colegas externos à equipe,
 não disponibilizamos nossas respostas para colegas externos à equipe e
 não realizamos quaisquer outras atividades desonestas para nos beneficiar ou predidicar outros.
 
-#######################
-
-Data de Entrega: 11/06/2020
-Faculdade: Centro Universitário Senac Santo Amaro
-Curso: Bacharelado em Jogos Digitais
-Matéria: Projeto Integrador (P.I.)
-
-#######################
-'''
+#########################################################
+#                                                       #
+#    Data de Entrega: 11/06/2020                        #
+#    Faculdade: Centro Universitário Senac Santo Amaro  #
+#    Curso: Bacharelado em Jogos Digitais               #
+#    Matéria: Projeto Integrador (P.I.)                 #
+#                                                       #
+#########################################################
+"""""
 
 import pygame
 from src.Graphics import colors, scenario
@@ -161,7 +161,7 @@ while running != "Fim":
         ir além do permitido pressionando os botões para os lados, ele irá para os numeros 0 e 4, indo para a primeira e última posição
         da parte de cima do menu respectivamente
         """""
-        menuDificuldade.selecionarDificuldade(System.screen, seta)
+        menuDificuldade.desenhaDificuldade(System.screen, seta)
         setSeta = menuDificuldade.eventoDificuldade(opcao)
         opcao += setSeta
 

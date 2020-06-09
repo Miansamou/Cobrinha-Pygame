@@ -14,14 +14,18 @@ class System:
         # Seta do menu
         self.seta = [(220, 185), (220, 215), (235, 200)]
 
+        # Dificuldade base
         self.dificuldade = 15
 
+        # Score primário
         self.score = 0
 
+        # Cenário primário
         self.cenario = "Garden"
 
         self.clock = pygame.time.Clock()
 
+    # Base para a movimentação da seta nos menus e da cobrinha
     def mudarPrimeiroArrayBimensional(self, valorImutavel, valorTotal, soma):
         valorTotal += soma
         return (valorImutavel, valorTotal)
@@ -42,6 +46,7 @@ class System:
     def getCenario(self):
         return self.cenario
 
+    # Atualização randômica do item da na tela
     def on_grid_random(self, min, max):
         x = random.randint(min, max)
         y = random.randint(min, max)

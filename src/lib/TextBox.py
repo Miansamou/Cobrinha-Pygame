@@ -18,10 +18,12 @@ class CaixaDeTexto():
         self.shiftChars = '!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:ZXCVBNM<>?'
         self.shiftDown = False
 
+    # Coleta dos dados do jogador
     def resetBox(self):
         self.text = ""
         self.image = fonts.comicNeue40.render("Qual o seu nickname?", True, colors.Black)
 
+    # Criação de uma caracter com letra maiuscula
     def adicionarChar(self, char):
         if char in self.validChars and not self.shiftDown:
             self.text += char
@@ -36,6 +38,7 @@ class CaixaDeTexto():
         self.rect = self.image.get_rect()
         self.rect.center = old_rect_pos
 
+    # Atualizações de display nos cenários e mudança do antigo para o novo Score
     def desenhaTexto(self, score, screen):
         screen.fill(colors.White)
         screen.blit(scenario.TextBackground, (0, 0))

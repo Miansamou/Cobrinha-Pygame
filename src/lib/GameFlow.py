@@ -15,6 +15,7 @@ class gameFlow:
         self.inimigoInferno = Enemy.InimigoInferno()
         self.inimigoCeu = Enemy.InimigoCeu()
 
+    # Ações feitas ao iniciar o jogo
     def resetGame(self, sceneSelected, snake):
         self.direcao = "direita"
 
@@ -23,6 +24,8 @@ class gameFlow:
         self.mudouMovimento = False
 
         pygame.mixer.music.stop()
+
+        # Trecho de seleção de fases
 
         if sceneSelected == "Garden":
             self.cenarioAtual = scenario.BackgroundGrass
@@ -42,6 +45,7 @@ class gameFlow:
             snake.mudarCor(colors.LightGreen)
             self.posicao_item = self.System.on_grid_random(20, 580)
 
+    # Trecho responsável por fazer a cobrinha não andar na direção contrária ao seu sentido
     def eventoJogo(self, snake, currentScene):
         for evento in pygame.event.get():
             if evento.type == QUIT:
@@ -83,6 +87,7 @@ class gameFlow:
         if snake.getCobrinha()[0][0] < 0:
             snake.setCobrinha(self.System.mudarSegundoArrayBimensional(snake.getCobrinha()[0][1], snake.getCobrinha()[0][0], 600))
 
+    # Realiza a base da colisão
     def colission(self, c1, c2):
         return (c1[0] == c2[0]) and (c1[1] == c2[1])
 
@@ -101,13 +106,14 @@ class gameFlow:
             for i in range(self.System.getDificuldade() // 10 + 1):
                 snake.getCobrinha().append((-250, -250))
 
-        # Cobra colidir com ela mesmo
+        # Cobra colidir com ela mesma
         for i in range(len(snake.getCobrinha()) - 1):
             if self.colission(snake.getCobrinha()[0], snake.getCobrinha()[i + 1]):
                 return "CaixaDeTexto"
 
         return currentScreen
 
+    # Colisão com inimigos da fase Céu
     def heavenColission(self, screen, currentScreen, snake):
         self.inimigoCeu.updateInimigos()
         self.inimigoCeu.desenhaInimigo(screen)
@@ -116,6 +122,7 @@ class gameFlow:
 
         return currentScreen
 
+    # Colisão com inimigos da fase inferno
     def hellColission(self, screen, currentScreen, snake):
         self.inimigoInferno.desenhaInimigo(screen)
         if currentScreen == "Jogo" or currentScreen == "RunningHistoria":
@@ -123,6 +130,7 @@ class gameFlow:
 
         return currentScreen
 
+    # Atualizações de tela e desenhos durante o jogo
     def desenhaJogo(self, screen, snake):
         screen.fill(colors.Black)
         screen.blit(self.cenarioAtual, (0, 0))

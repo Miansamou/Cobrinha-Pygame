@@ -3,8 +3,25 @@ from ..Fonts import fonts
 from ..Graphics import colors, scenario
 from pygame.locals import *
 
+"""""
+    
+    # Funções desenha: Todas as funções iniciadas por desenha... tem como função
+    realizar a criação, ou seja, desenhar na tela uma parte específica do menu.
+    Por exmeplo: desenhaIntro, cria Intro do game; desenhaMenu, cria o Menu principal.
+
+    # Funções evento: Todas as funções iniciadas por evento... tem como função
+    a movimentação da seta dos menus.
+    Por exemplo: Ao apertar a tecla "s", a seta se movimentará para baixo.
+    
+    OBS: A primeira função é a única que não possui um retorno que movimenta uma seta
+    e sim, que é responsável por uma ação somente, sair da Intro ao apertar "Enter".
+    
+    """""
+
 class Intro:
     def __init__(self):
+
+        # Print dos textos na tela de introdução
         self.gameName = fonts.chikhenButt70.render("Jogo da cobrinha", True, colors.White)
         self.grupo = fonts.comicNeue15.render("Jogo de Gustavo Costa e Miguel Moura", True, colors.White)
         self.pressEnter = fonts.comicNeue25.render("Pressione ENTER para começar", True, colors.White)
@@ -31,19 +48,20 @@ class Intro:
 class MenuPrincipal:
     def __init__(self):
 
-        # botoes do menu principal
+        # Botões do menu principal
         self.btnJogar = fonts.comicNeue25.render("Jogar", True, colors.White)
         self.btnHistoria = fonts.comicNeue25.render("História", True, colors.White)
         self.btnRanking = fonts.comicNeue25.render("Ranking", True, colors.White)
         self.btnCreditos = fonts.comicNeue25.render("Creditos", True, colors.White)
         self.btnSair = fonts.comicNeue25.render("Sair", True, colors.White)
 
+        # Botão de volume
         self.btnVolume = fonts.comicNeue25.render("Volume", True, colors.White)
         pygame.mixer.music.set_volume(1)
         self.volumeAtual = pygame.mixer.music.get_volume()
         self.btnVolumeAtual = fonts.comicNeue25.render("- " + str(int(pygame.mixer.music.get_volume() * 100)) + " +", True, colors.White)
 
-    def updateVolume(self):
+    def desenhaVolume(self):
         self.btnVolumeAtual = fonts.comicNeue25.render("- " + str(int(pygame.mixer.music.get_volume() * 100)) + " +", True, colors.White)
 
     def desenhaMenu(self, screen, seta):
@@ -81,25 +99,25 @@ class MenuPrincipal:
                     if self.volumeAtual < 1:
                         self.volumeAtual += 0.1
                     pygame.mixer.music.set_volume(self.volumeAtual)
-                    self.updateVolume()
+                    self.desenhaVolume()
 
                 elif evento.key == K_KP_MINUS:
                     if self.volumeAtual > 0:
                         self.volumeAtual -= 0.10
                     pygame.mixer.music.set_volume(self.volumeAtual)
-                    self.updateVolume()
+                    self.desenhaVolume()
 
         return 0
 
 class MenuDificuldade:
     def __init__(self):
-        # botoes da dificuldade
+        # Botões de dificuldade
         self.btnFacil = fonts.comicNeue25.render("Fácil", True, colors.White)
         self.btnMedio = fonts.comicNeue25.render("Médio", True, colors.White)
         self.btnDificil = fonts.comicNeue25.render("Difícil", True, colors.White)
         self.btnVoltar = fonts.comicNeue25.render("Voltar", True, colors.White)
 
-    def selecionarDificuldade(self, screen, seta):
+    def desenhaDificuldade(self, screen, seta):
 
         pygame.display.flip()
 
@@ -137,7 +155,7 @@ class MenuDificuldade:
 class MenuFases:
     def __init__(self):
 
-        #botões das fases
+        # Botões das fases
         self.btnGarden = fonts.comicNeue25.render("Garden", True, colors.White)
         self.btnSky = fonts.comicNeue25.render("Sky", True, colors.White)
         self.btnHell = fonts.comicNeue25.render("Hell", True, colors.White)

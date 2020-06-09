@@ -3,13 +3,24 @@ from ..Fonts import fonts
 from ..Graphics import colors, scenario
 from pygame.locals import *
 
+"""""
+
+    # Função desenha: Tem como função realizar a criação, ou seja, desenhar na tela 
+    todas as informações dos créditos.
+
+    # Função evento: Tem como função realizar realizar a ação desejada pelo jogador
+    dependendo da tecla selecionada, por exemplo: Apertar "Enter" para sair dos créditos. 
+
+"""""
+
 class Creditos:
     def __init__(self):
 
+        # ----- Inicialização de todas as váriaveis ----- #
         self.initialTime = 0
         self.timer = 0
 
-        #nomes
+        # Nomes
         self.Gustavo = fonts.comicNeue15.render("Gustavo Almeida Costa", True, colors.White)
         self.GustavoJesus = fonts.comicNeue15.render("Gustavo ~Jesus~ Costa", True, colors.White)
         self.Miguel = fonts.comicNeue15.render("Miguel Ângelo Santiago Moura", True, colors.White)
@@ -80,6 +91,7 @@ class Creditos:
     def desenhaCreditos(self, screen):
         screen.fill(colors.Black)
 
+        #Váriavel que realiza a movimentação da tela em ticks
         self.timer = (pygame.time.get_ticks() - self.initialTime) / 1000
         self.timer = int(self.timer)
 
@@ -90,9 +102,10 @@ class Creditos:
             screen.blit(self.gameName, (300 - self.gameName.get_width() // 2, self.provYGameName - self.gameName.get_height() // 2))
 
         elif self.timer >= 8:
-            screen.blit(self.gameName,(300 - self.gameName.get_width() // 2, self.provYGameName - self.gameName.get_height() // 2))
+            screen.blit(self.gameName, (300 - self.gameName.get_width() // 2, self.provYGameName - self.gameName.get_height() // 2))
             self.provYGameName -= self.deltaTime
 
+        # Entre os segundos 13 ~ 120 são executadas as imagens e textos abaixo
         if self.timer >= 13 and self.timer < 120:
             screen.blit(self.faculdade, (300 - self.faculdade.get_width() // 2, self.provYn1 - self.faculdade.get_height() // 2))
             screen.blit(self.estudio, (300 - self.estudio.get_width() // 2, (self.provYn1 + 100) - self.estudio.get_height() // 2))
@@ -130,6 +143,7 @@ class Creditos:
 
             self.provYn1 -= self.deltaTime
 
+        # Entre os segundos 75 ~ 170 são executadas as imagens e textos abaixo
         if self.timer > 75 and self.timer < 170:
             screen.blit(self.Programadores, (50, self.provYn2))
             screen.blit(self.GustavoJesus, (350, self.provYn2))

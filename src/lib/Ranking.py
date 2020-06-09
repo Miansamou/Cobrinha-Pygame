@@ -4,6 +4,23 @@ from ..Graphics import colors, scenario
 from src.lib import DBConfig
 from pygame.locals import *
 
+"""""
+
+    # Função setRank: Tem como função recolher as informações passadas como parâmetro
+    e executa-las dependendo da opção.
+    
+    # Função impressaoBanco: Tem como função desenhar e ordenar a pontuação de acordo
+    com as anteriores, deixando o Ranking em ordem crescente
+
+    # Função desenha: Tem como função realizar a criação, ou seja, desenhar na tela 
+    todas as informações do Ranking para o jogador.
+
+    # Função evento: Tem como função realizar realizar a ação desejada pelo jogador
+    dependendo da tecla selecionada, por exemplo: Apertar "D" para ir para a página
+    da direita. 
+
+"""""
+
 class Rankinkg:
     def __init__(self):
         self.Rank = fonts.comicNeue40.render("< Ranking Jardim >", True, colors.White)

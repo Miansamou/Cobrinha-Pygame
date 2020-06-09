@@ -1,6 +1,14 @@
 import pygame
 from ..Graphics import colors
 
+"""""
+    # Funções desenha: São responsáveis por desenhar array inimigo na tela.
+    
+    # Funções colisão: São responsáveis pela colisão de qualquer parte
+    da cobrinha com o inimigo
+
+"""""
+
 class InimigoCeu:
     def __init__(self):
         self.inimigos = [
@@ -13,6 +21,7 @@ class InimigoCeu:
         self.movimento = 1
         self.movimentoTotal = 0
 
+    # Responsável por realizar a movimentação de todos os inimigos do game
     def updateInimigos(self):
         self.inimigos[0] = self.inimigos[0].move(0, self.movimento)
         self.inimigos[1] = self.inimigos[1].move(self.movimento, 0)
