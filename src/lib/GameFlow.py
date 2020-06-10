@@ -25,7 +25,7 @@ class gameFlow:
 
         pygame.mixer.music.stop()
 
-        # Trecho de seleção de fases
+        # Trecho de seleção de fases e sprites
 
         if sceneSelected == "Garden":
             self.cenarioAtual = scenario.BackgroundGrass

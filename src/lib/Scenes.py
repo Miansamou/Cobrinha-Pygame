@@ -19,6 +19,16 @@ class Scene:
 
         self.espacoEntreLinhas = 0
 
+"""""
+
+       # Função desenha: Tem como função realizar a criação, ou seja, desenhar na tela 
+        todas as informações dos créditos.
+
+       # Função evento: Tem como função realizar realizar a ação desejada pelo jogador
+        dependendo da tecla selecionada, por exemplo: Apertar "Enter" para mudar de tela. 
+
+"""""
+
         try:
             self.currentScene = pickle.load(open("Save/savefile.dat", "rb"))
         except:
@@ -36,28 +46,29 @@ class Scene:
         self.prologo = fonts.comicNeue40.render("Prólogo", True, colors.White)
 
         self.prologoTextoUm = "Esta é uma história de algum lugar num tempo futuro, no qual\n" \
-                              "a  compreensão  sobre  o  mundo  se  tornou  mais  densa, e a\n" \
+                              "a  compreensão  sobre  o  mundo  se  tornou  mais  densa e a\n" \
                               "interação  entre  os  povos  completamente interconectada, a\n" \
-                              "ponto  da natureza e o espaço ao redor da sociedade importar\n" \
-                              "cada  vez   menos.  Com   isso,  o  mundo   terreno   foi  sendo\n" \
-                              "usurpado,  animais  e  plantas foram  deixando  de  existir,  e  a\n" \
-                              "humanidade  em nada se  importava, já que naquele momento,\n" \
-                              "com  a  potência  tecnológica,  era  possível  redefinir as leis da\n" \
-                              "cadeia alimentar da forma que bem entendessem."
+                              "ponto da natureza e o espaço ao redor da sociedade importar\n" \
+                              "cada  vez   menos.  Com  isso,  o  mundo   terreno foi  sendo\n" \
+                              "usurpado,  animais e plantas foram  deixando  de  existir, e a\n" \
+                              "humanidade em nada se  importava, já que naquele momento,   \n" \
+                              "com a potência tecnológica existente, era  possível redefinir \n" \
+                              "as  leis  da cadeia alimentar da forma que bem entendessem."
 
         self.prologoParagrafoUm = self.separaLinhas(self.prologoTextoUm)
 
+
         self.prologoTextoDois = "Cientistas, biólogos e religiosos não viam aquilo com bons olhos,\n" \
-                                "a  ciência  buscou  no  abrigo  divino  a  última esperança para a\n" \
-                                "salvação do planeta, e  começaram a  disseminar que mais cedo\n" \
-                                "ou  mais  tarde  a  punição  divina   iria  cair  sobre  a  população\n" \
+                                "a  ciência  buscou no  abrigo  divino  a  última  esperança para a\n" \
+                                "salvação do  planeta  e  começaram  a  disseminar que mais cedo\n" \
+                                "ou  mais  tarde  a  punição  divina  iria  cair  sobre  a  população\n" \
                                 "pecadora, caso  aquela  louca aceleração continuasse. Como um\n" \
                                 "milagre,  o mundo deu ouvidos a esses avisos, esses três grupos,\n" \
-                                "uma vez  tão  contrários,  juntos ganharam força e popularidade,\n" \
-                                "e  se  uniram  para  montar um grandioso lugar, que abrigaria as\n" \
+                                "uma vez  tão  contrários,  juntos  ganharam força e popularidade,\n" \
+                                "e  se  uniram  para  montar  um  grandioso lugar, que abrigaria as\n" \
                                 "principais criaturas vítimas do avanço da humanidade, este lugar\n" \
                                 "foi construído e batizado de Jardim do Éden. Nele, cada criatura,\n" \
-                                "planta  ou  animal,  recebeu  um  nome  pelos sacerdotes, e isso\n" \
+                                "planta  ou  animal,  recebeu  um  nome  pelos  sacerdotes,  e isso\n" \
                                 "prometia  ser  o  início  de  uma  nova  era,  na  qual  natureza  e\n" \
                                 "tecnologia pudessem dialogar entre si."
 
@@ -69,10 +80,10 @@ class Scene:
 
         self.textoCapituloUm = "Numa toca,  suja e  úmida do  Jardim, habitava uma pequena e\n" \
                                "jovem   cobra,   era   uma   python,   uma   das   espécies  mais\n" \
-                               "ameaçadas, lhe foi dado o nome de chamada Caillou. Certa vez,\n" \
+                               "ameaçadas,   lhe   foi  dado  o  nome   de   Caillou.   Certa vez,\n" \
                                "ela  acabou  confundindo  uma  maçã  do  Jardim  com  uma de\n" \
-                               "suas  presas, e a comeu de uma vez, e mesmo sendo carnívora,\n" \
-                               "ela  apreciou  a  janta  daquela  tarde, e foi em busca de outras\n" \
+                               "suas  presas e a comeu de uma vez,   mesmo  sendo  carnívora,\n" \
+                               "ela  apreciou  a  janta  daquela  tarde  e foi em busca de outras\n" \
                                "maçãs para comer..."
 
         self.capituloUmParagrafo = self.separaLinhas(self.textoCapituloUm)
@@ -85,21 +96,21 @@ class Scene:
 
         self.textoCapituloDoisParagrafoUm = "De alguma forma, Caillou começou a crescer e a crescer cada\n"\
                                           "vez  mais  toda  vez  que  ele  se  alimentava,  todavia, ele não\n"\
-                                          "parecia se sentir saciado, e todo o alimento sequer demorava\n"\
-                                          "para  ser  digerido.  Com  fome  Caillou como qualquer animal\n"\
-                                          "irracional  foi  atrás  de presas que habitavam o Jardim, presas\n"\
-                                          "essas    cada   vez   maiores,   porcos,   lobos,   leões,   búfalos,\n"\
-                                          "rinocerontes,  elefantes  e  até  mesmo girafas, até chegar um\n"\
-                                          "momento  que  aquele  Jardim  se  tornou muito pequeno com\n"\
-                                          "uma   alimentação  escassa   para  ele  e  por  fim,  quebrou  as\n"\
-                                          "barreiras do Jardim que a separavam da humanidade."
+                                          "parecia se sentir saciado  e  todo o alimento sequer demorava\n"\
+                                          "para  ser  digerido.  Com fome  Caillou como qualquer animal\n"\
+                                          "irracional foi  atrás  de presas que habitavam o Jardim, presas\n"\
+                                          "essas   cada   vez   maiores,   porcos,   lobos,   leões,   búfalos,\n"\
+                                          "rinocerontes,  elefantes   e  até   mesmo  girafas, até chegar um\n"\
+                                          "momento  que  aquele  Jardim  se  tornou muito pequeno, com\n"\
+                                          "uma   alimentação  escassa  para  ele  e  por  fim,  quebrou  as\n"\
+                                          "barreiras do Jardim que o separavam da humanidade."
 
         self.capituloDoisParagrafoUm = self.separaLinhas(self.textoCapituloDoisParagrafoUm)
 
         self.textoCapituloDoisParagrafoDois = "Então  ele  começou  a  devastar locais habitados por humanos,\n"\
                                             "estava  gerando  o  caos,   muitos  se  renderam  ao  seu  terror,\n"\
-                                            "militares  não  eram  capazes  de  detê-lo,  e  estava  claro  para\n"\
-                                            "todos  que  a  loucura  do  avanço   tecnológico  irritou  a   Deus,\n"\
+                                            "militares  não  eram  capazes  de  detê-lo, e  estava  claro  para\n"\
+                                            "todos  que  a  loucura  do  avanço  tecnológico  irritou  a  Deus,\n"\
                                             "aquela  certamente era a época do apocalipse, o julgamento de\n"\
                                             "todas as almas, a punição divina."
 
@@ -112,27 +123,27 @@ class Scene:
         self.capituloTres = fonts.comicNeue40.render("Capítulo 3 – Céu, o lugar de todos", True, colors.White)
 
         self.textoCapituloTresParagrafoUm = "Desesperada,  a  humanidade não  via outra escolha, a não ser\n" \
-                                            "utilizar armas nucleares contra Caillou, e assim o fizeram, uma\n" \
+                                            "utilizar armas nucleares contra Caillou, e assim   fizeram, uma\n" \
                                             "grande  explosão  que  destruiu  um  país  inteiro,  milhares de\n" \
-                                            "vidas  foram  sacrificadas  naquele  dia, mas este sacrifício não\n" \
+                                            "vidas  foram  sacrificadas naquele  dia, mas este sacrifício não\n" \
                                             "foi  em  vão,  finalmente  Caillou  parou  de  sentir  fome,  tudo\n" \
-                                            "estava  terminado,  a  humanidade  podia  enfim comemorar a\n" \
-                                            "morte  de  um  inimigo que quase destruiu a raça humana, eles\n"\
+                                            "estava  terminado,  a  humanidade  podia  enfim comemorar  a\n" \
+                                            "morte  de  um  inimigo  que quase destruiu a raça humana, eles\n"\
                                             "poderiam  reconstruir  suas  vidas,  dessa vez repensando seus\n"\
-                                            "atos e se redimindo perante Deus, e Caillou poderia encontrar\n"\
-                                            "paz e vida eterna, no céu dos animais."
+                                            "atos  e  se  redimindo  perante  a  Deus,   e  Caillou,   poderia \n"\
+                                            "encontrar paz e vida eterna, no céu dos animais."
 
         self.capituloTresParagrafoUm = self.separaLinhas(self.textoCapituloTresParagrafoUm)
 
         self.textoCapituloTresParagrafoDois = "No  outro  mundo,  porém,  a  nossa  amada  python  ainda  se\n"\
-                                              "sentia   estranha,  de  alguma  forma,  a  sede  e  a  fome  dela\n"\
+                                              "sentia   estranha,  de  alguma  forma,   a  sede  e  a  fome  dela\n"\
                                               "pareciam  não ter fim,  mesmo tendo passado pela experiência\n"\
-                                              "da  morte,  e  seu  instinto animal despertou mais uma vez, ele\n"\
+                                              "da  morte,   seu  instinto  animal  despertou mais uma vez,  ela\n"\
                                               "iniciou  mais  uma  era  de caos,  por consequência  no terreno\n"\
-                                              "sagrado  do  paraíso,  devorando  almas,  Querubins  e Serafins,\n"\
-                                              "mas  diferente  da morte, não havia outro plano etéreo para as\n"\
-                                              "vítimas  de Caillou, e uma vez devorado, sua existência se esvai\n"\
-                                              "para todo o sempre."
+                                              "sagrado  do  paraíso, devorando  almas, Querubins  e Serafins,\n"\
+                                              "mas  diferente  da  morte, não havia outro plano etéreo para as\n"\
+                                              "vítimas  de  Caillou  e  uma  vez  devorado,  sua   existência \n"\
+                                              "se esvai para todo o sempre."
 
         self.capituloTresParagrafoDois = self.separaLinhas(self.textoCapituloTresParagrafoDois)
 
@@ -142,19 +153,19 @@ class Scene:
 
         self.capituloQuatro = fonts.comicNeue40.render("Capítulo 4 – A frota dos arcanjos", True, colors.White)
 
-        self.textoCapituloQuatroParagrafoUm = "Deus  tendo  notado  tal  afronta  dentro  de  seu próprio reino,\n"\
-                                              "sentiu   uma   grande  energia  maléfica  vinda  de,  Caillou  algo\n"\
-                                              "semelhante com as vibrações negativas de Lúcifer, o anjo caído,\n"\
-                                              "sem demora, Deus ordenou para que todos os arcanjos fossem\n"\
-                                              "em direção da python  de  forma  que a mandasse diretamente\n"\
-                                              "para  as  profundezas  do  inferno.  Os arcanjos  são  o posto de\n"\
-                                              "maior hierarquia na divindade dos anjos,  poderosos  guerreiros\n"\
+        self.textoCapituloQuatroParagrafoUm = "Deus  tendo  notado  tal  afronta  dentro  de  seu  próprio  reino,\n"\
+                                              "sentiu   uma   grande  energia  maléfica  vinda  de  Caillou  algo\n"\
+                                              "semelhante com as vibrações negativas de Lúcifer, o anjo caído.\n"\
+                                              "Sem demora, Deus ordenou para que todos os  arcanjos  fossem\n"\
+                                              "em  direção da python  de  forma  que  a  mandasse  diretamente\n"\
+                                              "para as profundezas  do  inferno.  Os  arcanjos possuem o posto \n"\
+                                              "de  maior  hierarquia  perante  os  anjos,  poderosos  guerreiros\n"\
                                               "da paz com poderes inimagináveis."
 
         self.capituloQuatroParagrafoUm = self.separaLinhas(self.textoCapituloQuatroParagrafoUm)
 
         self.textoCapituloQuatroParagrafoDois = "Mesmo com todo o exército indo em direção da cobra, ela não\n"\
-                                                "se  abalou,  pelo  contrário,  cada criatura dívida devorada a fez\n"\
+                                                "se abalou, pelo  contrário, cada criatura dívida devorada a fez\n"\
                                                 "ficar  cada  vez  maior  e  mais forte, tendo um incrível embate\n"\
                                                 "contra as tropas do céu."
 
@@ -168,30 +179,30 @@ class Scene:
 
         self.textoCapituloCincoParagrafoUm = "A  cobra  despertava sua fúria contra todos da  alvorada divina,\n"\
                                              "até ver em sua frente o príncipe da milícia celeste, São Miguel\n"\
-                                             "Arcanjo,  paralisada  de  medo,  nada  pode  fazer,  até ter sua\n"\
-                                             "cabeça  pisoteada  por  Maria,  a mãe de Jesus, e sem escolha,\n"\
+                                             "Arcanjo,  paralisada  de  medo,  nada  pode  fazer,  até  ter sua\n"\
+                                             "cabeça  pisoteada  por  Maria,  a mãe de Jesus,  e sem escolha,\n"\
                                              "viu São Miguel  erguer  sua  balança  e  iniciar o julgamento de\n"\
                                              "sua alma.  Mesmo sendo uma criatura irracional, seus pecados\n"\
-                                             "não  poderiam  ser  relevados,  e  sua  alma  já  não tinha  mais\n"\
-                                             "salvação,   ela  viu  o  Arcanjo  invocar  sua  espada  de  fogo  e\n"\
+                                             "não  poderiam  ser  relevados  e  sua  alma  já  não tinha  mais\n"\
+                                             "salvação,  ela  viu  o  Arcanjo  invocar  sua  espada  de  fogo  e\n"\
                                              "golpeá-la, precipitando sua alma para junto do reino de satanás,\n" \
                                              "o inferno."
 
         self.capituloCincoParagrafoUm = self.separaLinhas(self.textoCapituloCincoParagrafoUm)
 
-        self.textoCapituloCincoParagrafoDois = "Mais  uma  vez,  Caillou havia  sido expurgada, e se viu em um\n"\
-                                               "novo habitat  desconhecido, as chamas não ardiam, toda a sua\n"\
-                                               "sede  e  fome já  não existia, e de alguma forma ela sentia que\n"\
-                                               "naquele  lugar  seria  possível  chamá-lo  de lar,  e talvez ali ela\n"\
-                                               "poderia viver enfim em paz."
+        self.textoCapituloCincoParagrafoDois = "Mais  uma  vez,  Caillou havia  sido expurgada  e se viu em um\n"\
+                                               "habitat   desconhecido.   As   chamas  não  ardiam,  toda  a  sua\n"\
+                                               "sede  e  fome já  não existiam e de alguma forma ela sentia  que\n"\
+                                               "naquele lugar  seria possível  chamá-lo  de lar,  e talvez ali, ela\n"\
+                                               "poderia enfim viver em paz."
 
         self.capituloCincoParagrafoDois = self.separaLinhas(self.textoCapituloCincoParagrafoDois)
 
-        self.textoCapituloCincoParagrafoTres = "Alguns  demônios  não  demoraram  para  encontrá-la,  e  com\n"\
-                                               "chicotes na mão, foram em sua direção para açoitá-la,  em um\n"\
+        self.textoCapituloCincoParagrafoTres = "Alguns  demônios  não   demoraram  para  encontrá-la  e  com\n"\
+                                               "chicotes em mãos, foram em sua direção para açoitá-la, em um\n"\
                                                "gesto de legítima defesa, Caillou os devorou, mas diferente de\n" \
-                                               "antes  que  se  alimentar  para  saciar  uma  fome  inesgotável,\n" \
-                                               "Caillou pode se deleitar  e  se  divertir, então foi em direção de\n" \
+                                               "antes  que  se  alimentava  para  saciar  sua  fome  inesgotável,\n" \
+                                               "Caillou pode deleitar-se  e  se divertir, então foi em direção de\n" \
                                                "outros demônios para continuar seu legado de caos, mas dessa\n" \
                                                "vez, por mera diversão."
 
@@ -210,20 +221,20 @@ class Scene:
         self.capituloSeisParagrafoUm = self.separaLinhas(self.textoCapituloSeisParagrafoUm)
 
         self.textoCapituloSeisParagrafoDois = "- Ora, se não é aquela pequena cobrinha inútil da terra, quem\n" \
-                                              "diria que iriamos  nos encontrar aqui, depois de fazê-la comer\n" \
+                                              "diria que iriamos nos encontrar aqui, depois de fazê-la comer\n" \
                                               "aquele fruto proibido."
 
         self.capituloSeisParagrafoDois = self.separaLinhas(self.textoCapituloSeisParagrafoDois)
 
         self.textoCapituloSeisParagrafoTres = "O  fruto  proibido  ou  a  maçã  de Eva foi a origem  do  pecado\n" \
-                                            "original da humanidade, que a fez cair no caos, o consumo dela\n" \
-                                            "desperta uma  maldição eterna  para  a criatura que a digerir e\n" \
+                                            "original da humanidade, que a fez cair no caos. O consumo dela\n" \
+                                            "desperta  uma  maldição  eterna  para  a criatura que a digerir e\n" \
                                             "para toda a sua linhagem."
 
         self.capituloSeisParagrafoTres = self.separaLinhas(self.textoCapituloSeisParagrafoTres)
 
         self.textoCapituloSeisParagrafoQuatro = "- Você é uma  falha,  por  ser um “animalzinho puro”, não seria\n" \
-                                                "barrada  na entrada do céu por qualquer pecado que fizesse, e\n" \
+                                                "barrada  na  entrada  do céu por qualquer pecado  que  fizesse,  \n" \
                                                 "assim poderia consumir todos, eu lhe dei o poder para destruir\n" \
                                                 "Deus...  achei que com essa maldição poderia fazer  com que a\n" \
                                                 "minha sede e fome de vingança pelos seres celestes  poderiam\n" \
@@ -233,8 +244,8 @@ class Scene:
 
         self.capituloSeisParagrafoQuatro = self.separaLinhas(self.textoCapituloSeisParagrafoQuatro)
 
-        self.textoCapituloSeisParagrafoCinco = "Então Lúcifer se divide em diversas partes, e parte para o\n" \
-                                               "ataque em direção de Caillou."
+        self.textoCapituloSeisParagrafoCinco = "Então Lúcifer se divide em diversas partes e parte para o\n" \
+                                               "ataque em direção a Caillou."
 
         self.capituloSeisParagrafoCinco = self.separaLinhas(self.textoCapituloSeisParagrafoCinco)
 
@@ -244,25 +255,25 @@ class Scene:
 
         self.epilogo = fonts.comicNeue40.render("Epílogo", True, colors.White)
 
-        self.epilogoTexto = "Após o confronto, o Capeta finalmente foi derrotado, e Cailllou\n" \
+        self.epilogoTexto = "Após o confronto, o Capeta finalmente foi derrotado e Cailllou\n" \
                               "vendo o trono do inferno desocupado, assume o seu mais novo\n" \
                               "reinado,  e assim, a nossa pequena cobrinha recebeu a alcunha\n" \
                               "de Imperador do Inferno."
 
         self.epilogoParagrafo = self.separaLinhas(self.epilogoTexto)
 
-        self.epilogoMoralTexto = "Moral da história: A fome e sede de vingança nunca o levará a\n" \
-                            "lugar algum, viva e se divirta"
-
-        self.epilogoMoral = self.separaLinhas(self.epilogoMoralTexto)
+        self.epilogoMoral = fonts.ambarella20.render( "Moral da história: A fome e sede de vingança nunca o levará", True, colors.White)
+        self.epilogoMoral2 =fonts.ambarella20.render("a lugar algum, viva e se divirta", True, colors.White)
 
         self.agradecimentos = fonts.hello30.render("Obrigado por jogar nosso jogo!!", True, colors.White)
 
         self.imagemCobrinha = fonts.animals90.render("S", True, colors.White)
 
+    # Salva a história do game em um arquivo .dat
     def saveData(self, texto):
         pickle.dump(texto, open("Save/savefile.dat", "wb"))
 
+    # Reseta as cenas do arquivo .dat
     def resetScene(self):
         try:
             self.currentScene = pickle.load(open("Save/savefile.dat", "rb"))
@@ -1041,10 +1052,9 @@ class Scene:
                 screen.blit(self.alphaSurface, (0, 0))
 
                 if self.alphaZero >= 255:
-                    for linhas in self.epilogoMoral:
-                        self.espacoEntreLinhas += 30
-                        screen.blit(linhas, (50, 180 + self.espacoEntreLinhas))
 
+                    screen.blit(self.epilogoMoral, (50, 180))
+                    screen.blit(self.epilogoMoral2, (150,210))
                     screen.blit(self.agradecimentos, (300, 550))
                     screen.blit(self.imagemCobrinha, (370, 590))
 

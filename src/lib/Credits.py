@@ -21,7 +21,7 @@ class Creditos:
         self.timer = 0
 
         # Nomes
-        self.Gustavo = fonts.comicNeue15.render("Gustavo Almeida Costa", True, colors.White)
+        self.Gustavo = fonts.comicNeue15.render("Gustavo Costa Santos Almeida", True, colors.White)
         self.GustavoJesus = fonts.comicNeue15.render("Gustavo ~Jesus~ Costa", True, colors.White)
         self.Miguel = fonts.comicNeue15.render("Miguel Ângelo Santiago Moura", True, colors.White)
         self.Miguelito = fonts.comicNeue15.render("Miguelito ~Anjo~ Moura", True, colors.White)
