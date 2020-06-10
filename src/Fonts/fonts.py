@@ -6,7 +6,7 @@ filesChikhenButt = os.path.join(os.path.dirname(__file__), "ChickenButt.ttf")
 filesTimesNewRoman = os.path.join(os.path.dirname(__file__), "TimesNewRoman.ttf")
 filesHelloLittleTiger = os.path.join(os.path.dirname(__file__), "HelloLittleTiger.otf")
 filesPhonicsAnimals2 = os.path.join(os.path.dirname(__file__), "PhonicsAnimals2.ttf")
-filesAmbarella = os.path.join(os.path.dirname(__file__), "Ambarella.ttf")
+filesParisienne = os.path.join(os.path.dirname(__file__), "Parisienne-Regular.ttf")
 
 pygame.init()
 
@@ -28,5 +28,5 @@ animals90 = pygame.font.Font(filesPhonicsAnimals2, 90)
 #Fonte Times New Roman
 times20 = pygame.font.Font(filesTimesNewRoman, 20)
 
-#Fonte Ambarella
-ambarella20 = pygame.font.Font(filesAmbarella, 20)
+#Fonte Parisienne
+parisienne25 = pygame.font.Font(filesParisienne, 25)

@@ -262,8 +262,8 @@ class Scene:
 
         self.epilogoParagrafo = self.separaLinhas(self.epilogoTexto)
 
-        self.epilogoMoral = fonts.ambarella20.render( "Moral da história: A fome e sede de vingança nunca o levará", True, colors.White)
-        self.epilogoMoral2 =fonts.ambarella20.render("a lugar algum, viva e se divirta", True, colors.White)
+        self.epilogoMoral = fonts.parisienne25.render( "Moral da história: A fome e sede de vingança nunca o levará", True, colors.White)
+        self.epilogoMoral2 =fonts.parisienne25.render("a lugar algum, viva e se divirta", True, colors.White)
 
         self.agradecimentos = fonts.hello30.render("Obrigado por jogar nosso jogo!!", True, colors.White)
 
@@ -399,6 +399,7 @@ class Scene:
 
     def eventoPrologo(self, currentScene):
         for evento in pygame.event.get():
+            
             if evento.type == QUIT:
                 return "Fim"
 
@@ -1053,8 +1054,8 @@ class Scene:
 
                 if self.alphaZero >= 255:
 
-                    screen.blit(self.epilogoMoral, (50, 180))
-                    screen.blit(self.epilogoMoral2, (150,210))
+                    screen.blit(self.epilogoMoral, (15, 250))
+                    screen.blit(self.epilogoMoral2, (170,300))
                     screen.blit(self.agradecimentos, (300, 550))
                     screen.blit(self.imagemCobrinha, (370, 590))
 
