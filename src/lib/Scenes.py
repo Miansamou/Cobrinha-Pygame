@@ -19,7 +19,7 @@ class Scene:
 
         self.espacoEntreLinhas = 0
 
-"""""
+        """""
 
        # Função desenha: Tem como função realizar a criação, ou seja, desenhar na tela 
         todas as informações dos créditos.
@@ -27,7 +27,7 @@ class Scene:
        # Função evento: Tem como função realizar realizar a ação desejada pelo jogador
         dependendo da tecla selecionada, por exemplo: Apertar "Enter" para mudar de tela. 
 
-"""""
+        """""
 
         try:
             self.currentScene = pickle.load(open("Save/savefile.dat", "rb"))
