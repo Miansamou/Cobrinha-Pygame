@@ -26,6 +26,8 @@ PythonImg = pygame.image.load('src/Graphics/python.bmp')
 PygameImg = pygame.image.load('src/Graphics/pygame.bmp')
 MysqlImg = pygame.image.load('src/Graphics/mysql.bmp')
 SnakeBite = pygame.image.load('src/Graphics/SnakeBite.bmp')
+aseprite = pygame.image.load('src/Graphics/aseprite.bmp')
+audacity = pygame.image.load('src/Graphics/audacity.bmp')
 
 #Historia
 godTouch = pygame.image.load('src/Graphics/godTouch.bmp')
@@ -45,10 +47,8 @@ whiteSnake = pygame.image.load('src/Graphics/whiteSnake.bmp')
 MacaSprite = pygame.image.load('src/Graphics/maca.png')
 AngelSprite = pygame.image.load('src/Graphics/Angel.png')
 DemonSprite = pygame.image.load('src/Graphics/Demon.png')
-
-
+HumanSprite = pygame.image.load('src/Graphics/Human.png')
+Human2Sprite = pygame.image.load('src/Graphics/Human2.png')
 Angel2Sprite = pygame.image.load('src/Graphics/Angel2.png')
-'''
 Demon2Sprite = pygame.image.load('src/Graphics/Demon2.png')
-HumanSprite = pygame.imagem.load('scr/Graphics/Human.png')
-'''
+

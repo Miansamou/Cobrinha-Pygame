@@ -69,6 +69,8 @@ class Creditos:
         self.music2Artist = fonts.comicNeue15.render("Cynthia Harrell", True, colors.White)
         self.music3 = fonts.comicNeue15.render("Our Moutain", True, colors.White)
         self.music3Artist = fonts.comicNeue15.render("Sound Image", True, colors.White)
+        self.music4 = fonts.comicNeue15.render("Four seasons", True, colors.White)
+        self.music4Artist = fonts.comicNeue15.render("Vivaldi", True, colors.White)
 
         # 60 ~ 180
         self.patrocinadores = fonts.comicNeue15.render("Patrocinadores", True, colors.White)
@@ -85,7 +87,7 @@ class Creditos:
         self.alphaSurface = pygame.Surface((600, 700))
         self.alphaSurface.set_alpha(0)
         self.alpha = 0
-        self.deltaTime = 0.3
+        self.deltaTime = 0.35
         self.clock = pygame.time.Clock()
 
     def desenhaCreditos(self, screen):
@@ -144,7 +146,7 @@ class Creditos:
             self.provYn1 -= self.deltaTime
 
         # Entre os segundos 75 ~ 170 são executadas as imagens e textos abaixo
-        if self.timer > 75 and self.timer < 170:
+        if self.timer > 66 and self.timer < 170:
             screen.blit(self.Programadores, (50, self.provYn2))
             screen.blit(self.GustavoJesus, (350, self.provYn2))
             screen.blit(self.Miguelito, (350, self.provYn2 + 30))
@@ -172,14 +174,16 @@ class Creditos:
             screen.blit(self.music2Artist, (350, self.provYn2 + 800))
             screen.blit(self.music3, (50, self.provYn2 + 830))
             screen.blit(self.music3Artist, (350, self.provYn2 + 830))
+            screen.blit(self.music4, (50, self.provYn2 + 860))
+            screen.blit(self.music4Artist, (350, self.provYn2 + 860))
 
-            screen.blit(self.roteiro, (50, self.provYn2 + 880))
-            screen.blit(self.Gustavo, (350, self.provYn2 + 880))
-            screen.blit(self.Miguel, (350, self.provYn2 + 910))
+            screen.blit(self.roteiro, (50, self.provYn2 + 910))
+            screen.blit(self.Gustavo, (350, self.provYn2 + 910))
+            screen.blit(self.Miguel, (350, self.provYn2 + 940))
 
             self.provYn2 -= self.deltaTime
 
-        if self.timer > 127:
+        if self.timer > 113:
 
             screen.blit(scenario.FabricaSonho, (300 - scenario.FabricaSonho.get_width() // 2, self.provYn3))
 
@@ -192,6 +196,8 @@ class Creditos:
             screen.blit(scenario.PygameImg, (350, self.provYn3 + 260))
             screen.blit(scenario.Photoshop, (50, self.provYn3 + 400))
             screen.blit(scenario.MysqlImg, (350, self.provYn3 + 400))
+            screen.blit(scenario.audacity, (50, self.provYn3 + 540))
+            screen.blit(scenario.aseprite, (350, self.provYn3 + 540))
 
             if self.timer > 155:
                 self.alpha = min(self.alpha + (self.deltaTime * 2), 255)

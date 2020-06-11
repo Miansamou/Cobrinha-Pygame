@@ -1,4 +1,4 @@
-import pygame, pickle
+import pygame, random, pickle
 from src.Fonts import fonts
 from src.Graphics import colors, scenario
 from pygame.locals import *
@@ -580,6 +580,11 @@ class Scene:
                             pygame.mixer.music.stop()
                             self.resetAlpha()
                             Flow.resetGame("Garden", snake)
+                            N = random.randint(1, 2)
+                            if N % 2 == 0:
+                                Flow.itemAtual = scenario.HumanSprite
+                            else:
+                                Flow.itemAtual = scenario.Human2Sprite
                             snake.resetCobrinha(40)
                             return "JogoCapituloDois"
 
@@ -764,6 +769,7 @@ class Scene:
                             pygame.mixer.music.stop()
                             self.resetAlpha()
                             Flow.resetGame("Sky", snake)
+                            Flow.itemAtual = scenario.Angel2Sprite
                             snake.resetCobrinha(40)
                             return "JogoCapituloQuatro"
 
@@ -1008,6 +1014,7 @@ class Scene:
                             pygame.mixer.music.stop()
                             self.resetAlpha()
                             Flow.resetGame("Hell", snake)
+                            Flow.itemAtual = scenario.Demon2Sprite
                             snake.resetCobrinha(40)
                             return "JogoCapituloSeis"
 
