@@ -40,7 +40,7 @@ class Scene:
         self.btnEnter = fonts.comicNeue15.render("Pressione ENTER para avançar", True, colors.White)
         self.btnEsc = fonts.comicNeue15.render("Pressione ESC para voltar ao menu", True, colors.White)
 
-        # Prologo
+        # Prólogo
         self.estudio = fonts.comicNeue40.render("Anaconda 5 apresenta", True, colors.White)
         self.nomeJogo = fonts.chikhenButt70.render("Jogo da Cobrinha", True, colors.White)
         self.prologo = fonts.comicNeue40.render("Prólogo", True, colors.White)
@@ -282,7 +282,7 @@ class Scene:
 
     def resetAlpha(self):
         self.alphaZero = 0
-        self.alphaMax = 255
+        self.alphaMax = 25
 
     def separaLinhas(self, texto):
         texto = texto.split("\n")

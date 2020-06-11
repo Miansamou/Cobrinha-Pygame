@@ -46,8 +46,9 @@ MacaSprite = pygame.image.load('src/Graphics/maca.png')
 AngelSprite = pygame.image.load('src/Graphics/Angel.png')
 DemonSprite = pygame.image.load('src/Graphics/Demon.png')
 
-'''
+
 Angel2Sprite = pygame.image.load('src/Graphics/Angel2.png')
+'''
 Demon2Sprite = pygame.image.load('src/Graphics/Demon2.png')
 HumanSprite = pygame.imagem.load('scr/Graphics/Human.png')
 '''
